@@ -1,0 +1,19 @@
+<body class="text-center">
+    <div class="container-sm">
+    <form class="form-signin">
+      <img src="https://store-images.s-microsoft.com/image/apps.33677.13989208873375395.61f9165d-cc8e-49a5-9a70-f2a276bebbe5.b7522e20-ae49-4c77-8001-2539798ecb85" width="200" height="200" alt="">
+      <h1 class="h3 mb-3 font-weight-normal">Input information below.</h1>
+
+      <label for="inputEmail" class="sr-only">Email address</label>
+
+      <input [(ngModel)]="registerUserData.email" name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+      <label for="inputPassword" class="sr-only">Password</label>
+
+      <input [(ngModel)]="registerUserData.password" name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+      <button (click) ="registerUser()" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      <p class="mt-5 mb-3 text-muted">Faris Al-khatahtbeh &copy; 2017-2018</p>
+    </form>
+  </div>
+  </body>

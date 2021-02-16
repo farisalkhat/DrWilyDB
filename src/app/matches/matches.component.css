@@ -1,0 +1,21 @@
+.table tr{
+    border: #053275 solid 1px !important;
+    border-top:#053275 solid 1px !important;
+}
+.table td{
+    border-bottom: #053275 solid 1px !important;
+
+}
+.table th{
+    border-bottom: #053275 solid .1px !important;
+    border-top: #053275 solid .1px !important;
+}
+
+
+
+
+
+thead{
+    border:#053275 solid 1.2px  !important;
+    background-color:#053275;
+}
