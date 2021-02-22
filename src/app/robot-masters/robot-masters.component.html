@@ -1,4 +1,8 @@
 
+
+
+
+
 <div class="container">
 
 
@@ -7,29 +11,21 @@
           <tr>
             <th scope="col">Robot Master</th>
             <th scope="col">Origin</th>
+            <th scope="col">Primary Class</th>
+            <th scope="col">Secondary Class</th>
             <th scope="col">Games Played</th>
             <th scope="col">Most Played By</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let robotmaster of robotmasters ">
           <tr>
-            <td><a href="#"></a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="#"></a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="#"></a></td>
-            <td></td>
+            <td><img src={{robotmaster.icon}}> {{robotmaster.name}}</td>
+            <td>{{robotmaster.origin}}</td>
+            <td>{{robotmaster.primaryclass}}</td>
+            <td>{{robotmaster.secondaryclass}}</td>
             <td></td>
             <td></td>
           </tr>
         </tbody>
       </table>
-    </div>
+  </div>

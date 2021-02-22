@@ -1,10 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
+const RobotMaster = require('../models/robotmasters')
+
 const mongoose = require('mongoose')
-const user = require('../models/user')
 const jwt = require('jsonwebtoken')
 const db = "mongodb+srv://Faris:Luigipoop1437yes@gamestatistics.j134f.mongodb.net/MM8BitDM?retryWrites=true&w=majority"
+
 
 mongoose.connect(db, err=>{
     if (err){
@@ -89,12 +91,18 @@ router.get('/events',(req,res)=>{
             "date":"lmao!"
         }
     ]
-    res.json(events)
+    res.send(RobotMaster)
 })
 
 
-router.get('/submit',verifyToken,(req,res)=>{
-    res.send(true)
+router.get('/robotmasters',async(req,res)=>{
+
+    try{
+        const robotmasters = await RobotMaster.find()
+        res.json(robotmasters)
+    }catch(err){
+        res.send('poop!')
+    }
 })
 
 

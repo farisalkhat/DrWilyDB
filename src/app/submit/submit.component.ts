@@ -3,15 +3,19 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../auth.service'
 import {Router} from '@angular/router'
 
+import {RobotMaster, RobotmastersService} from '../robotmasters.service'
+
 @Component({
   selector: 'app-submit',
   templateUrl: './submit.component.html',
   styleUrls: ['./submit.component.css']
 })
 export class SubmitComponent implements OnInit {
-
+  robotmasters: RobotMaster[];
+  public totalPlayers = 2
+  public gameMode
   submitVerified = false
-  constructor(private _authSerice:AuthService, private _router:Router) { }
+  constructor(private _authSerice:AuthService, private _router:Router,private robotmasterService: RobotmastersService) { }
 
   ngOnInit() {
     this._authSerice.getSubmitVerification().subscribe(
@@ -24,6 +28,16 @@ export class SubmitComponent implements OnInit {
         }
       }
     )
+
+
+    this.robotmasterService.getRobotMasters().subscribe(
+
+      res => {this.robotmasters = res;
+      console.log(this.robotmasters[0])}
+  )
   }
+
+
+
 
 }
