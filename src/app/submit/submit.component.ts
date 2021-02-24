@@ -16,6 +16,17 @@ export class SubmitComponent implements OnInit {
   public gameMode
   submitVerified = false
   constructor(private _authSerice:AuthService, private _router:Router,private robotmasterService: RobotmastersService) { }
+ 
+  player1 = {}
+  player2 = {}
+  player3 = {}
+  player4 = {}
+  player5 = {}
+  player6 = {}
+  player7 = {}
+  player8 = {}
+  player9 = {}
+  player10 = {}
 
   ngOnInit() {
     this._authSerice.getSubmitVerification().subscribe(

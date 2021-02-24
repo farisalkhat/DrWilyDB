@@ -48,7 +48,7 @@
 
 
 
-        <div class="form-col align-items-center" id = "duel" *ngIf="gameMode==='Duels'">
+        <div class="form-col align-items-center">
             <div class ="form-row" *ngIf="totalPlayers>=1">
                 <div class="col-auto">
                     <label for="exampleFormControlSelect1">Player 1</label>
@@ -60,15 +60,28 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+
+
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
+
+
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Frags</label>
+                    <input type="number" class="form-control" placeholder="Frags">
+                </div>
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Placement</label>
+                    <input type="number" class="form-control" placeholder="Placement">
+                </div>
             </div>
+
 
             <div class ="form-row" *ngIf="totalPlayers>=2">
                 <div class="col-auto">
@@ -81,13 +94,25 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+
+
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
+                </div>
+
+
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Frags</label>
+                    <input type="number" class="form-control" placeholder="Frags">
+                </div>
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Placement</label>
+                    <input type="number" class="form-control" placeholder="Placement">
                 </div>
             </div>
 
@@ -102,13 +127,25 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+
+
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
+                </div>
+
+
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Frags</label>
+                    <input type="number" class="form-control" placeholder="Frags">
+                </div>
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Placement</label>
+                    <input type="number" class="form-control" placeholder="Placement">
                 </div>
             </div>
 
@@ -123,13 +160,25 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+
+
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
+                </div>
+
+
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Frags</label>
+                    <input type="number" class="form-control" placeholder="Frags">
+                </div>
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Placement</label>
+                    <input type="number" class="form-control" placeholder="Placement">
                 </div>
             </div>
 
@@ -144,16 +193,27 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+
+
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-            </div>
 
+
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Frags</label>
+                    <input type="number" class="form-control" placeholder="Frags">
+                </div>
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Placement</label>
+                    <input type="number" class="form-control" placeholder="Placement">
+                </div>
+            </div>
             <div class ="form-row" *ngIf="totalPlayers>=6">
                 <div class="col-auto">
                     <label for="exampleFormControlSelect1">Player 6</label>
@@ -165,19 +225,31 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+    
+    
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
+    
+    
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Frags</label>
+                    <input type="number" class="form-control" placeholder="Frags">
+                </div>
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Placement</label>
+                    <input type="number" class="form-control" placeholder="Placement">
+                </div>
             </div>
-
+    
             <div class ="form-row" *ngIf="totalPlayers>=7">
                 <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player 7</label>
+                    <label for="exampleFormControlSelect1">Player 1</label>
                     <input type="text" class="form-control" placeholder="Player">
                   </div>
                   <div class="col-auto">
@@ -186,19 +258,31 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+    
+    
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
+    
+    
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Frags</label>
+                    <input type="number" class="form-control" placeholder="Frags">
+                </div>
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Placement</label>
+                    <input type="number" class="form-control" placeholder="Placement">
+                </div>
             </div>
-
+    
             <div class ="form-row" *ngIf="totalPlayers>=8">
                 <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player 8</label>
+                    <label for="exampleFormControlSelect1">Player 1</label>
                     <input type="text" class="form-control" placeholder="Player">
                   </div>
                   <div class="col-auto">
@@ -207,19 +291,31 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+    
+    
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
+    
+    
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Frags</label>
+                    <input type="number" class="form-control" placeholder="Frags">
+                </div>
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Placement</label>
+                    <input type="number" class="form-control" placeholder="Placement">
+                </div>
             </div>
-
+    
             <div class ="form-row" *ngIf="totalPlayers>=9">
                 <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player 9</label>
+                    <label for="exampleFormControlSelect1">Player 1</label>
                     <input type="text" class="form-control" placeholder="Player">
                   </div>
                   <div class="col-auto">
@@ -228,19 +324,31 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+    
+    
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
+    
+    
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Frags</label>
+                    <input type="number" class="form-control" placeholder="Frags">
+                </div>
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
+                    <label for="exampleFormControlSelect1">Placement</label>
+                    <input type="number" class="form-control" placeholder="Placement">
+                </div>
             </div>
-
+    
             <div class ="form-row" *ngIf="totalPlayers>=10">
                 <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player 10</label>
+                    <label for="exampleFormControlSelect1">Player 1</label>
                     <input type="text" class="form-control" placeholder="Player">
                   </div>
                   <div class="col-auto">
@@ -249,239 +357,35 @@
                         <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
                       </select>
                   </div>
-                  <div class="col-auto">
+    
+    
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
+                <div *ngIf="gameMode==='Duels' || gameMode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-            </div>
-
-
-
-            
-
-
-
-              
-        </div>
-
-        <div *ngIf="gameMode==='DM'">
-            <div class="form-row align-items-center" id = "player1" *ngIf="totalPlayers>=1">
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
+    
+    
+                <div *ngIf="gameMode==='DM'|| gameMode==='TDM'" class="col-auto">
                     <label for="exampleFormControlSelect1">Frags</label>
                     <input type="number" class="form-control" placeholder="Frags">
                 </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" placeholder="Placement">
-                </div>
-            </div>
-
-
-
-            <div class="form-row align-items-center" id = "player2" *ngIf="totalPlayers>=2">
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" placeholder="Frags">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" placeholder="Placement">
-                </div>
-            </div>
-
-            <div class="form-row align-items-center" id = "player3" *ngIf="totalPlayers>=3">
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" placeholder="Frags">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" placeholder="Placement">
-                </div>
-            </div>
-
-            <div class="form-row align-items-center" id = "player4" *ngIf="totalPlayers>=4">
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" placeholder="Frags">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" placeholder="Placement">
-                </div>
-            </div>
-
-            <div class="form-row align-items-center" id = "player5" *ngIf="totalPlayers>=5">
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" placeholder="Frags">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" placeholder="Placement">
-                </div>
-            </div>
-
-            <div class="form-row align-items-center" id = "player6" *ngIf="totalPlayers>=6">
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" placeholder="Frags">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" placeholder="Placement">
-                </div>
-            </div>
-
-            <div class="form-row align-items-center" id = "player7" *ngIf="totalPlayers>=7"> 
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" placeholder="Frags">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" placeholder="Placement">
-                </div>
-            </div>
-
-            <div class="form-row align-items-center" id = "player8" *ngIf="totalPlayers>=8">
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" placeholder="Frags">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" placeholder="Placement">
-                </div>
-            </div>
-
-            <div class="form-row align-items-center" id = "player9" *ngIf="totalPlayers>=9">
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" placeholder="Frags">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" placeholder="Placement">
-                </div>
-            </div>
-
-            <div class="form-row align-items-center" id = "player10" *ngIf="totalPlayers>=10">
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Player</label>
-                    <input type="text" class="form-control" placeholder="Player">
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Robot Master</label>
-                    <select class="form-control"   id="exampleFormControlSelect1">
-                        <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" placeholder="Frags">
-                </div>
-                <div class="col-auto">
+                <div  *ngIf="gameMode==='DM' || gameMode==='TDM'" class="col-auto">
                     <label for="exampleFormControlSelect1">Placement</label>
                     <input type="number" class="form-control" placeholder="Placement">
                 </div>
             </div>
 
         </div>
+
+
+
+
+
+
       
 
 
