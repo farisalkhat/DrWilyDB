@@ -47,7 +47,7 @@
             <div class ="form-row" *ngIf="match.totalplayers>=1">
                 <div class="col-auto">
                     <label for="exampleFormControlSelect1">Player 1</label>
-                    <input type="text" class="form-control" [(ngModel)]="players.player1.name" placeholder="Player">
+                    <input required type="text" class="form-control" [(ngModel)]="players.player1.name" placeholder="Player">
                   </div>
                   <div class="col-auto">
                     <label for="exampleFormControlSelect1">Robot Master</label>
@@ -59,21 +59,21 @@
 
                 <div *ngIf="match.gamemode==='Duels' || match.gamemode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Wins</label>
-                    <input type="number" class="form-control" [(ngModel)]="players.player1.wins" placeholder="Frags">
+                    <input required type="number" class="form-control" [(ngModel)]="players.player1.wins" placeholder="Frags">
                 </div>
                 <div *ngIf="match.gamemode==='Duels' || match.gamemode==='TLMS'" class="col-auto">
                     <label for="exampleFormControlSelect1">Loss</label>
-                    <input type="number" class="form-control" [(ngModel)]="players.player1.loss" placeholder="Frags">
+                    <input required type="number" class="form-control" [(ngModel)]="players.player1.loss" placeholder="Frags">
                 </div>
 
 
                 <div *ngIf="match.gamemode==='DM'|| match.gamemode==='TDM'" class="col-auto">
                     <label for="exampleFormControlSelect1">Frags</label>
-                    <input type="number" class="form-control" [(ngModel)]="players.player1.frags" placeholder="Frags">
+                    <input required type="number" class="form-control" [(ngModel)]="players.player1.frags" placeholder="Frags">
                 </div>
                 <div  *ngIf="match.gamemode==='DM' || match.gamemode==='TDM'" class="col-auto">
                     <label for="exampleFormControlSelect1">Placement</label>
-                    <input type="number" class="form-control" [(ngModel)]="players.player1.placement" placeholder="Placement">
+                    <input required type="number" class="form-control" [(ngModel)]="players.player1.placement" placeholder="Placement">
                 </div>
             </div>
 

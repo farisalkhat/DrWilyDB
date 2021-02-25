@@ -3,7 +3,7 @@ const router = express.Router()
 const User = require('../models/user')
 const RobotMaster = require('../models/robotmasters')
 const Stages = require('../models/stages')
-
+const PlayedMatch = require('../models/playedmatch')
 const Match = require('../models/matches')
 
 
@@ -28,9 +28,32 @@ router.post('/submitmatch',(req,res)=>{
     let matchData = req.body
 
     let match = new Match(matchData['match'])
-    console.log(match['gametitle'])
+    let players = matchData['players']
+
+    match.save((error,match)=>{
+        if(error){
+            console.log(error)
+        }
+        else{
+            res.status(200).send(match)
+        }
+    })
 
 
+
+    for (let player in players) {
+        if(players[player]!={}){
+            let playedmatch = new PlayedMatch(players[player])
+            playedmatch.save((error,player)=>{
+                if(error){
+                    console.log(error)
+                }
+                else{
+                    res.status(200).send(player)
+                }
+            })
+          }
+        }
 })
 
 
