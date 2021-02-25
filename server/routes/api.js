@@ -2,10 +2,39 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
 const RobotMaster = require('../models/robotmasters')
+const Stages = require('../models/stages')
+
+const Match = require('../models/matches')
+
 
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
 const db = "mongodb+srv://Faris:Luigipoop1437yes@gamestatistics.j134f.mongodb.net/MM8BitDM?retryWrites=true&w=majority"
+
+
+
+
+function getNextSequenceValue(sequenceName){
+    var sequenceDocument = db.counters.findAndModify({
+       query:{_id: sequenceName },
+       update: {$inc:{sequence_value:1}},
+       new:true
+    });
+    return sequenceDocument.sequence_value;
+ }
+
+
+router.post('/submitmatch',(req,res)=>{
+    let matchData = req.body
+
+    let match = new Match(matchData['match'])
+    console.log(match['gametitle'])
+
+
+})
+
+
+
 
 
 mongoose.connect(db, err=>{
@@ -100,6 +129,16 @@ router.get('/robotmasters',async(req,res)=>{
     try{
         const robotmasters = await RobotMaster.find()
         res.json(robotmasters)
+    }catch(err){
+        res.send('poop!')
+    }
+})
+
+router.get('/stages',async(req,res)=>{
+
+    try{
+        const stages = await Stages.find()
+        res.json(stages)
     }catch(err){
         res.send('poop!')
     }

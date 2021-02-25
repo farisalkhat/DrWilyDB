@@ -11,6 +11,8 @@ export class AuthService {
   private _registerUrl = "http://localhost:3000/api/register"
   private _loginUrl = "http://localhost:3000/api/login"
   private _submitUrl = "http://localhost:3000/api/submit"
+  private _subtmitMatchUrl = "http://localhost:3000/api/submitmatch"
+  
 
   constructor(private http: HttpClient,private _router:Router) { }
   registerUser(user){
@@ -33,6 +35,10 @@ export class AuthService {
     this._router.navigate(['/matches'])
   }
 
+
+  submitMatch(match){
+    return this.http.post<any>(this._subtmitMatchUrl,match)
+  }
 
   getSubmitVerification(){
     return this.http.get<any>(this._submitUrl)

@@ -16,7 +16,8 @@ import { SubmitComponent } from './submit/submit.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { NavigationComponent } from './navigation/navigation.component';
-import {TokenInterceptorService} from './token-interceptor.service'
+import {TokenInterceptorService} from './token-interceptor.service';
+import { StagesComponent } from './stages/stages.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {TokenInterceptorService} from './token-interceptor.service'
     RobotMastersComponent,
     PlayersComponent,
     SubmitComponent,
-    NavigationComponent
+    NavigationComponent,
+    StagesComponent
   ],
   imports: [
     BrowserModule,

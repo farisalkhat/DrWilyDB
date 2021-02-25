@@ -7,10 +7,13 @@ from collections import OrderedDict
 from pymongo import MongoClient
 from os import path
 
-#client = MongoClient("mongodb+srv://Faris:Luigipoop1437yes@gamestatistics.j134f.mongodb.net/MM8BitDM?retryWrites=true&w=majority")
-#database = client["MM8BitDM"]
-#collection = database["robotmasters"]
-#print(client.list_database_names())
+client = MongoClient("mongodb+srv://Faris:Luigipoop1437yes@gamestatistics.j134f.mongodb.net/MM8BitDM?retryWrites=true&w=majority")
+database = client["MM8BitDM"]
+collection = database["counters"]
+print(client.list_database_names())
+
+
+
 
 
 # stage_list = []
@@ -42,20 +45,20 @@ from os import path
 #     os.rename(filename,new_name)
     
 
-for filename in glob.glob('StageImages/XDM MAP PACK/*.png'):
-    stage_origin = filename.split('\\')[0].split('/')[1]
-    stage_name = filename.split('\\')[1].split('.')[0]
+# for filename in glob.glob('StageImages/IDM MAP PACK/*.png'):
+#     stage_origin = filename.split('\\')[0].split('/')[1]
+#     stage_name = filename.split('\\')[1].split('.')[0]
 
-    print(stage_origin)
+#     print(stage_origin)
 
 
-    stage = {
-        'name': stage_name,
-        'origin': stage_origin,
-        'image': 'assets\\'+filename
-    }
+#     stage = {
+#         'name': stage_name,
+#         'origin': stage_origin,
+#         'image': 'assets\\'+filename
+#     }
 
-    collection.insert_one(stage)
+#     collection.insert_one(stage)
 
 
 
