@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
 import { MatchesComponent } from './matches/matches.component';
 import { PlayersComponent } from './players/players.component';
 import { RegisterComponent } from './register/register.component';
@@ -49,6 +50,10 @@ const routes: Routes = [
   {
     path:'register',
     component:RegisterComponent
+  },
+  {
+    path:'matches/:matchid',
+    component: MatchdetailsComponent
   }
 
 ];

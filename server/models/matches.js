@@ -7,7 +7,7 @@ const rmSchema = new Schema({
     gamemode:String,
     stage:String,
     totalplayers:Number,
-    date:String
+    matchdate:String
 
 })
 

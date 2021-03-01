@@ -67,6 +67,8 @@ export class SubmitComponent implements OnInit {
   submitmatch(){
     this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
     this.match['matchdate'] = this.jstoday
+    this.match['matchid'] = 0
+
 
 
    let finaldata = {}

@@ -5,30 +5,25 @@
 <table class="table table-hover table-dark  ">
     <thead class=" border">
       <tr>
+        <th scope="col">ID</th>
         <th scope="col">Title</th>
-        <th scope="col">Duration</th>
+        <th scope="col">Date</th>
         <th scope="col">Mode</th>
-        <th scope="col">Results</th>
+        <th scope="col">Stage</th>
+        <th scope="col">Total Players</th>
+
+        
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let match of matches ">
       <tr>
-        <td><a href="#">Boys vs Bots 1</a></td>
-        <td>20:33</td>
-        <td>3v3</td>
-        <td>Boys Won</td>
-      </tr>
-      <tr>
-        <td><a href="#">Fuck Chargeman</a></td>
-        <td>4:07</td>
-        <td>FFA</td>
-        <td>ChargeMan Won</td>
-      </tr>
-      <tr>
-        <td><a href="#">Swampus vs Lefty</a></td>
-        <td>12:10</td>
-        <td>1v1</td>
-        <td>Swampus Won</td>
+        <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
+        <td> {{match.gametitle}}</td>
+        <td>{{match.matchdate}}</td>
+        <td>{{match.gamemode}}</td>
+        <td>{{match.stage}}</td>
+        <td>{{match.totalplayers}}</td>
+        
       </tr>
     </tbody>
   </table>

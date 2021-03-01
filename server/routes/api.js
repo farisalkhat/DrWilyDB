@@ -5,55 +5,75 @@ const RobotMaster = require('../models/robotmasters')
 const Stages = require('../models/stages')
 const PlayedMatch = require('../models/playedmatch')
 const Match = require('../models/matches')
-
+const Counters = require('../models/counters')
 
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
 const db = "mongodb+srv://Faris:Luigipoop1437yes@gamestatistics.j134f.mongodb.net/MM8BitDM?retryWrites=true&w=majority"
 
 
+mongoose.set('useFindAndModify', false);
 
+value = 0 
 
-function getNextSequenceValue(sequenceName){
-    var sequenceDocument = db.counters.findAndModify({
-       query:{_id: sequenceName },
-       update: {$inc:{sequence_value:1}},
-       new:true
-    });
-    return sequenceDocument.sequence_value;
+function getCurrentSequenceValue(){
+    const filter = {name:"matchid"}
+    const update = {$inc:{sequence_value:1}}
+    try{
+        Counters.findOne(filter,function(err,obj){
+            value = obj.sequence_value
+            return value});
+    }catch(err){
+        res.send('poop!')
+    }
+}
+function getNextSequenceValue(){
+    const filter = {name:"matchid"}
+    const update = {$inc:{sequence_value:1}}
+    try{
+        Counters.findOneAndUpdate(filter,update,function(err,obj){
+            value = obj.sequence_value
+            return value});
+    }catch(err){
+        res.send('poop!')
+    }
  }
+
+
+
+
+
 
 
 router.post('/submitmatch',(req,res)=>{
     let matchData = req.body
-
+    getNextSequenceValue()
+    id = value
     let match = new Match(matchData['match'])
     let players = matchData['players']
 
+
+    match['matchid'] = id
     match.save((error,match)=>{
         if(error){
             console.log(error)
         }
-        else{
-            res.status(200).send(match)
-        }
     })
 
-
-
     for (let player in players) {
-        if(players[player]!={}){
+        if(players[player]["name"]!=undefined){
             let playedmatch = new PlayedMatch(players[player])
+            playedmatch["matchid"] = id
             playedmatch.save((error,player)=>{
                 if(error){
                     console.log(error)
                 }
-                else{
-                    res.status(200).send(player)
-                }
             })
           }
+
         }
+
+    
 })
 
 
@@ -65,6 +85,7 @@ mongoose.connect(db, err=>{
         console.error('Error')
     }
     else{
+        getCurrentSequenceValue()
         console.log('Connected to mongodb')
     }
 })
@@ -166,6 +187,31 @@ router.get('/stages',async(req,res)=>{
         res.send('poop!')
     }
 })
+
+
+
+router.get('/matches',async(req,res)=>{
+
+    try{
+        const matches = await Match.find()
+        res.json(matches)
+    }catch(err){
+        res.send('poop!')
+    }
+})
+
+router.get('/matches/:matchid',async(req,res)=>{
+    let matchid = req.params.matchid
+    const filter = {matchid:matchid}
+    try{
+        const match = await Match.findOne(filter)
+        res.json(match)
+
+    }catch(err){
+        res.send('poop!')
+    }
+})
+
 
 
 module.exports = router 

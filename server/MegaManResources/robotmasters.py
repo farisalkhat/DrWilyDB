@@ -14,6 +14,11 @@ print(client.list_database_names())
 
 
 
+collection.insert({
+	"name":"matchid",
+	"sequence_value": 0
+})
+
 
 
 # stage_list = []
