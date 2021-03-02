@@ -212,6 +212,18 @@ router.get('/matches/:matchid',async(req,res)=>{
     }
 })
 
+router.get('/stages/:stage',async(req,res)=>{
+    let stagename = req.params.stage
+    const filter = {name:stagename}
+    try{
+        const stage = await Stages.findOne(filter)
+        res.json(stage)
+
+    }catch(err){
+        res.send('poop!')
+    }
+})
+
 
 
 module.exports = router 

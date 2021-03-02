@@ -18,7 +18,8 @@ import { AuthGuard } from './auth.guard';
 import { NavigationComponent } from './navigation/navigation.component';
 import {TokenInterceptorService} from './token-interceptor.service';
 import { StagesComponent } from './stages/stages.component';
-import { MatchdetailsComponent } from './matchdetails/matchdetails.component'
+import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
+import { StagedetailsComponent } from './stagedetails/stagedetails.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatchdetailsComponent } from './matchdetails/matchdetails.component'
     SubmitComponent,
     NavigationComponent,
     StagesComponent,
-    MatchdetailsComponent
+    MatchdetailsComponent,
+    StagedetailsComponent
   ],
   imports: [
     BrowserModule,

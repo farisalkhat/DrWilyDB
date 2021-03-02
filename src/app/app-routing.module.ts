@@ -8,6 +8,7 @@ import { MatchesComponent } from './matches/matches.component';
 import { PlayersComponent } from './players/players.component';
 import { RegisterComponent } from './register/register.component';
 import { RobotMastersComponent } from './robot-masters/robot-masters.component';
+import { StagedetailsComponent } from './stagedetails/stagedetails.component';
 import { StagesComponent } from './stages/stages.component';
 import { SubmitComponent } from './submit/submit.component';
 
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path:'matches/:matchid',
     component: MatchdetailsComponent
+  },
+  {
+    path:'stages/:name',
+    component: StagedetailsComponent
   }
 
 ];

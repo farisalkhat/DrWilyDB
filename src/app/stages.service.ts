@@ -19,5 +19,9 @@ export class StagesService {
     return this.http.get<any[]>(this._stages);
   }
 
+  getStage(name:string){
+    return this.http.get<any[]>(`http://localhost:3000/api/stages/${name}`);
+  }
+
 
 }
