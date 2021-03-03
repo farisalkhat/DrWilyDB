@@ -47,11 +47,33 @@ function getNextSequenceValue(){
 
 router.post('/submitmatch',(req,res)=>{
     let matchData = req.body
-    getNextSequenceValue()
-    id = value
     let match = new Match(matchData['match'])
     let players = matchData['players']
 
+    if (players['player1']==undefined){
+        res.send("Player1 does not exist.")
+        return
+    }
+    if(match['stage']==undefined){
+        res.send("No stage selected.")
+        return
+    }
+    if(match['gametitle']==undefined){
+        res.send("No title for gamemode!")
+        return
+    }
+    if(match['gamemode']==undefined){
+        res.send("No gamemode set.")
+        return
+    }
+
+
+
+
+
+
+    getNextSequenceValue()
+    id = value
 
     match['matchid'] = id
     match.save((error,match)=>{
@@ -62,6 +84,17 @@ router.post('/submitmatch',(req,res)=>{
 
     for (let player in players) {
         if(players[player]["name"]!=undefined){
+
+            if(match['gamemode']=="Duels" || match['gamemode'] == "TLMS"){
+                if(players[player]['wins']==undefined || players[player]['loss']==undefined ){continue}
+              }
+          
+            if(match['gamemode']=="DM" || match['gamemode'] == "TDM"){
+                if(players[player]['frags']==undefined || players[player]['placement']==undefined ){continue}
+            }
+
+
+
             let playedmatch = new PlayedMatch(players[player])
             playedmatch["matchid"] = id
             playedmatch.save((error,player)=>{

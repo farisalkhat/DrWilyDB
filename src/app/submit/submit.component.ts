@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input,EventEmitter } from '@angular/core';
 import {AuthService} from '../auth.service'
 import {Router} from '@angular/router'
 import { DatePipe } from '@angular/common';
@@ -14,7 +14,11 @@ import {formatDate } from '@angular/common';
   styleUrls: ['./submit.component.css']
 })
 export class SubmitComponent implements OnInit {
-  match = {}
+  match = {
+    'stage':undefined,
+    'gametitle':undefined,
+    'gamemode':undefined,
+    'totalplayers':1}
   players = {
     player1:{},
     player2:{},
@@ -31,15 +35,16 @@ export class SubmitComponent implements OnInit {
 
   robotmasters: RobotMaster[];
   stages: Stage[];
-  public totalPlayers = 2;
-  public gameMode;
-
+  public totalPlayers = 10;
+  gameMode:string;
   today= new Date();
   jstoday = '';
   submitVerified = false
   constructor(private _authSerice:AuthService, private _router:Router,private robotmasterService: RobotmastersService,private stageService: StagesService) {
     
   }
+
+
 
   ngOnInit() {
     this._authSerice.getSubmitVerification().subscribe(

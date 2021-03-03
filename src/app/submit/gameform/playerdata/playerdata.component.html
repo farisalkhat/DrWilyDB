@@ -1,0 +1,36 @@
+
+<div class ="form-row">
+    <div class="col-auto">
+        <label for="exampleFormControlSelect1">Player </label>
+        <input  type="text" class="form-control" required [(ngModel)]="player">
+      </div>
+      <div class="col-auto">
+        <label for="exampleFormControlSelect1">Robot Master</label>
+        <select class="form-control"   [(ngModel)]="robotmaster" id="exampleFormControlSelect1">
+            <option *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
+          </select>
+      </div>
+
+
+    <div *ngIf="gamemode==='Duels' || gamemode==='TLMS'" class="col-auto">
+        <label for="exampleFormControlSelect1">Wins</label>
+        <input required type="number" class="form-control" [(ngModel)]="wins" placeholder="Frags">
+    </div>
+    <div *ngIf="gamemode==='Duels' || gamemode==='TLMS'" class="col-auto">
+        <label for="exampleFormControlSelect1">Loss</label>
+        <input required type="number" class="form-control" [(ngModel)]="loss" placeholder="Frags">
+    </div>
+
+
+    <div *ngIf="gamemode==='DM'|| gamemode==='TDM'" class="col-auto">
+        <label for="exampleFormControlSelect1">Frags</label>
+        <input required type="number" class="form-control" [(ngModel)]="frags" placeholder="Frags">
+    </div>
+    <div  *ngIf="gamemode==='DM' || gamemode==='TDM'" class="col-auto">
+        <label for="exampleFormControlSelect1">Placement</label>
+        <input required type="number" class="form-control" [(ngModel)]="placement" placeholder="Placement">
+    </div>
+</div>
+
+
+

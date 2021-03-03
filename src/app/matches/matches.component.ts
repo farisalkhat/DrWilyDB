@@ -14,7 +14,6 @@ export class MatchesComponent implements OnInit {
     this.matchesService.getMatches().subscribe(
       data=>{
         this.matches=data;
-        console.log(this.matches[0]['totalplayers']);
       }
     )
 

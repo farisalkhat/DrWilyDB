@@ -1,0 +1,13 @@
+<app-playerdata #player1 [hidden]="totalplayers==0 " [gamemode]="gameMode"></app-playerdata>
+<app-playerdata #player2 [hidden]="totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
+<app-playerdata #player3 [hidden]="totalplayers==2 || totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
+<app-playerdata #player4 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
+<app-playerdata #player5 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
+<app-playerdata #player6 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
+<app-playerdata #player7 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==6 ||totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
+<app-playerdata #player8 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==6 ||totalplayers==7 || totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
+<app-playerdata #player9 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==6 ||totalplayers==7 || totalplayers==8 || totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
+<app-playerdata #player10 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==6 ||totalplayers==7 || totalplayers==8 || totalplayers==9 || totalplayers==1" [gamemode]="gameMode"></app-playerdata>
+
+
+<button type="button" class="btn btn-primary"  (click)="collectdata()">Submit</button>

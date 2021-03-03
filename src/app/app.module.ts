@@ -19,7 +19,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import {TokenInterceptorService} from './token-interceptor.service';
 import { StagesComponent } from './stages/stages.component';
 import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
-import { StagedetailsComponent } from './stagedetails/stagedetails.component'
+import { StagedetailsComponent } from './stagedetails/stagedetails.component';
+import { GameformComponent } from './submit/gameform/gameform.component';
+import { PlayerdataComponent } from './submit/gameform/playerdata/playerdata.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { StagedetailsComponent } from './stagedetails/stagedetails.component'
     NavigationComponent,
     StagesComponent,
     MatchdetailsComponent,
-    StagedetailsComponent
+    StagedetailsComponent,
+    GameformComponent,
+    PlayerdataComponent
   ],
   imports: [
     BrowserModule,
