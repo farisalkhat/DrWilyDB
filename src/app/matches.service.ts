@@ -26,5 +26,11 @@ export class MatchesService {
     return this.http.get<any[]>(`http://localhost:3000/api/matches/${matchid}`);
   }
 
+  getStageDetails(stage:string){
+    return this.http.get<any[]>(`http://localhost:3000/api/stages/${stage}`);
+  }
+  getPlayedMatchDetails(matchid:string){
+    return this.http.get<any[]>(`http://localhost:3000/api/playedmatch/${matchid}`);
+  }
 
 }

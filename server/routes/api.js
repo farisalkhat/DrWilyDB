@@ -50,6 +50,9 @@ router.post('/submitmatch',(req,res)=>{
     let match = new Match(matchData['match'])
     let players = matchData['players']
 
+
+
+
     if (players['player1']==undefined){
         res.send("Player1 does not exist.")
         return
@@ -246,8 +249,8 @@ router.get('/matches/:matchid',async(req,res)=>{
 })
 
 router.get('/stages/:stage',async(req,res)=>{
-    let stagename = req.params.stage
-    const filter = {name:stagename}
+    let stage = req.params.stage
+    const filter = {name:stage}
     try{
         const stage = await Stages.findOne(filter)
         res.json(stage)
@@ -256,6 +259,19 @@ router.get('/stages/:stage',async(req,res)=>{
         res.send('poop!')
     }
 })
+
+router.get('/playedmatch/:matchid',async(req,res)=>{
+    let matchid = req.params.matchid
+    const filter = {matchid:matchid}
+    try{
+        const playedmatch = await PlayedMatch.find(filter)
+        res.json(playedmatch)
+
+    }catch(err){
+        res.send('poop!')
+    }
+})
+
 
 
 

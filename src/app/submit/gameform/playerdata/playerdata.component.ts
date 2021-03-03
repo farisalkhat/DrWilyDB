@@ -75,8 +75,7 @@ sendPlayerInfo(){
 
     this.robotmasterService.getRobotMasters().subscribe(
 
-      res => {this.robotmasters = res;
-      console.log(this.robotmasters[0])}
+      res => {this.robotmasters = res;}
   )
   this.stageService.getStages().subscribe(
     res => {this.stages = res})
