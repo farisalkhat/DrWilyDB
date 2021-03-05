@@ -14,6 +14,7 @@ export class MatchdetailsComponent implements OnInit {
   matchid: string;
   stage:string;
 
+  lol = true;
 
   matchDetails: Match[];
   stageDetails: any[];
