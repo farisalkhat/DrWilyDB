@@ -21,7 +21,8 @@ import { StagesComponent } from './stages/stages.component';
 import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
 import { StagedetailsComponent } from './stagedetails/stagedetails.component';
 import { GameformComponent } from './submit/gameform/gameform.component';
-import { PlayerdataComponent } from './submit/gameform/playerdata/playerdata.component'
+import { PlayerdataComponent } from './submit/gameform/playerdata/playerdata.component';
+import { PlayerdetailsComponent } from './playerdetails/playerdetails.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PlayerdataComponent } from './submit/gameform/playerdata/playerdata.com
     MatchdetailsComponent,
     StagedetailsComponent,
     GameformComponent,
-    PlayerdataComponent
+    PlayerdataComponent,
+    PlayerdetailsComponent
   ],
   imports: [
     BrowserModule,

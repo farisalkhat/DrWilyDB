@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
 import { MatchesComponent } from './matches/matches.component';
+import { PlayerdetailsComponent } from './playerdetails/playerdetails.component';
 import { PlayersComponent } from './players/players.component';
 import { RegisterComponent } from './register/register.component';
 import { RobotMastersComponent } from './robot-masters/robot-masters.component';
@@ -59,6 +60,10 @@ const routes: Routes = [
   {
     path:'stages/:name',
     component: StagedetailsComponent
+  },
+  {
+    path:'players/:playername',
+    component:PlayerdetailsComponent
   }
 
 ];

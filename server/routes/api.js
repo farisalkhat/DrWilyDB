@@ -272,6 +272,16 @@ router.get('/playedmatch/:matchid',async(req,res)=>{
     }
 })
 
+router.get('/recentmatches/:playername',async(req,res)=>{})
+router.get('/players/:playername/playedwith',async(req,res)=>{})
+router.get('/players/:playername/heroesplayed',async(req,res)=>{})
+
+
+
+
+
+
+
 
 
 

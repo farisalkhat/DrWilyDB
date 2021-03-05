@@ -19,7 +19,7 @@
             </thead>
             <tbody *ngFor="let player of playedMatchDetails ">
               <tr>
-                <td> {{player.name}}</td>
+                <td><a routerLink='/players/{{player.name}}'>{{player.name}}</a></td>
                 <td> {{player.robotmaster}}</td>
                 <td> {{player.wins}}</td>
                 <td> {{player.loss}}</td>
@@ -43,7 +43,7 @@
             </thead>
             <tbody *ngFor="let player of playedMatchDetails ">
               <tr>
-                <td> {{player.name}}</td>
+                <td><a routerLink='/players/{{player.name}}'>{{player.name}}</a></td>
                 <td> {{player.robotmaster}}</td>
                 <td> {{player.frags}}</td>
                 <td> {{player.placement}}</td>
