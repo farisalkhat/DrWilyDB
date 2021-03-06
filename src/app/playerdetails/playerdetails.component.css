@@ -1,0 +1,23 @@
+img{
+    width:100px;
+    height:100px;
+}
+
+.container{
+    width:1000px;
+    margin-top:60px;
+}
+
+.playername{
+    font-size: 20px;
+}
+p{
+    margin:0
+}
+
+.col-md-auto{
+    padding-left:0
+}
+.nav{
+    width:100%;
+}
