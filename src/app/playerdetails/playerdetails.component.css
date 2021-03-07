@@ -18,6 +18,21 @@ p{
 .col-md-auto{
     padding-left:0
 }
-.nav{
-    width:100%;
+nav{
+margin-top:10px
+}
+
+
+li{
+    padding-left:30px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.push{
+    width:1000px;
 }
