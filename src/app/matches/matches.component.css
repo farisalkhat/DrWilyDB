@@ -1,9 +1,9 @@
 .table tr{
-    border: #053275 solid 1px !important;
+    border: #053275 solid 2px !important;
     border-top:#053275 solid 1px !important;
 }
 .table td{
-    border-bottom: #053275 solid 1px !important;
+    border-bottom: #053275 solid 2px !important;
 
 }
 .table th{
@@ -12,9 +12,7 @@
 }
 
 
-.container{
-    margin-top: 10px;
-}
+
 
 
 thead{

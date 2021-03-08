@@ -2,7 +2,11 @@
 <div class ="form-row">
     <div class="col-auto">
         <label for="exampleFormControlSelect1">Player </label>
-        <input  type="text" class="form-control" required [(ngModel)]="player">
+        <select class="form-control"   [(ngModel)]="player" id="exampleFormControlSelect1">
+            <option *ngFor="let playername of playernames">{{playername.name}}</option>
+          </select>
+
+
       </div>
       <div class="col-auto">
         <label for="exampleFormControlSelect1">Robot Master</label>

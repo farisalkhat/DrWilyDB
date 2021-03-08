@@ -1,173 +1,91 @@
 <div class="container firstcon">
-    <div class="row">
+  <div class="row">
 
-        <div class="col-md-auto align-self-start">
-            <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bb/bb3ef3a7103423dbfe4947ad72c6a43a84b53fa9_full.jpg">
-        </div>
+      <div class="col-md-auto align-self-start">
+          <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bb/bb3ef3a7103423dbfe4947ad72c6a43a84b53fa9_full.jpg">
+      </div>
 
-        <div class="col">
-            <div class="row">                
-                <p class="playername">Playername</p>
-            </div>
+      <div class="col">
+          <div class="row">                
+              <p class="playername">{{playername}}</p>
+          </div>
 
-            <div class="row align-self-start">
-                <div class="col-md-auto">
-                    <p>Matches</p>
-                    <p>0</p>
-                </div>
+          <div class="row align-self-start">
+              <div class="col-md-auto">
+                  <p>Matches</p>
+                  <p>0</p>
+              </div>
 
-                <div class="col-md-auto ">
-                    <p>Series</p>
-                    <p>0</p>
-                </div>
+              <div class="col-md-auto ">
+                  <p>Series</p>
+                  <p>0</p>
+              </div>
 
-                <div class="col-md-auto ">
-                    <p>Duels</p>
-                    <p>0</p>
-                </div>
+              <div class="col-md-auto ">
+                  <p>Duels</p>
+                  <p>0</p>
+              </div>
 
-                <div class="col-md-auto ">
-                    <p>DM</p>
-                    <p>0</p>
-                </div>
+              <div class="col-md-auto ">
+                  <p>DM</p>
+                  <p>0</p>
+              </div>
 
-                <div class="col-md-auto ">
-                    <p>TDM</p>
-                    <p>0</p>
-                </div>
+              <div class="col-md-auto ">
+                  <p>TDM</p>
+                  <p>0</p>
+              </div>
 
-                <div class="col-md-auto ">
-                    <p>TLMS</p>
-                    <p>0</p>
-                </div>
+              <div class="col-md-auto ">
+                  <p>TLMS</p>
+                  <p>0</p>
+              </div>
 
-            </div>
-        </div>
-        
+          </div>
+      </div>
+      
 
-    </div>
+  </div>
 </div> 
 
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark ">
 
-  <div class="push mx-auto">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto ">
-        <li class="nav-item">
-          <a class="nav-link">HOME <span class="sr-only">(current)</span></a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link">MATCHES</a>
-        </li>    
-        <li class="nav-item">
-            <a class="nav-link">SERIES</a>
-          </li>      
-        <li class="nav-item">
-          <a class="nav-link">ROBOT MASTERS</a>
-        </li>        
-        <li class="nav-item">
-          <a class="nav-link">PEERS</a>
-        </li>        
-        <li class="nav-item">
-          <a class="nav-link">TOTALS</a>
-        </li>
-        
-      </ul>
+<div class="push mx-auto">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto ">
+      <li class="nav-item">
+        <a routerLink='/players/{{playername}}' class="nav-link">HOME </a>
+      </li>
 
-
-
+      <li class="nav-item">
+        <a routerLink='/players/{{playername}}/matches' class="nav-link">MATCHES</a>
+      </li>    
+      <li class="nav-item">
+          <a routerLink='/players/{{playername}}/series' class="nav-link">SERIES</a>
+        </li>      
+      <li class="nav-item">
+        <a routerLink='/players/{{playername}}/robotmasters' class="nav-link">ROBOT MASTERS</a>
+      </li>        
+      <li class="nav-item">
+        <a routerLink='/players/{{playername}}/peers' class="nav-link">PEERS</a>
+      </li>        
+      <li class="nav-item">
+        <a routerLink='/players/{{playername}}/totals' class="nav-link">TOTALS</a>
+      </li>
+      
+    </ul>
 
   </div>
 
-</nav>
-      
 
-<div    class="container">
-    <div class="row">
-        <div class="col-8  ">
-            <p>Recent Matches</p>
-            <table class="table table-hover table-dark  ">
-                <thead class=" border">
-                  <tr>
-                    <th scope="col">Robotmaster</th>
-                    <th scope="col">Mode</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Stage</th>
-        
-            
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-4">
-            <div class="row">
-                <p>Played Played With</p>
-                <table class="table table-hover table-dark  ">
-                    <thead class=" border">
-                      <tr>
-                        <th scope="col">Player</th>
-                        <th scope="col">MP</th>
-                        <th scope="col">LM</th>
-            
-                
-                        
-                      </tr>
-                    </thead>
-                    <tbody >
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                </table>
-            </div>
 
-            <div class="row">
-                <p>Robotmasters Played</p>
-                <table class="table table-hover table-dark  ">
-                    <thead class=" border">
-                      <tr>
-                        <th scope="col">Robotmasters</th>
-                        <th scope="col">MP</th>
-                        <th scope="col">RM</th>        
-                      </tr>
-                    </thead>
-                    <tbody >
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
 
-    </div>
-    
 </div>
-      
-      
-      
 
-      
-      
+</nav>
       
 

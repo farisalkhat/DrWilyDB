@@ -1,0 +1,44 @@
+img{
+    width:100px;
+    height:100px;
+}
+
+
+
+.firstcon{
+    width:1000px;
+    margin-top:40px;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+}
+
+.playername{
+    font-size: 20px;
+}
+p{
+    margin:0
+}
+
+.col-md-auto{
+    padding-left:0
+}
+nav{
+margin-top:10px
+}
+
+
+li{
+    padding-left:30px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.push{
+    width:1000px;
+}

@@ -22,7 +22,13 @@ import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
 import { StagedetailsComponent } from './stagedetails/stagedetails.component';
 import { GameformComponent } from './submit/gameform/gameform.component';
 import { PlayerdataComponent } from './submit/gameform/playerdata/playerdata.component';
-import { PlayerdetailsComponent } from './playerdetails/playerdetails.component'
+import { PlayerdetailsComponent } from './playerdetails/playerdetails.component';
+import { PlayerMatchesComponent } from './playerdetails/player-matches/player-matches.component';
+import { PlayerSeriesComponent } from './playerdetails/player-series/player-series.component';
+import { PlayerRobotmastersComponent } from './playerdetails/player-robotmasters/player-robotmasters.component';
+import { PlayerPeersComponent } from './playerdetails/player-peers/player-peers.component';
+import { PlayerTotalsComponent } from './playerdetails/player-totals/player-totals.component';
+import { PlayerhomeComponent } from './playerdetails/playerhome/playerhome.component'
 
 @NgModule({
   declarations: [
@@ -40,7 +46,13 @@ import { PlayerdetailsComponent } from './playerdetails/playerdetails.component'
     StagedetailsComponent,
     GameformComponent,
     PlayerdataComponent,
-    PlayerdetailsComponent
+    PlayerdetailsComponent,
+    PlayerMatchesComponent,
+    PlayerSeriesComponent,
+    PlayerRobotmastersComponent,
+    PlayerPeersComponent,
+    PlayerTotalsComponent,
+    PlayerhomeComponent
   ],
   imports: [
     BrowserModule,

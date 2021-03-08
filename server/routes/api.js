@@ -6,6 +6,7 @@ const Stages = require('../models/stages')
 const PlayedMatch = require('../models/playedmatch')
 const Match = require('../models/matches')
 const Counters = require('../models/counters')
+const Player = require('../models/players')
 
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
@@ -235,6 +236,17 @@ router.get('/matches',async(req,res)=>{
         res.send('poop!')
     }
 })
+
+router.get('/players',async(req,res)=>{
+
+    try{
+        const players = await Player.find()
+        res.json(players)
+    }catch(err){
+        res.send('poop!')
+    }
+})
+
 
 router.get('/matches/:matchid',async(req,res)=>{
     let matchid = req.params.matchid

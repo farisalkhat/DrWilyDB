@@ -6,7 +6,7 @@ import { DatePipe } from '@angular/common';
 import {RobotMaster, RobotmastersService} from '../robotmasters.service'
 import {Stage, StagesService} from '../stages.service'
 import {formatDate } from '@angular/common';
-
+import {PlayersService} from '../players.service'
 
 @Component({
   selector: 'app-submit',
@@ -35,12 +35,13 @@ export class SubmitComponent implements OnInit {
 
   robotmasters: RobotMaster[];
   stages: Stage[];
+  playernames: any[];
   public totalPlayers = 10;
   gameMode:string;
   today= new Date();
   jstoday = '';
   submitVerified = false
-  constructor(private _authSerice:AuthService, private _router:Router,private robotmasterService: RobotmastersService,private stageService: StagesService) {
+  constructor(private playersService: PlayersService,private _authSerice:AuthService, private _router:Router,private robotmasterService: RobotmastersService,private stageService: StagesService) {
     
   }
 
@@ -61,9 +62,10 @@ export class SubmitComponent implements OnInit {
 
     this.robotmasterService.getRobotMasters().subscribe(
 
-      res => {this.robotmasters = res;
-      console.log(this.robotmasters[0])}
+      res => {this.robotmasters = res;}
   )
+
+
   this.stageService.getStages().subscribe(
     res => {this.stages = res})
   }

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-playerdetails',
-  templateUrl: './playerdetails.component.html',
-  styleUrls: ['./playerdetails.component.css']
+  selector: 'app-playerhome',
+  templateUrl: './playerhome.component.html',
+  styleUrls: ['./playerhome.component.css']
 })
-export class PlayerdetailsComponent implements OnInit {
+export class PlayerhomeComponent implements OnInit {
 
   playername:string;
   constructor(private route: ActivatedRoute,) { }

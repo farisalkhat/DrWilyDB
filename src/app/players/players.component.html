@@ -11,25 +11,16 @@
             <th scope="col">Most Played RM</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let playername of playernames ">
           <tr>
-            <td><a href="#">Lefty</a></td>
-            <td>2000</td>
-            <td>1</td>
-            <td>Grenade Man</td>
-          </tr>
-          <tr>
-            <td><a href="#"></a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="#"></a></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td> <a routerLink='/players/{{playername.name}}'>{{playername.name}}</a></td>
+            <td></td>    
+            <td></td>    
+            <td></td>    
           </tr>
         </tbody>
       </table>
     </div>
+
+
+    

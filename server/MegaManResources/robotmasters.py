@@ -9,15 +9,17 @@ from os import path
 
 client = MongoClient("mongodb+srv://Faris:Luigipoop1437yes@gamestatistics.j134f.mongodb.net/MM8BitDM?retryWrites=true&w=majority")
 database = client["MM8BitDM"]
-collection = database["counters"]
+collection = database["players"]
 print(client.list_database_names())
 
+players = ['Swampus','Dan','Charge','Faris','Luka','Chet','Emily',]
+
+for player in players:
+	collection.insert({
+		"name":player
+	})
 
 
-collection.insert({
-	"name":"matchid",
-	"sequence_value": 0
-})
 
 
 

@@ -6,6 +6,7 @@ import { DatePipe } from '@angular/common';
 import {RobotMaster, RobotmastersService} from '../../../robotmasters.service'
 import {Stage, StagesService} from '../../../stages.service'
 import {formatDate } from '@angular/common';
+import {PlayersService} from '../../../players.service'
 @Component({
   selector: 'app-playerdata',
   templateUrl: './playerdata.component.html',
@@ -30,6 +31,8 @@ export class PlayerdataComponent implements OnInit {
   robotmaster:string
   robotmasters: RobotMaster[];
   stages: Stage[];
+
+  playernames:any[];
 
   @Output() playerInfo = new EventEmitter<object>()
   @Input() gamemode:string;
@@ -62,7 +65,7 @@ sendPlayerInfo(){
     
   }
 
-  constructor(private _authSerice:AuthService, private _router:Router,private robotmasterService: RobotmastersService,private stageService: StagesService) {
+  constructor(private _authSerice:AuthService, private playersService: PlayersService,private _router:Router,private robotmasterService: RobotmastersService,private stageService: StagesService) {
     
   }
   
@@ -76,6 +79,10 @@ sendPlayerInfo(){
     this.robotmasterService.getRobotMasters().subscribe(
 
       res => {this.robotmasters = res;}
+  )
+
+  this.playersService.getPlayers().subscribe(
+    res=>{this.playernames = res;}
   )
   this.stageService.getStages().subscribe(
     res => {this.stages = res})
