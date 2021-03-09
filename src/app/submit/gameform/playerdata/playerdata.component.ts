@@ -15,7 +15,7 @@ import {PlayersService} from '../../../players.service'
 export class PlayerdataComponent implements OnInit {
 
   playerDict = {
-    'name':undefined,
+    'name':'Swampus',
     'robotmaster':undefined,
     'wins':undefined,
     'loss':undefined,
@@ -48,7 +48,12 @@ sendPlayerInfo(){
     'placement':undefined
   }
   
-    this.playerDict['name'] = this.player
+    if(this.player=="Select User"){
+      this.playerDict['name'] = undefined
+    }
+    else{
+      this.playerDict['name'] = this.player
+    }
     this.playerDict['robotmaster'] = this.robotmaster
 
     if(this.gamemode=="Duels" || this.gamemode == "TLMS"){

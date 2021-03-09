@@ -71,26 +71,7 @@ export class SubmitComponent implements OnInit {
   }
 
 
-  submitmatch(){
-    this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
-    this.match['matchdate'] = this.jstoday
-    this.match['matchid'] = 0
 
-
-
-   let finaldata = {}
-   finaldata['match'] = this.match
-   finaldata['players'] = this.players
-
-   this._authSerice.submitMatch(finaldata)
-   .subscribe(
-    res=>{console.log(res)},
-    err=>console.log(err)
-   )
-
-
-
-  }
 
 
 

@@ -150,10 +150,14 @@ export class GameformComponent implements AfterViewInit {
    this._authSerice.submitMatch(finaldata)
    .subscribe(
     res=>{console.log(res)},
-    err=>console.log(err)
+      
+    err=>{console.log(err)}
    )
 
 
    //this._router.navigate(['/matches'])
   }
 }
+
+
+
