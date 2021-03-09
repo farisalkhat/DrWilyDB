@@ -20,7 +20,7 @@ export class StagesService {
   }
 
   getStage(name:string){
-    return this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/stages/${name}`);
+    return this.http.get<Stage>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/stages/${name}`);
   }
 
 

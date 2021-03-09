@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {StagesService} from '../stages.service'
+import {Stage,StagesService} from '../stages.service'
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StagedetailsComponent implements OnInit {
   stage: string;
-  stageDetails: any[];
+  stageDetails: Stage;
   constructor(private stagesServices:StagesService,private route: ActivatedRoute) { 
 
   }
