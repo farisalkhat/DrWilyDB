@@ -45,5 +45,17 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farisalkhat/mm8bitdm-friends.git"
+  },
+  "author": "Faris Al-khatahtbeh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farisalkhat/mm8bitdm-friends/issues"
+  },
+  "homepage": "https://github.com/farisalkhat/mm8bitdm-friends#readme"
 }
