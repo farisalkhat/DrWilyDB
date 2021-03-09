@@ -8,10 +8,10 @@ import {Router} from '@angular/router';
 })
 export class AuthService {
 
-  private _registerUrl = "http://localhost:3000/api/register"
-  private _loginUrl = "http://localhost:3000/api/login"
-  private _submitUrl = "http://localhost:3000/api/submit"
-  private _subtmitMatchUrl = "http://localhost:3000/api/submitmatch"
+  private _registerUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/register"
+  private _loginUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/login"
+  private _submitUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/submit"
+  private _subtmitMatchUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/submitmatch"
   
 
   constructor(private http: HttpClient,private _router:Router) { }

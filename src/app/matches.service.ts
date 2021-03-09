@@ -25,7 +25,7 @@ export class MatchesService {
   stagesDetails:any[]
   playedMatchDetails:any[]
 
-  private _matchesUrl = "http://localhost:3000/api/matches/"
+  private _matchesUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/matches/"
   constructor(private http:HttpClient,private _router:Router) { }
   getMatches(){
     return this.http.get<any[]>(this._matchesUrl);
@@ -35,14 +35,14 @@ export class MatchesService {
 
   getMatchDetails(matchid:string){
 
-    return this.http.get<any[]>(`http://localhost:3000/api/matches/${matchid}`).pipe(
+    return this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/matches/${matchid}`).pipe(
       map(res=>{
         this.matchDetails = res
         return res
       }),
       mergeMap(res=>{
-        const stageData = this.http.get<any[]>(`http://localhost:3000/api/stages/${res['stage']}`);
-        const playedMatchData = this.http.get<any[]>(`http://localhost:3000/api/playedmatch/${res['matchid']}`);
+        const stageData = this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/stages/${res['stage']}`);
+        const playedMatchData = this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/playedmatch/${res['matchid']}`);
         return forkJoin([stageData,playedMatchData])
       })
 
@@ -66,17 +66,17 @@ export class MatchesService {
 
 
      
-    //return this.http.get<any[]>(`http://localhost:3000/api/matches/${matchid}`)
+    //return this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/matches/${matchid}`)
     //.pipe((mergeMap(
-      //matchDetails=>this.http.get<any[]>(`http://localhost:3000/api/stages/${matchDetails['stage']}`))  
+      //matchDetails=>this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/stages/${matchDetails['stage']}`))  
     //));
   }
 
   getStageDetails(stage:string){
-    return this.http.get<any[]>(`http://localhost:3000/api/stages/${stage}`);
+    return this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/stages/${stage}`);
   }
   getPlayedMatchDetails(matchid:string){
-    return this.http.get<any[]>(`http://localhost:3000/api/playedmatch/${matchid}`);
+    return this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/playedmatch/${matchid}`);
   }
 
 }

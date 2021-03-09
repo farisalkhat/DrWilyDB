@@ -31,14 +31,14 @@ export class MatchdetailsComponent implements OnInit {
     this.route.paramMap.subscribe((paramMap)=>{
       this.matchid = paramMap.get('matchid');
 
-      this.http.get<any[]>(`http://localhost:3000/api/matches/${this.matchid}`).pipe(
+      this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/matches/${this.matchid}`).pipe(
       map(res=>{
         this.matchDetails = res
         return res
       }),
       mergeMap(res=>{
-        const stageData = this.http.get<any[]>(`http://localhost:3000/api/stages/${res['stage']}`);
-        const playedMatchData = this.http.get<any[]>(`http://localhost:3000/api/playedmatch/${res['matchid']}`);
+        const stageData = this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/stages/${res['stage']}`);
+        const playedMatchData = this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/playedmatch/${res['matchid']}`);
         return forkJoin([stageData,playedMatchData])
       })
 
