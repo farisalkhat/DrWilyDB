@@ -119,8 +119,13 @@
               "devServerTarget": "mm8bitdm-friends:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "mm8bitdm-friends"
 }
