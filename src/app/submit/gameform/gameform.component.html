@@ -1,13 +1,16 @@
-<app-playerdata #player1 [hidden]="totalplayers==0 " [gamemode]="gameMode"></app-playerdata>
-<app-playerdata #player2 [hidden]="totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
-<app-playerdata #player3 [hidden]="totalplayers==2 || totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
-<app-playerdata #player4 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
-<app-playerdata #player5 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
-<app-playerdata #player6 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
-<app-playerdata #player7 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==6 ||totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
-<app-playerdata #player8 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==6 ||totalplayers==7 || totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
-<app-playerdata #player9 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==6 ||totalplayers==7 || totalplayers==8 || totalplayers==1 " [gamemode]="gameMode"></app-playerdata>
-<app-playerdata #player10 [hidden]="totalplayers==2 || totalplayers==3 ||totalplayers==4 ||totalplayers==5 ||totalplayers==6 ||totalplayers==7 || totalplayers==8 || totalplayers==9 || totalplayers==1" [gamemode]="gameMode"></app-playerdata>
+
+<app-playerdata #player1 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==0 " [gamemode]="match.controls['gameMode'].value"></app-playerdata>
+<app-playerdata #player2 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==1 " [gamemode]="match.controls['gameMode'].value"></app-playerdata>
+<app-playerdata #player3 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==2 || match.controls['totalPlayers'].value==1 " [gamemode]="match.controls['gameMode'].value"></app-playerdata>
+<app-playerdata #player4 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==2 || match.controls['totalPlayers'].value==3 ||match.controls['totalPlayers'].value==1 " [gamemode]="match.controls['gameMode'].value"></app-playerdata>
+<app-playerdata #player5 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==2 || match.controls['totalPlayers'].value==3 ||match.controls['totalPlayers'].value==4 ||match.controls['totalPlayers'].value==1 " [gamemode]="match.controls['gameMode'].value"></app-playerdata>
+<app-playerdata #player6 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==2 || match.controls['totalPlayers'].value==3 ||match.controls['totalPlayers'].value==4 ||match.controls['totalPlayers'].value==5 ||match.controls['totalPlayers'].value==1 " [gamemode]="match.controls['gameMode'].value"></app-playerdata>
+<app-playerdata #player7 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==2 || match.controls['totalPlayers'].value==3 ||match.controls['totalPlayers'].value==4 ||match.controls['totalPlayers'].value==5 ||match.controls['totalPlayers'].value==6 ||match.controls['totalPlayers'].value==1 " [gamemode]="match.controls['gameMode'].value"></app-playerdata>
+<app-playerdata #player8 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==2 || match.controls['totalPlayers'].value==3 ||match.controls['totalPlayers'].value==4 ||match.controls['totalPlayers'].value==5 ||match.controls['totalPlayers'].value==6 ||match.controls['totalPlayers'].value==7 || match.controls['totalPlayers'].value==1 " [gamemode]="match.controls['gameMode'].value"></app-playerdata>
+<app-playerdata #player9 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==2 || match.controls['totalPlayers'].value==3 ||match.controls['totalPlayers'].value==4 ||match.controls['totalPlayers'].value==5 ||match.controls['totalPlayers'].value==6 ||match.controls['totalPlayers'].value==7 || match.controls['totalPlayers'].value==8 || match.controls['totalPlayers'].value==1 " [gamemode]="match.controls['gameMode'].value"></app-playerdata>
+<app-playerdata #player10 [submitted] = "submitted" [hidden]="match.controls['totalPlayers'].value==2 || match.controls['totalPlayers'].value==3 ||match.controls['totalPlayers'].value==4 ||match.controls['totalPlayers'].value==5 ||match.controls['totalPlayers'].value==6 ||match.controls['totalPlayers'].value==7 || match.controls['totalPlayers'].value==8 || match.controls['totalPlayers'].value==9 || match.controls['totalPlayers'].value==1" [gamemode]="match.controls['gameMode'].value"></app-playerdata>
 
 
-<button type="button" class="btn btn-primary"  (click)="collectdata()">Submit</button>
+
+
+

@@ -1,53 +1,119 @@
 
+
 <div class="container">
+  <form [formGroup] = "gameData" (ngSubmit) = "onSubmit()">
 
-    <div class="form-row align-items-center">
-        <div class="col-auto">
-            <label for="exampleFormControlSelect1">Game Title</label>
-            <input type="text" class="form-control" [(ngModel)] = "match.gametitle" placeholder="Game Title">
+<div class="form-row">
+    <div class="col">
+      <div class="form-group">
+        <label for="gameTitle">Game Title</label>
+        <input id="gameTitle" type="text" class="form-control" formControlName="gameTitle" [ngClass]="{'is-invalid': submitted && f.gameTitle.errors}" placeholder="Game Title">
+        <div *ngIf="submitted && f.gameTitle.errors" class="invalid-feedback">
+            <div *ngIf="f.gameTitle.errors.required">
+              <p class="red">Umm Game Title required idiot.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <label for="gameMode">Game Mode</label>
+        <select class="form-control" id="gameMode" formControlName="gameMode" [ngClass]="{'is-invalid': submitted && f.gameMode.errors}" >
+          <option value = "DM">Deathmatch</option>
+          <option value = "TDM">Team Deathmatch</option>
+          <option value = "TLMS">Team LMS</option>
+          <option value  = "Duels">Duels</option>
+          <option value = "Series">Series</option>
+        </select>
+        <div *ngIf="submitted && f.gameMode.errors" class="invalid-feedback">
+          <div *ngIf="f.gameMode.errors.required">
+            <p class="red">Game mode required.</p>
           </div>
-      <div class="col-auto">
-                <label for="exampleFormControlSelect1">Game Mode</label>
-                <select class="form-control" id="exampleFormControlSelect1" [(ngModel)] = "match.gamemode">
-                  <option value = "DM">Deathmatch</option>
-                  <option value = "TDM">Team Deathmatch</option>
-                  <option value = "TLMS">Team LMS</option>
-                  <option value  = "Duels">Duels</option>
-                  <option value = "Series">Series</option>
+      </div>
+      </div>
+
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <label for="totalPlayers">Total Players</label>
+                <select class="form-control"  id="totalPlayers" [ngClass]="{'is-invalid': submitted && f.totalPlayers.errors}" formControlName="totalPlayers"  >
+                  <option value = 1>1</option>
+                  <option value = 2>2</option>
+                  <option value = 3>3</option>
+                  <option value = 4>4</option>
+                  <option value = 5>5</option>
+                  <option value = 6>6</option> 
+                  <option value = 7>7</option>
+                  <option value = 8>8</option>
+                  <option value = 9>9</option>
+                  <option value = 10>10</option>
                 </select>
+                <div *ngIf="submitted && f.totalPlayers.errors" class="invalid-feedback">
+                  <div *ngIf="f.totalPlayers.errors.required">
+                    <p class="red">Player amount required.</p>
+                  </div>
+              </div>
       </div>
-      <div class="col-auto">
-
-            <label for="exampleFormControlSelect1">Total Players</label>
-            <select class="form-control"  id="exampleFormControlSelect1" [(ngModel)] = "match.totalplayers" >
-              <option value = 1>1</option>
-              <option value = 2>2</option>
-              <option value = 3>3</option>
-              <option value = 4>4</option>
-              <option value = 5>5</option>
-              <option value = 6>6</option> 
-              <option value = 7>7</option>
-              <option value = 8>8</option>
-              <option value = 9>9</option>
-              <option value = 10>10</option>
-            </select>
+    </div>
+    
+    <div class="col">
+      <div class="form-group">
+        <label for="stage">Stage</label>
+                <select class="form-control" formControlName="stage"  id="stage" [ngClass]="{'is-invalid': submitted && f.stage.errors}">
+                    <option *ngFor="let stage of stages">{{stage.name}}</option>
+                  </select>
+                  <div *ngIf="submitted && f.gameTitle.errors" class="invalid-feedback">
+                    <div *ngIf="f.stage.errors.required">
+                      <p class="red">Stage requried.</p>
+                    </div>
+                </div>
       </div>
-
-      <div class="col-auto">
-            <label for="exampleFormControlSelect1">Stage</label>
-            <select class="form-control"  [(ngModel)] = "match.stage" id="exampleFormControlSelect1">
-                <option *ngFor="let stage of stages">{{stage.name}}</option>
-              </select>
-          </div>
     </div>
 
 
 
 
-    <app-gameform [match] = "match" [gameMode] = "match.gamemode" [totalplayers] = "match.totalplayers"></app-gameform>
+
+
+</div> 
+
+
+
+
+    
+    
+
+    <app-gameform #gameForm [submitted] = "submitted" [match] = "gameData"></app-gameform>
+    <button class="btn btn-primary" type="submit">Submit</button>
+
+  </form>
+
+  
+
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

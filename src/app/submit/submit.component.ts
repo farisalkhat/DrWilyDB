@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit, Input,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input,EventEmitter, ViewChild } from '@angular/core';
 import {AuthService} from '../auth.service'
 import {Router} from '@angular/router'
 import { DatePipe } from '@angular/common';
@@ -7,6 +7,8 @@ import {RobotMaster, RobotmastersService} from '../robotmasters.service'
 import {Stage, StagesService} from '../stages.service'
 import {formatDate } from '@angular/common';
 import {PlayersService} from '../players.service'
+import { FormControl, FormGroup,FormBuilder, Validators } from '@angular/forms';
+import { GameformComponent } from './gameform/gameform.component';
 
 @Component({
   selector: 'app-submit',
@@ -14,25 +16,10 @@ import {PlayersService} from '../players.service'
   styleUrls: ['./submit.component.css']
 })
 export class SubmitComponent implements OnInit {
-  match = {
-    'stage':undefined,
-    'gametitle':undefined,
-    'gamemode':undefined,
-    'totalplayers':1}
-  players = {
-    player1:{},
-    player2:{},
-    player3:{},
-    player4:{},
-    player5:{},
-    player6:{},
-    player7:{},
-    player8:{},
-    player9:{},
-    player10:{}
-  }
+  match = {}
+  players = {}
 
-
+  @ViewChild('gameForm',{static:false}) gameForm:GameformComponent
   robotmasters: RobotMaster[];
   stages: Stage[];
   playernames: any[];
@@ -41,13 +28,44 @@ export class SubmitComponent implements OnInit {
   today= new Date();
   jstoday = '';
   submitVerified = false
-  constructor(private playersService: PlayersService,private _authSerice:AuthService, private _router:Router,private robotmasterService: RobotmastersService,private stageService: StagesService) {
+  submitted = false
+
+
+  constructor(private fb:FormBuilder,private playersService: PlayersService,private _authSerice:AuthService, private _router:Router,private robotmasterService: RobotmastersService,private stageService: StagesService) {
     
   }
 
 
 
+
+
+
+
+  gameData: FormGroup;
+
+ 
   ngOnInit() {
+
+
+
+    this.gameData = new FormGroup({
+      gameTitle: new FormControl(undefined,[
+        Validators.required,
+        Validators.minLength(1)
+      ]),
+      gameMode: new FormControl(undefined,[
+        Validators.required,
+      ]),
+      totalPlayers: new FormControl(1,[
+        Validators.required,
+      ]),
+      stage: new FormControl(undefined,[
+        Validators.required,
+      ]),
+    })
+
+
+
     this._authSerice.getSubmitVerification().subscribe(
       res=>this.submitVerified = res,
       err=>{
@@ -58,19 +76,56 @@ export class SubmitComponent implements OnInit {
         }
       }
     )
-
-
     this.robotmasterService.getRobotMasters().subscribe(
 
       res => {this.robotmasters = res;}
-  )
+    )
+    this.stageService.getStages().subscribe(
+      res => {this.stages = res}
+    )
 
-
-  this.stageService.getStages().subscribe(
-    res => {this.stages = res})
   }
 
+get f(){return this.gameData.controls;}
 
+  onSubmit(){
+    this.submitted = true
+    if(this.gameData.invalid){
+      console.log('Basic data not filled.')
+      return;
+    }
+    this.players = this.gameForm.collectdata()
+    if(this.players==undefined){
+      console.log("gameForm failed.")
+      return
+    }
+
+    this.match = {}
+    this.match['gametitle'] = this.gameData.get('gameTitle').value
+    this.match['gamemode'] = this.gameData.get('gameMode').value
+    this.match['stage'] = this.gameData.get('stage').value
+    this.match['totalplayers'] = this.gameData.get('totalPlayers').value
+
+
+    this.today = new Date()
+    this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
+    this.match['matchdate'] = this.jstoday
+    this.match['matchid'] = 0
+
+    let finaldata = {}
+    finaldata['match'] = this.match
+    finaldata['players'] = this.players
+
+    this._authSerice.submitMatch(finaldata)
+    .subscribe(
+      res=>{
+        console.log(res);
+        this._router.navigate(['/matches']);
+      },
+        
+      err=>{console.log(err)}
+    )
+  }
 
 
 
