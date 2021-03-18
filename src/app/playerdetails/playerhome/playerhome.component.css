@@ -1,8 +1,7 @@
-img{
-    width:100px;
-    height:100px;
-}
 
+.rbm-icon{
+    padding-right:5px;
+}
 
 
 .firstcon{
@@ -42,3 +41,8 @@ li{
 .push{
     width:1000px;
 }
+
+.col-4{
+    margin-left:10px;
+}
+

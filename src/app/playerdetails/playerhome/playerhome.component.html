@@ -2,7 +2,8 @@
 
 <div    class="container">
   <div class="row">
-      <div class="col-8  ">
+      <div class="col-7">
+        <div class="row">
           <p>Recent Matches</p>
           <table class="table table-hover table-dark  ">
               <thead class=" border">
@@ -11,21 +12,56 @@
                   <th scope="col">Mode</th>
                   <th scope="col">ID</th>
                   <th scope="col">Stage</th>
+                  <th scope="col">Frags</th>
+                  <th scope="col">Placement</th>
       
           
                   
                 </tr>
               </thead>
-              <tbody>
+              <tbody *ngFor="let match of DmMatches ">
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td><img class="rbm-icon" src="{{match.icon}}">{{match.rmname}}</td>
+                  <td>{{match.gamemode}}</td>
+                  <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
+                  <td>{{match.stage}}</td>
+                  <td>{{match.frags}}</td>
+                  <td>{{match.placement}}</td>
                 </tr>
               </tbody>
           </table>
+        </div>
+        <div class="row">
+          <p>Recent Matches</p>
+          <table class="table table-hover table-dark  ">
+              <thead class=" border">
+                <tr>
+                  <th scope="col">Robotmaster</th>
+                  <th scope="col">Mode</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Stage</th>
+                  <th scope="col">Wins</th>
+                  <th scope="col">Loss</th>
+      
+          
+                  
+                </tr>
+              </thead>
+              <tbody *ngFor="let match of duelsMatches">
+                <tr>
+                  <td><img class="rbm-icon" src="{{match.icon}}">{{match.rmname}}</td>
+                  <td>{{match.gamemode}}</td>
+                  <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
+                  <td>{{match.stage}}</td>
+                  <td>{{match.wins}}</td>
+                  <td>{{match.loss}}</td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+          
       </div>
+
       <div class="col-4">
           <div class="row">
               <p>Played Played With</p>

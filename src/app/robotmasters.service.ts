@@ -19,7 +19,7 @@ export interface RobotMaster extends Document{
 })
 export class RobotmastersService {
 
-  private _robotmastersUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/robotmasters"
+  private _robotmastersUrl = "http://127.0.0.1:8080/api/robotmasters"
   constructor(private http:HttpClient,private _router:Router) { }
   getRobotMasters(){
     return this.http.get<any[]>(this._robotmastersUrl);

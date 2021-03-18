@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 
@@ -11,7 +11,7 @@ export class AuthService {
   private _registerUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/register"
   private _loginUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/login"
   private _submitUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/submit"
-  private _subtmitMatchUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/submitmatch"
+  private _subtmitMatchUrl = "http://127.0.0.1:8080/api/submitmatch"
   
 
   constructor(private http: HttpClient,private _router:Router) { }
@@ -37,7 +37,15 @@ export class AuthService {
 
 
   submitMatch(match){
-    return this.http.post<any>(this._subtmitMatchUrl,match)
+    return this.http.post<any>(this._subtmitMatchUrl,match,
+      {
+        headers: new HttpHeaders({
+             'Content-Type':  'application/json',
+           })
+      }
+      
+      
+      )
   }
 
   getSubmitVerification(){

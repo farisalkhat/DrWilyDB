@@ -71,6 +71,15 @@ getPlayerData(){
   }
 
   this.playerDict['name'] = this.playerData.get('player').value
+  for(let i=0; i<this.playernames.length; i++){
+    if(this.playernames[i]['name']==this.playerDict['name']){
+      this.playerDict['id'] = this.playernames[i]['id']
+      break
+    }
+}
+
+
+
   this.playerDict['robotmaster'] = this.playerData.get('robotmaster').value
   this.playerDict['wins'] = this.playerData.get('wins').value
   this.playerDict['loss'] = this.playerData.get('loss').value
@@ -119,11 +128,13 @@ getPlayerData(){
   )
 
   this.playersService.getPlayers().subscribe(
-    res=>{this.playernames = res;}
+    res=>{this.playernames = res;
+      console.log(this.playernames)}
   )
   this.stageService.getStages().subscribe(
     res => {this.stages = res})
 
+    
 
   }
 

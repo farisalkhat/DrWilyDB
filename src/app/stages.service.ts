@@ -12,7 +12,7 @@ export interface Stage extends Document{
   providedIn: 'root'
 })
 export class StagesService {
-  private _stages = "https://mm8bitdm-api-nodejs.herokuapp.com/api/stages"
+  private _stages = "http://127.0.0.1:8080/api/stages"
 
   constructor(private http:HttpClient,private _router:Router) { }
   getStages(){
@@ -20,7 +20,7 @@ export class StagesService {
   }
 
   getStage(name:string){
-    return this.http.get<Stage>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/stages/${name}`);
+    return this.http.get<Stage>(`http://127.0.0.1:8080/api/stages/${name}`);
   }
 
 

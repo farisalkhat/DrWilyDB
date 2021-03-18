@@ -6,12 +6,25 @@ import {Router} from '@angular/router';
 })
 export class PlayersService {
 
-  private _playersUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/players"
+  private _playersUrl = "http://127.0.0.1:8080/api/players"
   constructor(private http:HttpClient,private _router:Router) { }
   getPlayers(){
     return this.http.get<any[]>(this._playersUrl);
   }
   getPlayer(player:string){
-    return this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/players/${player}`)
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/players/${player}`)
   }
+
+  getRecentMatches(player:string){
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/recentmatches/${player}`)
+  }
+
+  getRecentDM(player:string){
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/recentmatches/dm/${player}`)
+  }
+
+  getRecentDuels(player:string){
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/recentmatches/duels/${player}`)
+  }
+
 }

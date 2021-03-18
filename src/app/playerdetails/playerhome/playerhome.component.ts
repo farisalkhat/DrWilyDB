@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PlayersService } from 'src/app/players.service';
 
 @Component({
   selector: 'app-playerhome',
@@ -8,14 +9,39 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PlayerhomeComponent implements OnInit {
 
-  playername:string;
-  constructor(private route: ActivatedRoute,) { }
+  playerid:string;
+  playerdetails:any[];
+  recentmatches:any[];
+  duelsMatches: any[];
+  DmMatches:any[];
+
+  constructor(private playersService: PlayersService,private route: ActivatedRoute,) { }
 
   ngOnInit() {
 
     this.route.paramMap.subscribe((paramMap)=>{
-      this.playername = paramMap.get('playername');
-    console.log(this.playername)})
+      this.playerid= paramMap.get('playername');
+    })
+
+    this.playersService.getPlayer(this.playerid).subscribe(
+      res=>{this.playerdetails = res;}
+    )
+
+    this.playersService.getRecentMatches(this.playerid).subscribe(
+      res=>{this.recentmatches = res;}
+    )
+
+    this.playersService.getRecentDM(this.playerid).subscribe(
+      res=>{this.DmMatches = res;}
+    )
+
+    this.playersService.getRecentDuels(this.playerid).subscribe(
+      res=>{this.duelsMatches = res;
+        console.log(this.duelsMatches)}
+    )
+
+    
+    
 
   }
 

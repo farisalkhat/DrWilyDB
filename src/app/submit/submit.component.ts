@@ -120,11 +120,11 @@ get f(){return this.gameData.controls;}
     .subscribe(
       res=>{
         console.log(res);
-        this._router.navigate(['/matches']);
       },
         
       err=>{console.log(err)}
     )
+    this._router.navigate(['/matches']);
   }
 
 

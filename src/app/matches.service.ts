@@ -25,7 +25,7 @@ export class MatchesService {
   stagesDetails:any[]
   playedMatchDetails:any[]
 
-  private _matchesUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/matches/"
+  private _matchesUrl = "http://127.0.0.1:8080/api/matches"
   constructor(private http:HttpClient,private _router:Router) { }
   getMatches(){
     return this.http.get<any[]>(this._matchesUrl);
@@ -34,15 +34,15 @@ export class MatchesService {
 
 
   getMatchDetails(matchid:string){
-
-    return this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/matches/${matchid}`).pipe(
+ 
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/matches/${matchid}`).pipe(
       map(res=>{
         this.matchDetails = res
         return res
       }),
       mergeMap(res=>{
-        const stageData = this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/stages/${res['stage']}`);
-        const playedMatchData = this.http.get<any[]>(`https://mm8bitdm-api-nodejs.herokuapp.com/api/playedmatch/${res['matchid']}`);
+        const stageData = this.http.get<any[]>(`http://127.0.0.1:8080/api/stages/stageid/${res['stage']}`);
+        const playedMatchData = this.http.get<any[]>(`http://127.0.0.1:8080/api/playedmatch/${res['matchid']}`);
         return forkJoin([stageData,playedMatchData])
       })
 
