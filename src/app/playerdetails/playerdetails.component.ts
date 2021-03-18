@@ -12,6 +12,11 @@ export class PlayerdetailsComponent implements OnInit {
   playerid:string;
   recentmatches:any[];
 
+  mostplayedrm:any[];
+  mostplayedrm5:any[];
+
+  matchestotals:any[];
+
   constructor(private playersService: PlayersService,private route: ActivatedRoute,) { }
 
   ngOnInit() {
@@ -27,6 +32,19 @@ export class PlayerdetailsComponent implements OnInit {
     this.playersService.getRecentMatches(this.playerid).subscribe(
       res=>{this.recentmatches = res;}
     )
+
+    this.playersService.getMatchesTotals(this.playerid).subscribe(
+      res=>{this.matchestotals = res;
+      }
+    )
+
+    this.playersService.getMostPlayedRM(this.playerid).subscribe(
+      res=>{this.mostplayedrm = res;
+        console.log(this.mostplayedrm)
+     }
+    )
+
+
 
   }
 

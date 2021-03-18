@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 })
 export class PlayersService {
 
+
   private _playersUrl = "http://127.0.0.1:8080/api/players"
   constructor(private http:HttpClient,private _router:Router) { }
   getPlayers(){
@@ -27,4 +28,17 @@ export class PlayersService {
     return this.http.get<any[]>(`http://127.0.0.1:8080/api/recentmatches/duels/${player}`)
   }
 
+  getMatchesTotals(player:string){
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/players/${player}/matchtotals`)
+  }
+
+  getMostPlayedRM(player: string) {
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/players/${player}/mostplayedrm`)
+  }
+
+  get5MostPlayedRM(player: string) {
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/players/${player}/5mostplayedrm`)
+  }
+
 }
+

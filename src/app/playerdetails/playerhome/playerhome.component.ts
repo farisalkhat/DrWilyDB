@@ -14,6 +14,7 @@ export class PlayerhomeComponent implements OnInit {
   recentmatches:any[];
   duelsMatches: any[];
   DmMatches:any[];
+  mostplayedrm5:any[];
 
   constructor(private playersService: PlayersService,private route: ActivatedRoute,) { }
 
@@ -38,6 +39,12 @@ export class PlayerhomeComponent implements OnInit {
     this.playersService.getRecentDuels(this.playerid).subscribe(
       res=>{this.duelsMatches = res;
         console.log(this.duelsMatches)}
+    )
+
+    this.playersService.get5MostPlayedRM(this.playerid).subscribe(
+      res=>{this.mostplayedrm5 = res;
+        
+     }
     )
 
     
