@@ -14,15 +14,15 @@
             
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let rm of rmDetails" >
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><img src="{{rm.icon}}">{{rm.rmname}}</td>
+            <td>{{rm.matches}}</td>
+            <td>{{0}}</td>
+            <td>{{rm.frags}}</td>
+            <td>{{rm.wins}}</td>
+            <td>{{rm.loss}}</td>
+            <td><a routerLink='/matches/{{rm.matchid}}'>{{rm.matchid}}</a> </td>
           </tr>
         </tbody>
       </table>

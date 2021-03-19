@@ -14,13 +14,14 @@
             
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let match of matchDetails">
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><img class="rbm-icon" src="{{match.icon}}">{{match.rmname}}</td>
+            <td><a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
+            <td> {{match.gamemode}}</td>
+            <td>{{match.matchdate}}</td>
+            <td>{{match.stage}}</td>
+            
           </tr>
         </tbody>
       </table>

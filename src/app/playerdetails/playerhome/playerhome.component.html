@@ -20,7 +20,7 @@
                 </tr>
               </thead>
               <tbody *ngFor="let match of DmMatches ">
-                <tr>
+                <tr> 
                   <td><img class="rbm-icon" src="{{match.icon}}">{{match.rmname}}</td>
                   <td>{{match.gamemode}}</td>
                   <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
