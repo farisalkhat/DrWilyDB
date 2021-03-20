@@ -1,7 +1,175 @@
 
 <div class="container">
-    <img src="{{stageDetails?.image}}">
-    <h1>{{stageDetails?.name}}<span class="float-right">Total Games: </span></h1>
+    <h1>{{stageDetails?.stage.name}}<span class="float-right">Total Games: {{stageDetails?.total_matches.total}} </span></h1>
+    <img class="stageimg" src="{{stageDetails?.stage.image}}">
+    
+
+    <div class="container2">
+        <div class="row">
+
+            <div class="col">
+                <div class="card text-white bg-primary mb-3" >   
+                    <div class="card-body">
+                      <h5 class="card-title">Favorite Player</h5>
+                      <p class="card-text">{{stageDetails?.favorite_player.name}}</p>
+                    </div>
+                  </div>        
+            </div>
+
+            <div class="col">
+                <div class="card text-white bg-primary mb-3" >   
+                    <div class="card-body">
+                      <h5 class="card-title">Most Popular Game Mode</h5>
+                      <p class="card-text">{{stageDetails?.most_popular_mode.gamemode}}: {{stageDetails?.most_popular_mode.total}}</p>
+                    </div>
+                  </div>        
+            </div>
+
+            <div class="col">
+                <div class="card text-white bg-primary mb-3" >   
+                    <div class="card-body">
+                      <h5 class="card-title">Most Popular Robotmaster </h5>
+                      <p class="card-text">{{stageDetails?.most_popular_rm.robotmaster}}: {{stageDetails?.most_popular_rm.matchesplayed}}</p>
+                    </div>
+                  </div>        
+            </div>
+        
+                <div class="col">
+                    <div class="card text-white bg-primary mb-3" >   
+                        <div class="card-body">
+                          <h5 class="card-title">Top Fragger In a Single Game</h5>
+                          <p class="card-text">{{stageDetails?.top_fragger.name}}: {{stageDetails?.top_fragger.frags}}</p>
+                        </div>
+                      </div>
+        
+                </div>
+        
+        
+                <div class="col">        
+                    <div class="card text-white bg-primary mb-3" >   
+                    <div class="card-body">
+                      <h5 class="card-title">Total Frags</h5>
+                      <p class="card-text">{{stageDetails?.total_frags.total}}</p>
+                    </div>
+                  </div></div>
+                  <div class="col">
+                    <div class="card text-white bg-primary mb-3" >   
+                        <div class="card-body">
+                          <h5 class="card-title">Total Matches</h5>
+                          <p class="card-text">{{stageDetails?.total_matches.total}}</p>
+                        </div>
+                      </div>        
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-primary mb-3">   
+                        <div class="card-body">
+                          <h5 class="card-title">Best Fragger</h5>
+                          <p class="card-text">{{stageDetails?.best_fragger.name}}: {{stageDetails?.best_fragger.total}}</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col">          
+                    <div class="card text-white bg-primary mb-3" >   
+                    <div class="card-body">
+                      <h5 class="card-title">Best Winner</h5>
+                      <p class="card-text">{{stageDetails?.best_winner.name}}: {{stageDetails?.best_winner.total}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">    
+                    <div class="card text-white bg-primary mb-3" >   
+                      <div class="card-body">
+                        <h5 class="card-title">Worst Loser</h5>
+                        <p class="card-text">{{stageDetails?.best_loser.name}}: {{stageDetails?.best_loser.total}}</p>
+                      </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+    </div>
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+    <h1> Recent Matches</h1>
+    <table class="table table-hover table-dark  ">
+        <thead class=" border">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Date</th>
+            <th scope="col">Mode</th>
+            <th scope="col">Total Players</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let match of stageDetails?.matches ">
+          <tr>
+            <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
+            <td> {{match.gametitle}}</td>
+            <td>{{match.matchdate}}</td>
+            <td>{{match.gamemode}}</td>
+            <td>{{match.totalplayers}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h1>Single Game Top Frags</h1>
+      <table class="table table-hover table-dark  ">
+        <thead class=" border">
+          <tr>
+            <th scope="col">Player</th>
+            <th scope="col">Frags</th>
+            <th scope="col">Match</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let match of stageDetails?.top_fraggers_ordered ">
+          <tr>
+            <td><img class="rmimg" src="{{match.icon}}"><a routerLink='/players/{{match.playerid}}'>{{match.name}}</a></td>
+            <td> {{match.frags}}</td>
+            <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
+            
+            
+
+            
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h1> Favorite Players</h1>
+      <table class="table table-hover table-dark  ">
+          <thead class=" border">
+            <tr>
+              <th scope="col">Player</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let player of stageDetails?.favorite_players ">
+            <tr>
+              <td> <a routerLink='/players/{{player.id}}'>{{player.name}}</a></td>
+              <td> {{player.total}}</td>
+              
+            </tr>
+          </tbody>
+        </table>
+
+
 </div>
 
  

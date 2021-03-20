@@ -4,8 +4,6 @@
 
 
 <div class="container">
-
-
     <table class="table table-hover table-dark  ">
         <thead class=" border">
           <tr>
@@ -19,7 +17,7 @@
         </thead>
         <tbody *ngFor="let robotmaster of robotmasters ">
           <tr>
-            <td><img src={{robotmaster.icon}}> {{robotmaster.name}}</td>
+            <td><img src={{robotmaster.icon}}> <a routerLink='/robotmasters/{{robotmaster.id}}'>{{robotmaster.name}}</a></td>
             <td>{{robotmaster.origin}}</td>
             <td>{{robotmaster.primaryclass}}</td>
             <td>{{robotmaster.secondaryclass}}</td>

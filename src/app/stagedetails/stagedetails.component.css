@@ -1,5 +1,9 @@
-img{
-    width:100%;
+.stageimg{
+width:100%;
+margin-bottom:10px;
+}
+.rmimg{
+    margin-right:10px;
 }
 
 .container{
@@ -9,3 +13,25 @@ img{
 .rightalign{
     text-align: right;
 }
+
+.card-body{
+    text-align:center;
+
+}
+
+.container2{
+    width:1000px;
+    margin: auto;
+}
+
+.card-text{
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.card{
+    width:16rem;
+    height:8rem;
+}
+
+.bg-primary{background: #053275!important}

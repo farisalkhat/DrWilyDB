@@ -28,7 +28,8 @@ import { PlayerSeriesComponent } from './playerdetails/player-series/player-seri
 import { PlayerRobotmastersComponent } from './playerdetails/player-robotmasters/player-robotmasters.component';
 import { PlayerPeersComponent } from './playerdetails/player-peers/player-peers.component';
 import { PlayerTotalsComponent } from './playerdetails/player-totals/player-totals.component';
-import { PlayerhomeComponent } from './playerdetails/playerhome/playerhome.component'
+import { PlayerhomeComponent } from './playerdetails/playerhome/playerhome.component';
+import { RobotmasterDetailsComponent } from './robotmaster-details/robotmaster-details.component'
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { PlayerhomeComponent } from './playerdetails/playerhome/playerhome.compo
     PlayerRobotmastersComponent,
     PlayerPeersComponent,
     PlayerTotalsComponent,
-    PlayerhomeComponent
+    PlayerhomeComponent,
+    RobotmasterDetailsComponent
   ],
   imports: [
     BrowserModule,

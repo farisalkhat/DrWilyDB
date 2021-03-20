@@ -20,8 +20,10 @@ export class StagesService {
   }
 
   getStage(name:string){
-    return this.http.get<Stage>(`http://127.0.0.1:8080/api/stages/${name}`);
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/stages/${name}`);
   }
+
+
 
 
 }

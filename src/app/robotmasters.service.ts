@@ -25,5 +25,9 @@ export class RobotmastersService {
     return this.http.get<any[]>(this._robotmastersUrl);
   }
 
+  getRobotMaster(robotmaster:string){
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/robotmasters/${robotmaster}`)
+  }
+
 
 }

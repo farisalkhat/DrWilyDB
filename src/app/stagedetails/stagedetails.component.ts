@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StagedetailsComponent implements OnInit {
   stage: string;
-  stageDetails: Stage;
+  stageDetails: any[];
   constructor(private stagesServices:StagesService,private route: ActivatedRoute) { 
 
   }
@@ -23,7 +23,7 @@ export class StagedetailsComponent implements OnInit {
       this.stagesServices.getStage(this.stage).subscribe(
         data=>{
           this.stageDetails = data;
-          
+           console.log(this.stageDetails)
         } 
       )
     })

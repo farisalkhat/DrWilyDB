@@ -15,6 +15,7 @@ import { PlayerhomeComponent } from './playerdetails/playerhome/playerhome.compo
 import { PlayersComponent } from './players/players.component';
 import { RegisterComponent } from './register/register.component';
 import { RobotMastersComponent } from './robot-masters/robot-masters.component';
+import { RobotmasterDetailsComponent } from './robotmaster-details/robotmaster-details.component';
 import { StagedetailsComponent } from './stagedetails/stagedetails.component';
 import { StagesComponent } from './stages/stages.component';
 import { SubmitComponent } from './submit/submit.component';
@@ -90,6 +91,10 @@ const routes: Routes = [
   {
     path:'players/:playername',
     component:PlayerhomeComponent
+  },
+  {
+    path:'robotmasters/:robotmaster',
+    component:RobotmasterDetailsComponent
   },
    
 
