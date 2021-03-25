@@ -11,7 +11,7 @@
                 <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Favorite Player</h5>
-                      <p class="card-text">{{stageDetails?.favorite_player.name}}</p>
+                      <p *ngIf="stageDetails?.favorite_player" class="card-text">{{stageDetails?.favorite_player.name}}</p>
                     </div>
                   </div>        
             </div>
@@ -20,7 +20,7 @@
                 <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Most Popular Game Mode</h5>
-                      <p class="card-text">{{stageDetails?.most_popular_mode.gamemode}}: {{stageDetails?.most_popular_mode.total}}</p>
+                      <p *ngIf="stageDetails?.most_popular_mode" class="card-text">{{stageDetails?.most_popular_mode.gamemode}}: {{stageDetails?.most_popular_mode.total}}</p>
                     </div>
                   </div>        
             </div>
@@ -29,7 +29,7 @@
                 <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Most Popular Robotmaster </h5>
-                      <p class="card-text">{{stageDetails?.most_popular_rm.robotmaster}}: {{stageDetails?.most_popular_rm.matchesplayed}}</p>
+                      <p *ngIf="stageDetails?.most_popular_rm" class="card-text">{{stageDetails?.most_popular_rm.robotmaster}}: {{stageDetails?.most_popular_rm.matchesplayed}}</p>
                     </div>
                   </div>        
             </div>
@@ -38,7 +38,7 @@
                     <div class="card text-white bg-primary mb-3" >   
                         <div class="card-body">
                           <h5 class="card-title">Top Fragger In a Single Game</h5>
-                          <p class="card-text">{{stageDetails?.top_fragger.name}}: {{stageDetails?.top_fragger.frags}}</p>
+                          <p *ngIf="stageDetails?.top_fragger" class="card-text">{{stageDetails?.top_fragger.name}}: {{stageDetails?.top_fragger.frags}}</p>
                         </div>
                       </div>
         
@@ -49,14 +49,14 @@
                     <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Total Frags</h5>
-                      <p class="card-text">{{stageDetails?.total_frags.total}}</p>
+                      <p *ngIf="stageDetails?.total_frags" class="card-text">{{stageDetails?.total_frags.total}}</p>
                     </div>
                   </div></div>
                   <div class="col">
                     <div class="card text-white bg-primary mb-3" >   
                         <div class="card-body">
                           <h5 class="card-title">Total Matches</h5>
-                          <p class="card-text">{{stageDetails?.total_matches.total}}</p>
+                          <p *ngIf="stageDetails?.total_matches" class="card-text">{{stageDetails?.total_matches.total}}</p>
                         </div>
                       </div>        
                 </div>
@@ -64,7 +64,7 @@
                     <div class="card text-white bg-primary mb-3">   
                         <div class="card-body">
                           <h5 class="card-title">Best Fragger</h5>
-                          <p class="card-text">{{stageDetails?.best_fragger.name}}: {{stageDetails?.best_fragger.total}}</p>
+                          <p *ngIf="stageDetails?.best_fragger" class="card-text">{{stageDetails?.best_fragger.name}}: {{stageDetails?.best_fragger.total}}</p>
                         </div>
                       </div>
                 </div>
@@ -72,7 +72,7 @@
                     <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Best Winner</h5>
-                      <p class="card-text">{{stageDetails?.best_winner.name}}: {{stageDetails?.best_winner.total}}</p>
+                      <p *ngIf="stageDetails?.best_winner" class="card-text">{{stageDetails?.best_winner.name}}: {{stageDetails?.best_winner.total}}</p>
                     </div>
                   </div>
                 </div>
@@ -80,7 +80,7 @@
                     <div class="card text-white bg-primary mb-3" >   
                       <div class="card-body">
                         <h5 class="card-title">Worst Loser</h5>
-                        <p class="card-text">{{stageDetails?.best_loser.name}}: {{stageDetails?.best_loser.total}}</p>
+                        <p *ngIf="stageDetails?.best_loser" class="card-text">{{stageDetails?.best_loser.name}}: {{stageDetails?.best_loser.total}}</p>
                       </div>
                     </div>
                 </div>
