@@ -7,14 +7,24 @@
     <div class="container2">
         <div class="row">
 
-            <div class="col">
+            <!-- <div class="col">
                 <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Favorite Player</h5>
                       <p *ngIf="stageDetails?.favorite_player" class="card-text">{{stageDetails?.favorite_player.name}}</p>
                     </div>
                   </div>        
-            </div>
+            </div> -->
+
+
+            <div class="col">
+              <div class="card text-white bg-primary mb-3" >   
+                  <div class="card-body">
+                    <h5 class="card-title">Worst Fragger</h5>
+                    <p *ngIf="stageDetails?.worst_fragger" class="card-text"><a routerLink="/players/{{stageDetails?.worst_fragger.playerid}}">{{stageDetails?.worst_fragger.name}}</a> : <a routerLink="/matches/{{stageDetails?.worst_fragger.matchid}}">{{stageDetails?.worst_fragger.matchid}}</a></p>
+                  </div>
+                </div>        
+          </div>
 
             <div class="col">
                 <div class="card text-white bg-primary mb-3" >   
@@ -29,7 +39,7 @@
                 <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Most Popular Robotmaster </h5>
-                      <p *ngIf="stageDetails?.most_popular_rm" class="card-text">{{stageDetails?.most_popular_rm.robotmaster}}: {{stageDetails?.most_popular_rm.matchesplayed}}</p>
+                      <p *ngIf="stageDetails?.most_popular_rm" class="card-text"><a routerLink="/robotmasters/{{stageDetails?.most_popular_rm.rid}}">{{stageDetails?.most_popular_rm.robotmaster}}</a> : {{stageDetails?.most_popular_rm.matchesplayed}}</p>
                     </div>
                   </div>        
             </div>
@@ -38,7 +48,7 @@
                     <div class="card text-white bg-primary mb-3" >   
                         <div class="card-body">
                           <h5 class="card-title">Top Fragger In a Single Game</h5>
-                          <p *ngIf="stageDetails?.top_fragger" class="card-text">{{stageDetails?.top_fragger.name}}: {{stageDetails?.top_fragger.frags}}</p>
+                          <p *ngIf="stageDetails?.top_fragger" class="card-text"><a routerLink="/players/{{stageDetails?.top_fragger.playerid}}">{{stageDetails?.top_fragger.name}}</a> : {{stageDetails?.top_fragger.frags}}</p>
                         </div>
                       </div>
         
@@ -64,7 +74,7 @@
                     <div class="card text-white bg-primary mb-3">   
                         <div class="card-body">
                           <h5 class="card-title">Best Fragger</h5>
-                          <p *ngIf="stageDetails?.best_fragger" class="card-text">{{stageDetails?.best_fragger.name}}: {{stageDetails?.best_fragger.total}}</p>
+                          <p *ngIf="stageDetails?.best_fragger" class="card-text"><a routerLink="/players/{{stageDetails?.best_fragger.playerid}}">{{stageDetails?.best_fragger.name}}</a> : {{stageDetails?.best_fragger.total}}</p>
                         </div>
                       </div>
                 </div>
@@ -72,15 +82,15 @@
                     <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Best Winner</h5>
-                      <p *ngIf="stageDetails?.best_winner" class="card-text">{{stageDetails?.best_winner.name}}: {{stageDetails?.best_winner.total}}</p>
+                      <p *ngIf="stageDetails?.best_winner" class="card-text"><a routerLink="/players/{{stageDetails?.best_winner.playerid}}">{{stageDetails?.best_winner.name}}</a> : {{stageDetails?.best_winner.total}}</p>
                     </div>
                   </div>
                 </div>
                 <div class="col">    
                     <div class="card text-white bg-primary mb-3" >   
                       <div class="card-body">
-                        <h5 class="card-title">Worst Loser</h5>
-                        <p *ngIf="stageDetails?.best_loser" class="card-text">{{stageDetails?.best_loser.name}}: {{stageDetails?.best_loser.total}}</p>
+                        <h5 class="card-title">Best Loser</h5>
+                        <p *ngIf="stageDetails?.best_loser" class="card-text"><a routerLink="/players/{{stageDetails?.best_loser.playerid}}">{{stageDetails?.best_loser.name}}</a> : {{stageDetails?.best_loser.total}}</p>
                       </div>
                     </div>
                 </div>

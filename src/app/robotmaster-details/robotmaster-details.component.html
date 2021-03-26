@@ -7,14 +7,14 @@
         <div class="row">
 
 
-            <div class="col">
+            <!-- <div class="col">
                 <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Favorite Player</h5>
                       <p *ngIf="robotmasterDetails?.favorite_player" class="card-text"><a routerLink="'/players/{{robotmasterDetails?.favorite_player.id}}"></a>{{robotmasterDetails?.favorite_player.name}} : {{robotmasterDetails?.favorite_player.total}}</p>
                     </div>
                   </div>        
-            </div>
+            </div> -->
 
 
             <div class="col">
@@ -39,7 +39,7 @@
                     <div class="card text-white bg-primary mb-3" >   
                         <div class="card-body">
                           <h5 class="card-title">Top Fragger In a Single Game</h5>
-                          <p *ngIf="robotmasterDetails?.best_performance" class="card-text"><a routerLink='/players/{{robotmasterDetails?.best_performance.playerid}}'>{{robotmasterDetails?.best_performance.name}}</a>: <a routerLink='/players/{{robotmasterDetails?.best_performance.matchid}}'>{{robotmasterDetails?.best_performance.frags}}</a></p>
+                          <p *ngIf="robotmasterDetails?.best_performance" class="card-text"><a routerLink='/players/{{robotmasterDetails?.best_performance.playerid}}'>{{robotmasterDetails?.best_performance.name}}</a>: <a routerLink='/matches/{{robotmasterDetails?.best_performance.matchid}}'>{{robotmasterDetails?.best_performance.frags}}</a></p>
                         </div>
                       </div>
         

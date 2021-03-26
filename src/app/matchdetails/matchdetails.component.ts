@@ -46,6 +46,8 @@ export class MatchdetailsComponent implements OnInit {
     ).subscribe(res=>{
       this.stageDetails=res[0]
       this.playedMatchDetails = res[1]
+      console.log(this.matchDetails)
+      console.log(this.playedMatchDetails)
 
     })
 

@@ -29,7 +29,8 @@ import { PlayerRobotmastersComponent } from './playerdetails/player-robotmasters
 import { PlayerPeersComponent } from './playerdetails/player-peers/player-peers.component';
 import { PlayerTotalsComponent } from './playerdetails/player-totals/player-totals.component';
 import { PlayerhomeComponent } from './playerdetails/playerhome/playerhome.component';
-import { RobotmasterDetailsComponent } from './robotmaster-details/robotmaster-details.component'
+import { RobotmasterDetailsComponent } from './robotmaster-details/robotmaster-details.component';
+import { SeriesdataComponent } from './submit/gameform/seriesdata/seriesdata.component'
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { RobotmasterDetailsComponent } from './robotmaster-details/robotmaster-d
     PlayerPeersComponent,
     PlayerTotalsComponent,
     PlayerhomeComponent,
-    RobotmasterDetailsComponent
+    RobotmasterDetailsComponent,
+    SeriesdataComponent
   ],
   imports: [
     BrowserModule,
