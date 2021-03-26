@@ -76,10 +76,10 @@
                       
                     </tr>
                   </thead>
-                  <tbody >
+                  <tbody *ngFor="let player of peers5" >
                     <tr>
-                      <td></td>
-                      <td></td>
+                      <td><a routerLink='/players/{{player.id}}'>{{player.name}}</a></td>
+                      <td>{{player.total}}</td>
                       <td></td>
                     </tr>
                   </tbody>

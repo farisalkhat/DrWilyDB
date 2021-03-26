@@ -49,6 +49,13 @@ export class PlayersService {
   }
 
 
+  getPeers(player: string) {
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/players/${player}/peers`)
+  }
+
+  getPeers5(player: string) {
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/players/${player}/peers5`)
+  }
 
 
 }

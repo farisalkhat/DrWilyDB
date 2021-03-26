@@ -15,6 +15,8 @@ export class PlayerhomeComponent implements OnInit {
   duelsMatches: any[];
   DmMatches:any[];
   mostplayedrm5:any[];
+  peers5:any[];
+
 
   constructor(private playersService: PlayersService,private route: ActivatedRoute,) { }
 
@@ -43,6 +45,12 @@ export class PlayerhomeComponent implements OnInit {
 
     this.playersService.get5MostPlayedRM(this.playerid).subscribe(
       res=>{this.mostplayedrm5 = res;
+        
+     }
+    )
+
+    this.playersService.getPeers5(this.playerid).subscribe(
+      res=>{this.peers5 = res;
         
      }
     )
