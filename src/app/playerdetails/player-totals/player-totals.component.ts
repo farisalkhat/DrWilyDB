@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PlayersService } from 'src/app/players.service';
 
 @Component({
   selector: 'app-player-totals',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerTotalsComponent implements OnInit {
 
-  constructor() { }
+  playerid:String
+  playerTotals: any[];
+  constructor(private playersService: PlayersService,private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((paramMap)=>{
+      this.playerid= paramMap.get('playername');
+    })
+
+
+    this.playersService.getPlayerTotals(this.playerid).subscribe(
+      res=>{this.playerTotals = res;}
+    )
   }
 
 }

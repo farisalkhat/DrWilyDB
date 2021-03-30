@@ -5,6 +5,9 @@ import {Router} from '@angular/router';
   providedIn: 'root'
 })
 export class PlayersService {
+  getPlayerTotals(player: String) {
+    return this.http.get<any[]>(`http://127.0.0.1:8080/api/players/${player}/totals`)
+  }
 
 
   private _playersUrl = "http://127.0.0.1:8080/api/players"

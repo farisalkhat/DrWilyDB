@@ -55,3 +55,28 @@ thead{
     border:#053275 solid 1.2px  !important;
     background-color:#053275;
 }
+
+
+
+.card-body{
+    text-align:center;
+
+}
+
+.container2{
+    width:1000px;
+    margin: auto;
+    margin-top:10px;
+}
+
+.card-text{
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.card{
+    width:16rem;
+    height:8rem;
+}
+
+.bg-primary{background: #053275!important}
