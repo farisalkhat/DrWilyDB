@@ -13,10 +13,13 @@
         </thead>
         <tbody *ngFor="let playername of playernames ">
           <tr>
-            <td> <a routerLink='/players/{{playername.id}}'>{{playername.name}}</a></td>
-            <td></td>    
-            <td></td>    
-            <td></td>    
+            <td> <a routerLink='/players/{{playername.id}}'>{{playername?.name}}</a></td>
+            <td>{{playername?.totalmatches}}</td>    
+            <td>{{playername?.totalfrags}}</td>    
+            <td >
+              
+              
+               <span *ngIf="playername?.favoriteRM"><a *ngIf="playername?.favoriteRM" routerLink="/robotmasters/{{playername?.favoriteRM.id}}"><img *ngIf="playername?.favoriteRM" src = "{{playername?.favoriteRM.icon}}"></a>  {{playername?.favoriteRM.rmname}}</span></td>    
           </tr>
         </tbody>
       </table>
