@@ -16,7 +16,7 @@ export class RobotmasterDetailsComponent implements OnInit {
     this.route.paramMap.subscribe((paramMap)=>{
       this.robotmaster = paramMap.get('robotmaster');
       this.robotmastersService.getRobotMaster(this.robotmaster).subscribe(
-        data=>{
+        (data:any)=>{
           this.robotmasterDetails = data;
            console.log(this.robotmasterDetails)
         } 

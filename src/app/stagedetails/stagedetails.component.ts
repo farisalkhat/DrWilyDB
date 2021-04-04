@@ -21,7 +21,7 @@ export class StagedetailsComponent implements OnInit {
     this.route.paramMap.subscribe((paramMap)=>{
       this.stage = paramMap.get('name');
       this.stagesServices.getStage(this.stage).subscribe(
-        data=>{
+        (data:any)=>{
           this.stageDetails = data;
            console.log(this.stageDetails)
         } 

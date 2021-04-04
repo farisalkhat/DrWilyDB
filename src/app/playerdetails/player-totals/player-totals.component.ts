@@ -20,7 +20,7 @@ export class PlayerTotalsComponent implements OnInit {
 
 
     this.playersService.getPlayerTotals(this.playerid).subscribe(
-      res=>{this.playerTotals = res;}
+      (data:any)=>{this.playerTotals = data;}
     )
   }
 

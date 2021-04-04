@@ -26,20 +26,20 @@ export class PlayerdetailsComponent implements OnInit {
     })
 
     this.playersService.getPlayer(this.playerid).subscribe(
-      res=>{this.playerdetails = res;}
+      (data:any)=>{this.playerdetails = data;}
     )
 
     this.playersService.getRecentMatches(this.playerid).subscribe(
-      res=>{this.recentmatches = res;}
+      (data:any)=>{this.recentmatches = data;}
     )
 
     this.playersService.getMatchesTotals(this.playerid).subscribe(
-      res=>{this.matchestotals = res;
+      (data:any)=>{this.matchestotals = data;
       }
     )
 
     this.playersService.getMostPlayedRM(this.playerid).subscribe(
-      res=>{this.mostplayedrm = res;
+      (data:any)=>{this.mostplayedrm = data;
         console.log(this.mostplayedrm)
      }
     )
