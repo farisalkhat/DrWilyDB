@@ -8,11 +8,19 @@ export interface Stage extends Document{
   image:string;
 }
  
+
+interface player{
+  name:number,
+  playerid:number,
+  total:number,
+}
+
+
 export interface StageDetails{
-  best_fragger:{[key: string]: string | number;};
-  best_loser:{"name":1,"playerid":1,"total":1};
-  best_winner:{"name":1,"playerid":1,"total":1};
-  favorite_player:{"name":1,"playerid":1,"total":1};
+  best_fragger:Record<string,player>;
+  best_loser:Record<string,player>;
+  best_winner:Record<string,player>;
+  favorite_player:Record<string,player>;
   favorite_players:[],
   last_match:{"gamemode": "",
       "gametitle": "",
@@ -67,7 +75,7 @@ total_frags: {
   total_matches: {
       "total": 1
   },
-  worst_fragger: {[key: string]: string | number;}
+  worst_fragger: Record<string,player>;
 
   
 
