@@ -19,14 +19,14 @@ export interface RobotMaster extends Document{
 })
 export class RobotmastersService {
 
-  private _robotmastersUrl = "http://127.0.0.1:8080/api/robotmasters"
+  private _robotmastersUrl = "https://mm8bitdm-v2.herokuapp.com/api/robotmasters"
   constructor(private http:HttpClient,private _router:Router) { }
   getRobotMasters(){
     return this.http.get<any[]>(this._robotmastersUrl);
   }
 
   getRobotMaster(robotmaster:string){
-    return this.http.get<any[]>(`http://127.0.0.1:8080/api/robotmasters/${robotmaster}`)
+    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/robotmasters/${robotmaster}`)
   }
 
 
