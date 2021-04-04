@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Stage,StagesService} from '../stages.service'
+import {Stage,StageDetails,StagesService} from '../stages.service'
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StagedetailsComponent implements OnInit {
   stage: string;
-  stageDetails: any[];
+  stageDetails: StageDetails[];
   constructor(private stagesServices:StagesService,private route: ActivatedRoute) { 
 
   }
@@ -21,7 +21,7 @@ export class StagedetailsComponent implements OnInit {
     this.route.paramMap.subscribe((paramMap)=>{
       this.stage = paramMap.get('name');
       this.stagesServices.getStage(this.stage).subscribe(
-        (data:any)=>{
+        data=>{
           this.stageDetails = data;
            console.log(this.stageDetails)
         } 
