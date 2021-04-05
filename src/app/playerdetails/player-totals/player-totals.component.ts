@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlayersService } from 'src/app/players.service';
+import { PlayersService, PlayerTotals } from 'src/app/players.service';
 
 @Component({
   selector: 'app-player-totals',
@@ -10,7 +10,7 @@ import { PlayersService } from 'src/app/players.service';
 export class PlayerTotalsComponent implements OnInit {
 
   playerid:String
-  playerTotals: any[];
+  playerTotals: PlayerTotals;
   constructor(private playersService: PlayersService,private route: ActivatedRoute) { }
 
   ngOnInit() {

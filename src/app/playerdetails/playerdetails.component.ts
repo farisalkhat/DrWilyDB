@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {PlayersService} from '../players.service'
+import {MatchesTotal, MostPlayedRM, PlayerDetails, PlayersService} from '../players.service'
 @Component({
   selector: 'app-playerdetails',
   templateUrl: './playerdetails.component.html',
@@ -8,14 +8,14 @@ import {PlayersService} from '../players.service'
 })
 export class PlayerdetailsComponent implements OnInit {
 
-  playerdetails:any[];
+  playerdetails:PlayerDetails;
   playerid:string;
   recentmatches:any[];
 
-  mostplayedrm:any[];
+  mostplayedrm:MostPlayedRM;
   mostplayedrm5:any[];
 
-  matchestotals:any[];
+  matchestotals:MatchesTotal;
 
   constructor(private playersService: PlayersService,private route: ActivatedRoute,) { }
 

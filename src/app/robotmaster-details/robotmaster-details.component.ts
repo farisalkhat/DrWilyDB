@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {RobotmastersService} from '../robotmasters.service'
+import {RobotmasterDetails, RobotmastersService} from '../robotmasters.service'
 @Component({
   selector: 'app-robotmaster-details',
   templateUrl: './robotmaster-details.component.html',
@@ -11,7 +11,7 @@ export class RobotmasterDetailsComponent implements OnInit {
 
   constructor(private robotmastersService:RobotmastersService,private route: ActivatedRoute) { }
   robotmaster:string;
-  robotmasterDetails:any[];
+  robotmasterDetails:RobotmasterDetails;
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap)=>{
       this.robotmaster = paramMap.get('robotmaster');

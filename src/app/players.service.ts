@@ -1,12 +1,63 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Router} from '@angular/router';
-@Injectable({
-  providedIn: 'root'
-})
+
+
+export interface MostPlayedRM{
+icon:"",
+id:1,
+rmname:"",
+total:1
+}
+
+export interface PlayerDetails{
+  id:1,
+  name:""
+}
+
+export interface MatchesTotal{
+  DM:1,
+  Duels:1,
+  Matches:1,
+  Series:1,
+  TDM:1,
+  TLMS:1
+}
+
+
+
+export interface PlayerTotals{
+  avgPlacement:{"total":1},
+  bestFrags:{"frags": 1,
+  "icon": "",
+  "id": 1,
+  "matchid": 1},
+  bestWins:{"",
+  "id": 1,
+  "matchid": 1,
+  "wins": 1},
+  favoriteMode:{"gamemode": "",
+  "total": 1},
+  favoriteRM:{"icon": "",
+  "id": 1,
+  "rmname": "",
+  "total": 1},
+  matches:{ "total": 1},
+  totalFrags:{ "total": 1},
+  totalLoss:{ "total": 1},
+  totalWins:{ "total": 1},
+  wlRatio:{"total": 1},
+  worstFrags:{"frags": 1,
+  "icon": "",
+  "id": 1,
+  "matchid": 1},
+
+
+}
+
 export class PlayersService {
   getPlayerTotals(player: String) {
-    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/totals`)
+    return this.http.get<PlayerTotals>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/totals`)
   }
 
 
@@ -16,7 +67,7 @@ export class PlayersService {
     return this.http.get<any[]>(this._playersUrl);
   }
   getPlayer(player:string){
-    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}`)
+    return this.http.get<PlayerDetails>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}`)
   }
 
   getRecentMatches(player:string){
@@ -32,11 +83,11 @@ export class PlayersService {
   }
 
   getMatchesTotals(player:string){
-    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/matchtotals`)
+    return this.http.get<MatchesTotal>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/matchtotals`)
   }
 
   getMostPlayedRM(player: string) {
-    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/mostplayedrm`)
+    return this.http.get<MostPlayedRM>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/mostplayedrm`)
   }
 
   get5MostPlayedRM(player: string) {

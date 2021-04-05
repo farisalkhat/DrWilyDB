@@ -12,6 +12,81 @@ export interface RobotMaster extends Document{
   image:string;
 }
 
+export interface RobotmasterDetails{
+      avg_placement: {
+        "avgplacement": 1
+    },
+    best_performance: {
+        "frags": 1,
+        "matchid": 1,
+        "name": "",
+        "playerid": 1
+    },
+    favorite_player: {
+        "id": 1,
+        "name": "",
+        "total": 1
+    },
+    matches: [
+        {
+            "gamemode": "",
+            "gametitle": "!",
+            "matchdate": "",
+            "matchid": 1,
+            "totalplayers": 1
+        }
+    ],
+    most_popular_mode: {
+        "gamemode": "",
+        "total": 1
+    },
+    most_popular_stage: {
+        "id": 1,
+        "stage": "",
+        "total": 1
+    },
+    mostfrags: [
+        {
+            "frags": 1,
+            "matchid": 1,
+            "name": ""
+        }
+    ],
+    playersplayed: [
+        {
+            "id": 1,
+            "name": "",
+            "total": 1
+        }
+    ],
+    robotmaster: {
+        "icon": "",
+        "id": 1,
+        "image": "",
+        "name": "",
+        "origin": "",
+        "primaryclass": "",
+        "secondaryclass": ""
+    },
+    total_frags: {
+        "totalfrags": 1
+    },
+    total_loss: {
+        "totalloss": 1
+    },
+    total_matches: {
+        "total": 1
+    },
+    total_wins: {
+        "totalwins": 99
+    },
+    worst_performance: {
+        "frags": 1,
+        "matchid": 1,
+        "name": "",
+        "playerid": 1
+    }
+}
 
 
 @Injectable({
@@ -26,7 +101,7 @@ export class RobotmastersService {
   }
 
   getRobotMaster(robotmaster:string){
-    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/robotmasters/${robotmaster}`)
+    return this.http.get<RobotmasterDetails>(`https://mm8bitdm-v2.herokuapp.com/api/robotmasters/${robotmaster}`)
   }
 
 

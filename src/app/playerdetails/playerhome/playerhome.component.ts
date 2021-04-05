@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlayersService } from 'src/app/players.service';
+import { PlayerDetails, PlayersService } from 'src/app/players.service';
 
 @Component({
   selector: 'app-playerhome',
@@ -10,7 +10,7 @@ import { PlayersService } from 'src/app/players.service';
 export class PlayerhomeComponent implements OnInit {
 
   playerid:string;
-  playerdetails:any[];
+  playerdetails:PlayerDetails;
   recentmatches:any[];
   duelsMatches: any[];
   DmMatches:any[];
