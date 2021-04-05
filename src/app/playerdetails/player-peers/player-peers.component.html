@@ -5,19 +5,17 @@
           <tr>
             <th scope="col">Player</th>
             <th scope="col">Matches Played</th>
-            <th scope="col">Series Played</th>
             <th scope="col">Last Match Together</th>
 
     
             
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let player of peers">
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><a routerLink='/players/{{player.id}}'>{{player.name}}</a></td>
+            <td>{{player.total}}</td>
+            <td><a routerLink='/matches/{{player.LM}}'>{{player.LM}}</a></td>
           </tr>
         </tbody>
       </table>

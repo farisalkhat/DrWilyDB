@@ -80,7 +80,7 @@
             <div class="card text-white bg-primary mb-3" >   
                 <div class="card-body">
                   <h5 class="card-title">Best Frags Game</h5>
-                  <p  *ngIf="playerTotals?.bestFrags.frags"  class="card-text"><a routerLink = "/robotmasters/{{playerTotals?.bestFrags.id}}"><img src = "{{playerTotals?.bestFrags.icon}}"></a> with <a routerLink="matches/{{playerTotals?.bestFrags.matchid}}">{{playerTotals?.bestFrags.frags}} Frags</a></p>
+                  <p  *ngIf="playerTotals?.bestFrags.frags"  class="card-text"><a routerLink = "/robotmasters/{{playerTotals?.bestFrags.id}}"><img src = "{{playerTotals?.bestFrags.icon}}"></a> with <a routerLink="/matches/{{playerTotals?.bestFrags.matchid}}">{{playerTotals?.bestFrags.frags}} Frags</a></p>
                 </div>
               </div>        
         </div>

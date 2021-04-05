@@ -55,6 +55,13 @@ export interface PlayerTotals{
 
 }
 
+export interface Peers{
+  LM:1,
+  id,1,
+  name:"",
+  total:1
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -107,11 +114,11 @@ export class PlayersService {
 
 
   getPeers(player: string) {
-    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/peers`)
+    return this.http.get<Peers[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/peers`)
   }
 
   getPeers5(player: string) {
-    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/peers5`)
+    return this.http.get<Peers[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/peers5`)
   }
 
 

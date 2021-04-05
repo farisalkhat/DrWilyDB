@@ -31,6 +31,8 @@ import { PlayerTotalsComponent } from './playerdetails/player-totals/player-tota
 import { PlayerhomeComponent } from './playerdetails/playerhome/playerhome.component';
 import { RobotmasterDetailsComponent } from './robotmaster-details/robotmaster-details.component';
 import { SeriesdataComponent } from './submit/gameform/seriesdata/seriesdata.component'
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { SeriesdataComponent } from './submit/gameform/seriesdata/seriesdata.com
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule,
+    RouterModule
 
   ],
   providers: [AuthService,AuthGuard,
