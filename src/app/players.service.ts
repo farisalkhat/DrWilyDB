@@ -55,6 +55,9 @@ export interface PlayerTotals{
 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class PlayersService {
   getPlayerTotals(player: String) {
     return this.http.get<PlayerTotals>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/totals`)

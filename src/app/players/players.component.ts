@@ -6,6 +6,7 @@ import {PlayersService} from '../players.service'
   templateUrl: './players.component.html',
   styleUrls: ['./players.component.css']
 })
+
 export class PlayersComponent implements OnInit {
 
   playernames:any[];
