@@ -48,9 +48,9 @@ export interface PlayerTotals{
   totalWins:{ "total": 1},
   wlRatio:{"total": 1},
   worstFrags:{"frags": 1,
-  "icon": "",
-  "id": 1,
-  "matchid": 1},
+  icon: "",
+  id: 1,
+  matchid: 1},
 
 
 }
