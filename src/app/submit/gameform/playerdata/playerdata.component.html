@@ -14,7 +14,7 @@
                 </div>
             </div>
     
-    
+     
           </div>
           <div class="col-auto">
             <label for="exampleFormControlSelect1">Robot Master</label>
@@ -31,10 +31,20 @@
 
           </div>
     
-    
+          <div class="col-auto">
+            <label for="exampleFormControlSelect1">Frags</label>
+            <input required type="number" class="form-control"  formControlName="frags" [ngClass]="{ 'is-invalid': submitted && f.frags.errors }" [(ngModel)]="frags" placeholder="Frags">
+
+            <div *ngIf="submitted && f.frags.errors" class="invalid-feedback">
+                <div *ngIf="f.frags.errors.required">
+                  <p class="red">Frag it up baby</p>
+                </div>
+            </div>
+
+        </div>    
         <div *ngIf="gamemode==='Duels' || gamemode==='TLMS'" class="col-auto">
             <label for="exampleFormControlSelect1">Wins</label>
-            <input required type="number" class="form-control" formControlName="wins"  [ngClass]="{ 'is-invalid': submitted && f.wins.errors }" [(ngModel)]="wins" placeholder="Frags">
+            <input required type="number" class="form-control" formControlName="wins"  [ngClass]="{ 'is-invalid': submitted && f.wins.errors }" [(ngModel)]="wins" placeholder="Wins">
 
             <div *ngIf="submitted && f.wins.errors" class="invalid-feedback">
                 <div *ngIf="f.wins.errors.required">
@@ -46,7 +56,7 @@
         </div>
         <div *ngIf="gamemode==='Duels' || gamemode==='TLMS'" class="col-auto">
             <label for="exampleFormControlSelect1">Loss</label>
-            <input required type="number" class="form-control" formControlName="loss"  [ngClass]="{ 'is-invalid': submitted && f.loss.errors }" [(ngModel)]="loss" placeholder="Frags">
+            <input required type="number" class="form-control" formControlName="loss"  [ngClass]="{ 'is-invalid': submitted && f.loss.errors }" [(ngModel)]="loss" placeholder="Loss">
 
             <div *ngIf="submitted && f.loss.errors" class="invalid-feedback">
                 <div *ngIf="f.loss.errors.required">
@@ -57,17 +67,7 @@
         </div>
     
     
-        <div *ngIf="gamemode==='DM'|| gamemode==='TDM'" class="col-auto">
-            <label for="exampleFormControlSelect1">Frags</label>
-            <input required type="number" class="form-control"  formControlName="frags" [ngClass]="{ 'is-invalid': submitted && f.frags.errors }" [(ngModel)]="frags" placeholder="Frags">
 
-            <div *ngIf="submitted && f.frags.errors" class="invalid-feedback">
-                <div *ngIf="f.frags.errors.required">
-                  <p class="red">Frag it up baby</p>
-                </div>
-            </div>
-
-        </div>
         <div  *ngIf="gamemode==='DM' || gamemode==='TDM'" class="col-auto">
             <label for="exampleFormControlSelect1">Placement</label>
             <input required type="number" class="form-control" formControlName="placement" [ngClass]="{ 'is-invalid': submitted && f.placement.errors }" [(ngModel)]="placement"  placeholder="Placement">

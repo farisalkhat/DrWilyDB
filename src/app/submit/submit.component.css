@@ -16,3 +16,12 @@ button{
 .red{
     color:red;
 }
+
+.submit-text-fail{
+color:red;
+font-weight: bold;
+}
+.submit-text-success{
+    color:green;
+    font-weight: bold;
+}

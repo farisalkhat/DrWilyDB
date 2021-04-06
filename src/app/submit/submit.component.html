@@ -2,7 +2,7 @@
 
 <div class="container">
   <form [formGroup] = "gameData" (ngSubmit) = "onSubmit()">
-
+ 
 <div class="form-row">
     <div class="col">
       <div class="form-group">
@@ -79,6 +79,52 @@
 
 </div> 
 
+<div class="form-row">
+
+  <div class="col">
+    <div class="form-group">
+      <label for="fragLimit">Frag Limit</label>
+      <input id="fragLimit" type="number" class="form-control" formControlName="fragLimit" placeholder="1">
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="form-group">
+      <label for="timeLimit">Time Limit</label>
+      <input id="timeLimit" type="text" class="form-control" formControlName="timeLimit" placeholder="1">
+      <!-- <select class="form-control" id="timeLimit" formControlName="timeLimit" >
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        <option value = ":00">:00</option>
+        
+      </select> -->
+
+
+
+    </div>
+  </div>
+
+
+  <div class="col" *ngIf="gameData.get('gameMode').value==='Duels' || gameData.get('gameMode').value==='TLMS'">
+    <div class="form-group">
+      <label for="winLimit">Win Limit</label>
+      <input id="winLimit" type="number" class="form-control" formControlName="winLimit" placeholder="1">
+    </div>
+  </div>
+
+
+
+
+
+</div>
 
 
 
@@ -88,9 +134,22 @@
     <app-gameform #gameForm [submitted] = "submitted" [match] = "gameData"></app-gameform>
     <button class="btn btn-primary" type="submit">Submit</button>
 
+
+
+    <div *ngIf="submitfail && submitted" class="submit-text-fail" >
+      Submission failed! Fix errors above. 
+    </div>
+  
+    <div *ngIf="!submitfail && submitted" class="submit-text-success">
+      Match submitted!
+    </div>
+    
+
+
   </form>
 
   
+
 
 
 

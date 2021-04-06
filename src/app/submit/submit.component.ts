@@ -29,6 +29,7 @@ export class SubmitComponent implements OnInit {
   jstoday = '';
   submitVerified = false
   submitted = false
+  submitfail: boolean;
 
 
   constructor(private fb:FormBuilder,private playersService: PlayersService,private _authSerice:AuthService, private _router:Router,private robotmasterService: RobotmastersService,private stageService: StagesService) {
@@ -62,6 +63,10 @@ export class SubmitComponent implements OnInit {
       stage: new FormControl(undefined,[
         Validators.required,
       ]),
+      fragLimit: new FormControl(0),
+      timeLimit: new FormControl(0),
+      winLimit: new FormControl('None'),
+
     })
 
 
@@ -91,6 +96,7 @@ get f(){return this.gameData.controls;}
   onSubmit(){
     this.submitted = true
     if(this.gameData.invalid){
+      this.submitfail = true;
       console.log('Basic data not filled.')
       return;
     }
@@ -100,12 +106,16 @@ get f(){return this.gameData.controls;}
       return
     }
 
+    
     this.match = {}
     this.match['gametitle'] = this.gameData.get('gameTitle').value
     this.match['gamemode'] = this.gameData.get('gameMode').value
     this.match['stage'] = this.gameData.get('stage').value
     this.match['totalplayers'] = this.gameData.get('totalPlayers').value
 
+    this.match['fraglimit'] = this.gameData.get('fragLimit').value
+    this.match['timelimit'] = this.gameData.get('timeLimit').value
+    this.match['winlimit'] = this.gameData.get('winLimit').value
 
     this.today = new Date()
     this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
@@ -124,7 +134,8 @@ get f(){return this.gameData.controls;}
         
       err=>{console.log(err)}
     )
-    this._router.navigate(['/matches']);
+    this.submitfail = false;
+    //this._router.navigate(['/matches']);
   }
 
 
