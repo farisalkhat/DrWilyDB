@@ -102,6 +102,7 @@ get f(){return this.gameData.controls;}
     }
     this.players = this.gameForm.collectdata()
     if(this.players==undefined){
+      this.submitfail = true;
       console.log("gameForm failed.")
       return
     }
@@ -118,7 +119,7 @@ get f(){return this.gameData.controls;}
     this.match['winlimit'] = this.gameData.get('winLimit').value
 
     this.today = new Date()
-    this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
+    this.jstoday = formatDate(this.today, 'MM-dd-yyyy hh:mm:ss a zzzz', 'en-US', '-0400');
     this.match['matchdate'] = this.jstoday
     this.match['matchid'] = 0
 

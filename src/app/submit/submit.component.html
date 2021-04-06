@@ -81,14 +81,14 @@
 
 <div class="form-row">
 
-  <div class="col">
+  <div class="col" *ngIf="gameData.get('gameMode').value==='DM' || gameData.get('gameMode').value==='TDM'">
     <div class="form-group">
       <label for="fragLimit">Frag Limit</label>
       <input id="fragLimit" type="number" class="form-control" formControlName="fragLimit" placeholder="1">
     </div>
   </div>
 
-  <div class="col">
+  <div class="col" *ngIf="gameData.get('gameMode').value==='DM' || gameData.get('gameMode').value==='TDM'">
     <div class="form-group">
       <label for="timeLimit">Time Limit</label>
       <input id="timeLimit" type="text" class="form-control" formControlName="timeLimit" placeholder="1">
