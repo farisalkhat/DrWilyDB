@@ -21,7 +21,7 @@
               </thead>
               <tbody *ngFor="let match of DmMatches ">
                 <tr> 
-                  <td><img class="rbm-icon" src="{{match.icon}}">{{match.rmname}}</td>
+                  <td><a routerLink='/robotmasters/{{match.rid}}'><img class="rbm-icon" src="{{match.icon}}"></a>{{match.rmname}}</td>
                   <td>{{match.gamemode}}</td>
                   <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
                   <td>{{match.stage}}</td>
@@ -49,7 +49,7 @@
               </thead>
               <tbody *ngFor="let match of duelsMatches">
                 <tr>
-                  <td><img class="rbm-icon" src="{{match.icon}}">{{match.rmname}}</td>
+                  <td><a routerLink='/robotmasters/{{match.rid}}'><img class="rbm-icon" src="{{match.icon}}"></a>{{match.rmname}}</td>
                   <td>{{match.gamemode}}</td>
                   <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
                   <td>{{match.stage}}</td>
@@ -98,7 +98,7 @@
                   </thead>
                   <tbody *ngFor="let rm of mostplayedrm5">
                     <tr>
-                      <td><img src="{{rm.icon}}"> {{rm.robotmaster}}</td>
+                      <td><a routerLink='/robotmasters/{{rm.id}}'><img src="{{rm.icon}}"> </a>{{rm.robotmaster}}</td>
                       <td>{{rm.MP}}</td>
                       <td><a routerLink='/matches/{{rm.LM}}'>{{rm.LM}}</a></td>
                     </tr>

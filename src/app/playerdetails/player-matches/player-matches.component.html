@@ -16,7 +16,7 @@
         </thead>
         <tbody *ngFor="let match of matchDetails">
           <tr>
-            <td><img class="rbm-icon" src="{{match.icon}}">{{match.rmname}}</td>
+            <td><a routerLink='/robotmasters/{{match.id}}'><img class="rbm-icon" src="{{match.icon}}"></a>{{match.rmname}}</td>
             <td><a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
             <td> {{match.gamemode}}</td>
             <td>{{match.matchdate}}</td>

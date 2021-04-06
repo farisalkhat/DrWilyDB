@@ -11,11 +11,12 @@
         <th scope="col">Mode</th>
         <th scope="col">Stage</th>
         <th scope="col">Total Players</th>
+        <th *ngIf="authGuard.checkUser()"></th>
 
         
       </tr>
     </thead>
-    <tbody *ngFor="let match of matches ">
+    <tbody  *ngFor="let match of matches ">
       <tr>
         <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
         <td> {{match.gametitle}}</td>
@@ -23,7 +24,7 @@
         <td>{{match.gamemode}}</td>
         <td>{{match.stage}}</td>
         <td>{{match.totalplayers}}</td>
-        
+        <td *ngIf="authGuard.checkUser()"><button class="btn btn-primary" (click)= "deleteMatch(match.matchid)" type="submit">X</button></td>
       </tr>
     </tbody>
   </table>

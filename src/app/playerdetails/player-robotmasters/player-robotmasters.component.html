@@ -16,7 +16,7 @@
         </thead>
         <tbody *ngFor="let rm of rmDetails" >
           <tr>
-            <td><img src="{{rm.icon}}">{{rm.rmname}}</td>
+            <td><a routerLink="/robotmasters/{{rm.id}}"><img src="{{rm.icon}}"></a>{{rm.rmname}}</td>
             <td>{{rm.matches}}</td>
             <td>{{0}}</td>
             <td>{{rm.frags}}</td>

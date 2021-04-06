@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {Router} from '@angular/router';
 import { concatMap, map, mergeMap, tap } from 'rxjs/operators';
 import { concat, forkJoin } from 'rxjs';
+import { AuthGuard } from './auth.guard';
 
 export interface Match extends Document{
   _id:string;
@@ -26,12 +27,18 @@ export class MatchesService {
   playedMatchDetails:any[]
 
   private _matchesUrl = "https://mm8bitdm-v2.herokuapp.com/api/matches"
-  constructor(private http:HttpClient,private _router:Router) { }
+  constructor(private http:HttpClient,private _router:Router,private authGuard:AuthGuard) { }
   getMatches(){
     return this.http.get<any[]>(this._matchesUrl);
   }
 
 
+  deleteMatch(matchid){
+    if (this.authGuard.canActivate()){
+      return this.http.post<any>('https://mm8bitdm-v2.herokuapp.com/api/deletematch',matchid)
+    }
+    
+  }
 
   getMatchDetails(matchid:string){
  
