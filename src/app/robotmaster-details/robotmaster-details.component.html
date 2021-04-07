@@ -1,7 +1,13 @@
 <div class="container">
+  
     <img class="rm-image" src="{{robotmasterDetails?.robotmaster.image}}">
-    <h1> {{robotmasterDetails?.robotmaster.name}}</h1>
-
+    
+    <div class="container3">
+      <h1 class ="h1-center">{{robotmasterDetails?.robotmaster.name}} - {{robotmasterDetails?.robotmaster.primaryclass}}<span *ngIf="robotmasterDetails?.robotmaster.secondaryclass!=''">,</span>  {{robotmasterDetails?.robotmaster.secondaryclass}}</h1>
+      <h1> </h1>
+    </div>
+      
+    
 
     <div class="container2">
         <div class="row">
@@ -30,7 +36,7 @@
                 <div class="card text-white bg-primary mb-3" >   
                     <div class="card-body">
                       <h5 class="card-title">Most Popular Stage </h5>
-                      <p *ngIf="robotmasterDetails?.most_popular_stage" class="card-text"><a routerLink='/stages/{{robotmasterDetails?.most_popular_stage.id}}'></a>{{robotmasterDetails?.most_popular_stage.stage}}: {{robotmasterDetails?.most_popular_stage.total}}</p>
+                      <p *ngIf="robotmasterDetails?.most_popular_stage" class="card-text"><a routerLink='/stages/{{robotmasterDetails?.most_popular_stage.id}}'>{{robotmasterDetails?.most_popular_stage.stage}}</a> : {{robotmasterDetails?.most_popular_stage.total}}</p>
                     </div>
                   </div>        
             </div>

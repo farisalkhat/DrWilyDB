@@ -48,7 +48,7 @@
                     <div class="card text-white bg-primary mb-3" >   
                         <div class="card-body">
                           <h5 class="card-title">Top Fragger In a Single Game</h5>
-                          <p *ngIf="stageDetails?.top_fragger" class="card-text"><a routerLink="/players/{{stageDetails?.top_fragger.playerid}}">{{stageDetails?.top_fragger.name}}</a> : {{stageDetails?.top_fragger.frags}}</p>
+                          <p *ngIf="stageDetails?.top_fragger" class="card-text"><a routerLink="/players/{{stageDetails?.top_fragger.playerid}}">{{stageDetails?.top_fragger.name}}</a> : <a routerLink="/matches/{{stageDetails?.top_fragger.matchid}}">{{stageDetails?.top_fragger.frags}}</a></p>
                         </div>
                       </div>
         
@@ -73,7 +73,7 @@
                 <div class="col">
                     <div class="card text-white bg-primary mb-3">   
                         <div class="card-body">
-                          <h5 class="card-title">Best Fragger</h5>
+                          <h5 class="card-title">Best Overall Fragger</h5>
                           <p *ngIf="stageDetails?.best_fragger" class="card-text"><a routerLink="/players/{{stageDetails?.best_fragger.playerid}}">{{stageDetails?.best_fragger.name}}</a> : {{stageDetails?.best_fragger.total}}</p>
                         </div>
                       </div>

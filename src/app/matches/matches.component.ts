@@ -44,10 +44,15 @@ export class MatchesComponent implements OnInit {
       this.matchesService.deleteMatch(matchid).subscribe(
         res=>{
           console.log(res);
+          this._router.navigate(['/matches']);
         },
           
         err=>{console.log(err)}
       )
+
+      this._router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this._router.onSameUrlNavigation = 'reload';
+      this._router.navigate(['/matches']);
     }
 
 }

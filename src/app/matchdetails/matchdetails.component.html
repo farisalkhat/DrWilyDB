@@ -1,6 +1,9 @@
 <div class="container">
     <img class="stage-img" src="{{stageDetails?.image}}">
-    <h1>{{matchDetails?.gametitle}}<span class="float-right">{{stageDetails?.name}} </span></h1>
+    <h1>{{matchDetails?.gametitle}}<a routerLink="/stages/{{matchDetails?.stageid}}"><span class="float-right">{{stageDetails?.name}} </span></a></h1>
+
+    <h1 *ngIf="matchDetails?.gamemode==='DM' || matchDetails?.gamemode==='TDM'">Frag Limit: {{matchDetails?.fraglimit}}<span class="float-right">Time Limit: {{matchDetails?.timelimit}} </span></h1>
+    <h1 *ngIf="matchDetails?.gamemode==='Duels' || matchDetails?.gamemode==='TLMS'">Win Limit: {{matchDetails?.winlimit}}</h1>
 
 
 
@@ -9,7 +12,7 @@
             <thead class=" border">
               <tr>
                 <th scope="col">Player</th>
-                
+                <th scope="col">Frags</th>
                 <th scope="col">Wins</th>
                 <th scope="col">Loss</th>
     
@@ -20,7 +23,7 @@
             <tbody *ngFor="let player of playedMatchDetails ">
               <tr>
                 <td><a routerLink='/robotmasters/{{player.id}}'><img src= "{{player.icon}}"></a> <a routerLink='/players/{{player.playerid}}'> {{player.name}}</a></td>
-                
+                <td> {{player.frags}}</td>
                 <td> {{player.wins}}</td>
                 <td> {{player.loss}}</td>
               </tr>

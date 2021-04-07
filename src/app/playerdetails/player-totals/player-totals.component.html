@@ -17,7 +17,7 @@
             <div class="card text-white bg-primary mb-3" >   
                 <div class="card-body">
                   <h5 class="card-title">Favorite Robot Master</h5>
-                  <p *ngIf="playerTotals?.favoriteRM" class="card-text"><a routerLink='/robotmasters/{{playerTotals?.favoriteRM.id}}'></a><img src = "{{playerTotals?.favoriteRM.icon}}"> : {{playerTotals?.favoriteRM.total}}</p>
+                  <p *ngIf="playerTotals?.favoriteRM" class="card-text"><a routerLink='/robotmasters/{{playerTotals?.favoriteRM.id}}'><img src = "{{playerTotals?.favoriteRM.icon}}"></a> : {{playerTotals?.favoriteRM.total}}</p>
                 </div>
               </div>        
         </div>
