@@ -13,6 +13,10 @@ export interface Match extends Document{
   matchdate:string;
   matchid:number;
   stage:string;
+  fraglimit:number,
+  timelimit:string,
+  winlimit:number,
+  stageid:number
 }
 
 
