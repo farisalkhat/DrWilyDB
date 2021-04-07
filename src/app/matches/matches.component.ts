@@ -15,7 +15,7 @@ export class MatchesComponent implements OnInit {
   matches:any[];
   submitVerified = false
 
-  constructor(authGuard: AuthGuard,private matchesService: MatchesService, private _authService: AuthService,private _router:Router) {
+  constructor(public authGuard: AuthGuard,private matchesService: MatchesService, private _authService: AuthService,private _router:Router) {
     this.matchesService.getMatches().subscribe(
       data=>{
         this.matches=data;
