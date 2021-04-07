@@ -21,7 +21,7 @@
               <div class="card text-white bg-primary mb-3" >   
                   <div class="card-body">
                     <h5 class="card-title">Worst Fragger</h5>
-                    <p *ngIf="stageDetails?.worst_fragger" class="card-text"><a routerLink="/players/{{stageDetails?.worst_fragger.playerid}}">{{stageDetails?.worst_fragger.name}}</a> : <a routerLink="/matches/{{stageDetails?.worst_fragger.matchid}}">{{stageDetails?.worst_fragger.matchid}}</a></p>
+                    <p *ngIf="stageDetails?.worst_fragger" class="card-text"><a routerLink="/players/{{stageDetails?.worst_fragger.playerid}}">{{stageDetails?.worst_fragger.name}}</a> : <a routerLink="/matches/{{stageDetails?.worst_fragger.matchid}}">{{stageDetails?.worst_fragger.frags}}</a></p>
                   </div>
                 </div>        
           </div>
