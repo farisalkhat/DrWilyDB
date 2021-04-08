@@ -1,7 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { interval,Subscription  } from 'rxjs';
-import { Match, MatchesService } from '../matches.service';
+import { Match, MatchesService, rmMatch } from '../matches.service';
 import { RobotMaster, RobotmastersService } from '../robotmasters.service';
 
 @Component({
