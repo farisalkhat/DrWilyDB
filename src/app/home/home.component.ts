@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private robotmasterService: RobotmastersService, private matchesService: MatchesService) { }
   subscription: Subscription;
   dailyRM: RobotMaster;
-  randomMatch: Match;
+  randomMatch: rmMatch;
   recentMatch: Match;
 
   today= new Date();

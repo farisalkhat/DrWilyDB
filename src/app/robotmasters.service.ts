@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {Router} from '@angular/router';
 import { map } from 'rxjs/operators';
 export interface RobotMaster extends Document{
-  _id:string;
+  id:string;
   name:string;
   origin:string;
   primaryclass:string;

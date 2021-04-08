@@ -19,6 +19,21 @@ export interface Match extends Document{
   stageid:number
 }
 
+export interface rmMatch extends Document{
+  _id:string;
+  gametitle:string;
+  gamemode:string;
+  totalplayers:number;
+  matchdate:string;
+  matchid:number;
+  stage:string;
+  fraglimit:number,
+  timelimit:string,
+  winlimit:number,
+  stageid:number
+  image:string,
+}
+
 
 
 @Injectable({
@@ -37,7 +52,7 @@ export class MatchesService {
   }
 
   getRandomMatch(){
-    return this.http.get<Match>("https://mm8bitdm-v2.herokuapp.com/api/randommatch");
+    return this.http.get<rmMatch>("https://mm8bitdm-v2.herokuapp.com/api/randommatch");
   }
 
   getMostRecentMatch(){
