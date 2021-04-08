@@ -42,6 +42,7 @@ export interface PlayerTotals{
   "id": 1,
   "rmname": "",
   "total": 1},
+  favoriteStage:{"id":1,"name":"","total",1},
   matches:{ "total": 1},
   totalFrags:{ "total": 1},
   totalLoss:{ "total": 1},

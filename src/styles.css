@@ -11,6 +11,9 @@ body {
 h1{
     color:#f7f7f7;
 }
+h2{
+    color:#f7f7f7;
+}
 .container{
     margin-top:10px;
 }
@@ -27,6 +30,11 @@ label{
 
 p{
     color:#f7f7f7;
+}
+ul{
+    
+        color:#f7f7f7;
+    
 }
 
 table {

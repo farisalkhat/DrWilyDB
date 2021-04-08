@@ -33,6 +33,8 @@ import { RobotmasterDetailsComponent } from './robotmaster-details/robotmaster-d
 import { SeriesdataComponent } from './submit/gameform/seriesdata/seriesdata.component'
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RulesComponent } from './rules/rules.component';
+import { PatchnotesComponent } from './patchnotes/patchnotes.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { CommonModule } from '@angular/common';
     PlayerTotalsComponent,
     PlayerhomeComponent,
     RobotmasterDetailsComponent,
-    SeriesdataComponent
+    SeriesdataComponent,
+    RulesComponent,
+    PatchnotesComponent
   ],
   imports: [
     BrowserModule,

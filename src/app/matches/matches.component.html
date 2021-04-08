@@ -22,7 +22,7 @@
         <td> {{match.gametitle}}</td>
         <td>{{match.matchdate}}</td>
         <td>{{match.gamemode}}</td>
-        <td>{{match.stage}}</td>
+        <td><a routerLink='/stages/{{match.stageid}}'>{{match.stage}}</a></td>
         <td>{{match.totalplayers}}</td>
         <td *ngIf="authGuard.checkUser()"><button class="btn btn-primary" (click)= "deleteMatch(match.matchid)" type="submit">X</button></td>
       </tr>

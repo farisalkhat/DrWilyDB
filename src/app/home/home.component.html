@@ -1,58 +1,72 @@
-<div class="container">
+ <div class="container">
+   <div class="row">
+     <div class="col">
+      <h1 class="text-center"> MM8BitDM-Stats<span class="comment">Wow, what a mouthful..</span></h1>
+      
+     </div>
+    
+   </div>
 
+   <div class="row">
+     <div class="col">
+       <h2>Most Recent Match</h2>
+      <table class="table table-hover table-dark  ">
+        <thead class=" border">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Date</th>
+            <th scope="col">Mode</th>
+            <th scope="col">Stage</th>
+            <th scope="col">Total Players</th>
+            
+    
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <a routerLink='/matches/{{recentMatch?.matchid}}'>{{recentMatch?.matchid}}</a></td>
+            <td> {{recentMatch?.gametitle}}</td>
+            <td>{{recentMatch?.matchdate}}</td>
+            <td>{{recentMatch?.gamemode}}</td>
+            <td>{{recentMatch?.stage}}</td>
+            <td>{{recentMatch?.totalplayers}}</td>
+          </tr>
+        </tbody>
+      </table>
+     </div>
+   </div>
 
-<h1>RULES</h1>
-<p>You must pick a robot master, boss character or featured main character from the Mega Man game or challenge in question.
-You cannot switch characters mid tournament.</p>
-<p>Stages go in order, free-for-all first to the frag limit where the enemies are unpicked robot masters, or auxiliary characters, from the available pool.
-
-Stages that end in a 1st place win for a non-human player will be used for duels.
-Duels are conducted until all players have dueled each opponent a minimum of twice. In duels, players must fight in the local area where they first encounter one another. Items gathered from the stage cannot be used. Health pick-ups in the area of the battle can be gathered, but you cannot traverse the map outside of the dueling area to gather health.
-If more than 3 stages result in a win for a non-human player, 3 stages for duels will be chosen by draft. The player with the lowest points will choose first, and then continue to the 2nd lowest, until 3 stages are chosen. Stages cannot be picked twice.
-If all stages result in a win for a human player, 3 random maps will be chosen to be replayed for duels.
-If only one or two maps results in a win for a non-human player, the lowest scoring player can choose an additional different map to be replayed for duels. 
-In Team Deathmatch, up to 4 human players are pitted against uneven teams of AI controlled opponents. All players are awarded points for a 1st place victory, and additional points per frag.
-Duels will still be conducted in Team Deathmatch only tournaments, on maps where the AI is victorious, or chosen by the players with the least kills, starting from the lowest, until 3 are chosen.
-</p>
-
-
-
-
-<h1>SCORING</h1>
-  <table class="table table-hover table-dark row-4  ">
-      <thead class=" border">
-        <tr>
-          <th scope="col">DEATHMATCH</th>
-          <th scope="col">DUELS</th>
-          <th scope="col">TEAM DEATHMATCH</th>      
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <p>1st Place - 3 Points</p>
-            <p>2nd Place - 2 Points</p>
-            <p>3rd Place - 1 Point</p>
-            <p>4th Place - .5 Points</p>
-        </td>
-          <td>
-            <p>1st Place - 2 Points</p>
-            <p>2nd Place - 1.5 Points</p>
-            <p>3rd Place - 1 Point</p>
-          </td>
-          <td><p>
-            Player Team Victory - 2 points
-          </p>
-          <p>.1 point per frag</p>
-            </td>
-
-        </tr>
-      </tbody>
-  </table>
-
-
-
+   <div class="row">
+          <div class="col">
+            <div class="rm-card card text-white bg-primary mb-3" >   
+                <div class="card-body">
+                  <h5 class="card-title">ROBOT MASTER OF THE DAY</h5>
+                  <a routerLink ="/robotmasters/{{dailyRM?.id}}"><img class="rm-card-img" src = "{{dailyRM?.image}}"></a>
+                  <p class="card-text">
+                   {{dailyRM?.name}}
+                    </p>
+                </div>
+              </div>        
+        </div>
 
 
 
-</div>
+        <div class="col">
+          <div class="rm-card card text-white bg-primary mb-3" >   
+              <div class="card-body">
+                <h5 class="card-title">RANDOM MATCH</h5>
+                <a routerLink ="/matches/{{randomMatch?.matchid}}"><img class="stage-card-img" src = "{{randomMatch?.image}}"></a>
+                <p class="card-text">
+                  {{randomMatch?.gametitle}} : {{randomMatch?.gamemode}}
+                  </p>
+              </div>
+            </div>        
+      </div>
+
+
+
+
+   </div>
+ </div>

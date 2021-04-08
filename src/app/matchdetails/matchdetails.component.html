@@ -1,9 +1,9 @@
 <div class="container">
     <img class="stage-img" src="{{stageDetails?.image}}">
     <h1>{{matchDetails?.gametitle}}<a routerLink="/stages/{{matchDetails?.stageid}}"><span class="float-right">{{stageDetails?.name}} </span></a></h1>
-
     <h1 *ngIf="matchDetails?.gamemode==='DM' || matchDetails?.gamemode==='TDM'">Frag Limit: {{matchDetails?.fraglimit}}<span class="float-right">Time Limit: {{matchDetails?.timelimit}} </span></h1>
     <h1 *ngIf="matchDetails?.gamemode==='Duels' || matchDetails?.gamemode==='TLMS'">Win Limit: {{matchDetails?.winlimit}}</h1>
+    <h1>Game Mode: {{matchDetails?.gamemode}}</h1>
 
 
 

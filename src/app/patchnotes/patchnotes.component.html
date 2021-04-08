@@ -1,0 +1,85 @@
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark ">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li routerLinkActive="active" class="nav-item">
+            <button type="button" (click)="selectPatchNotes()" class="btn btn-link">Updates</button>
+        </li>
+
+        <li class="nav-item">
+            <button type="button" (click)="selectTODO()" class="btn btn-link">TODO</button>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+<div  class="container" *ngIf="patchnotes">
+<h1> Updates</h1>
+
+<h2>Ver 1.0.0</h2>
+    <ul>
+        <li>Added Patches Page
+            <ul>
+                <li>Purpose is to provide info on all future changes to the web application.</li>
+            </ul>
+        </li>
+        <li>Added Rules Page
+            <ul>
+                <li>Explains how the Series game mode works, which has not been implemented yet lol</li>
+            </ul>
+        </li>
+        <li>Home Page Updated
+            <ul>
+                <li>Robot Master of the Day feature, pretty cute. Let it be known that Chill Man was the first Robot Master of the day.</li>
+                <li>Random Match feature. Displays a random match every time you load the page.</li>
+                <li>Recent Match feature. Displays the most recent match.</li>
+            </ul>
+        </li>
+        <li>
+            Robot Masters Page Modified
+            <ul>
+                <li>Reordered lists so that Recent Matches is at the bottom of the page.</li>
+                <li>Recent Matches also shows stage now.</li>
+                <li>Single Game Top Frags list only shows the top 5 games.</li>
+            </ul>
+        </li>
+        <li>Players Page Updated
+            <ul>
+                <li>Totals
+                    <ul>
+                        <li>Fixed Worst Frags Match. It was showing results that were completely wrong.</li>
+                        <li>Fixed Win-Loss Ratio not showing properly</li>
+                        <li>Now tracks most played stage(thanks Swampus :3)</li>
+
+
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>Matches Page Updated
+            <ul>
+                <li>Stages column now links to stage.</li>
+                <li>Specific match pages now display game mode.</li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+<div class="container" *ngIf="todo">
+    <h1>TODO</h1>
+    <ul>
+        <li>
+            Limit amount of matches on Stages/Robotmasters, and introduce a load more button.
+            <ul>
+                <li>
+                    Alternatively, add navbars to Stages/Robotmasters to move all info into separate pages.
+                </li>
+            </ul>
+        </li>
+
+        <li>Add the Series game mode as well as the Points system.</li>
+        <li>Eventual addition of robot master descriptions and trivia(exciting)</li>
+    </ul>
+</div>

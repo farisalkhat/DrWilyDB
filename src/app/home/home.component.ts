@@ -1,4 +1,8 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { interval,Subscription  } from 'rxjs';
+import { Match, MatchesService } from '../matches.service';
+import { RobotMaster, RobotmastersService } from '../robotmasters.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private robotmasterService: RobotmastersService, private matchesService: MatchesService) { }
+  subscription: Subscription;
+  dailyRM: RobotMaster;
+  randomMatch: Match;
+  recentMatch: Match;
+
+  today= new Date();
+  jstoday = '';
 
   ngOnInit() {
+      this.robotmasterService.getDailyRM().subscribe(
+        res=>{
+          this.dailyRM = res;
+      })
+
+      this.matchesService.getRandomMatch().subscribe(
+        res=>{
+          this.randomMatch = res;
+      })
+
+      this.matchesService.getMostRecentMatch().subscribe(
+        res=>{
+          this.recentMatch = res;
+      })
+
   }
 
+
+  
 }

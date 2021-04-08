@@ -93,6 +93,9 @@ export interface RobotmasterDetails{
   providedIn: 'root'
 })
 export class RobotmastersService {
+  getDailyRM() {
+    return this.http.get<RobotMaster>('https://mm8bitdm-v2.herokuapp.com/api/dailyrm')
+  }
 
   private _robotmastersUrl = "https://mm8bitdm-v2.herokuapp.com/api/robotmasters"
   constructor(private http:HttpClient,private _router:Router) { }

@@ -124,28 +124,7 @@
 
 
 
-    <h1> Recent Matches</h1>
-    <table class="table table-hover table-dark  ">
-        <thead class=" border">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">Date</th>
-            <th scope="col">Mode</th>
-            <th scope="col">Total Players</th>
-          </tr>
-        </thead>
-        <tbody *ngFor="let match of robotmasterDetails?.matches ">
-          <tr>
-            <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
-            <td> {{match.gametitle}}</td>
-            <td>{{match.matchdate}}</td>
-            <td>{{match.gamemode}}</td>
-            <td>{{match.totalplayers}}</td>
-            
-          </tr>
-        </tbody>
-      </table>
+
 
 
       <h1>Single Game Top Frags</h1>
@@ -189,4 +168,29 @@
         </table>
 
 
+        <h1> Recent Matches</h1>
+        <table class="table table-hover table-dark  ">
+            <thead class=" border">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+                <th scope="col">Mode</th>
+                <th scope="col">Stage</th>
+                
+                <th scope="col">Total Players</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let match of robotmasterDetails?.matches ">
+              <tr>
+                <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
+                <td> {{match.gametitle}}</td>
+                <td>{{match.matchdate}}</td>
+                <td>{{match.gamemode}}</td>
+                <td><a routerLink='/stages/{{match.stageid}}'>{{match.stage}}</a></td>
+                <td>{{match.totalplayers}}</td>
+                
+              </tr>
+            </tbody>
+          </table>
 </div> 

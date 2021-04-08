@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
 import { MatchesComponent } from './matches/matches.component';
+import { PatchnotesComponent } from './patchnotes/patchnotes.component';
 import { PlayerMatchesComponent } from './playerdetails/player-matches/player-matches.component';
 import { PlayerPeersComponent } from './playerdetails/player-peers/player-peers.component';
 import { PlayerRobotmastersComponent } from './playerdetails/player-robotmasters/player-robotmasters.component';
@@ -16,6 +17,7 @@ import { PlayersComponent } from './players/players.component';
 import { RegisterComponent } from './register/register.component';
 import { RobotMastersComponent } from './robot-masters/robot-masters.component';
 import { RobotmasterDetailsComponent } from './robotmaster-details/robotmaster-details.component';
+import { RulesComponent } from './rules/rules.component';
 import { StagedetailsComponent } from './stagedetails/stagedetails.component';
 import { StagesComponent } from './stages/stages.component';
 import { SubmitComponent } from './submit/submit.component';
@@ -40,7 +42,7 @@ const routes: Routes = [
     component:MatchesComponent
   },
   {
-    path:'robot-masters',
+    path:'robotmasters',
     component:RobotMastersComponent
   },
   {
@@ -95,6 +97,14 @@ const routes: Routes = [
   {
     path:'robotmasters/:robotmaster',
     component:RobotmasterDetailsComponent
+  },
+  {
+    path:'rules',
+    component:RulesComponent
+  },
+  {
+    path:'updates',
+    component:PatchnotesComponent
   },
    
 

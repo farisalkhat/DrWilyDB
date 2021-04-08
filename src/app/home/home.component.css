@@ -1,3 +1,41 @@
 .container-sm{
     width:400px;
 }
+
+.bg-primary{background: #053275!important}
+
+.rm-card{
+    width:30rem;
+    height:24rem;
+}
+
+.rm-card-img{
+    width:50%;
+}
+
+.stage-card-img{
+    width:100%;
+}
+
+.container{
+    margin-top:50px;
+}
+
+h1{
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    font-size: 6rem;
+} 
+.card{
+    border-radius: 5%;
+    border-width: 2px;
+    border-color: #0a78c2;
+
+    font-family: 'Noto Sans KR', sans-serif !important;
+    font-weight: normal !important;
+    font-size: 40px !important;
+}
+
+.comment{
+    font-size: 1rem;
+}

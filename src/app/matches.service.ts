@@ -36,6 +36,13 @@ export class MatchesService {
     return this.http.get<any[]>(this._matchesUrl);
   }
 
+  getRandomMatch(){
+    return this.http.get<Match>("https://mm8bitdm-v2.herokuapp.com/api/randommatch");
+  }
+
+  getMostRecentMatch(){
+    return this.http.get<Match>("https://mm8bitdm-v2.herokuapp.com/api/recentmatch");
+  }
 
   deleteMatch(matchid){
     if (this.authGuard.canActivate()){
