@@ -1,10 +1,10 @@
  <div class="container">
    <div class="row">
      <div class="col">
-      <h1 class="text-center"> MM8BitDM-Stats<span class="comment">Wow, what a mouthful..</span></h1>
+      <h1 class="text-center"> Dr.Wily's Database</h1>
       
      </div>
-    
+     
    </div>
 
    <div class="row">
@@ -30,7 +30,7 @@
             <td> {{recentMatch?.gametitle}}</td>
             <td>{{recentMatch?.matchdate}}</td>
             <td>{{recentMatch?.gamemode}}</td>
-            <td>{{recentMatch?.stage}}</td>
+            <td> <a routerLink='/stages/{{recentMatch?.stageid}}'>{{recentMatch?.stageid}}</a></td>
             <td>{{recentMatch?.totalplayers}}</td>
           </tr>
         </tbody>

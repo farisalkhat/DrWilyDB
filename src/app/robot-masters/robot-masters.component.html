@@ -17,7 +17,7 @@
         </thead>
         <tbody *ngFor="let robotmaster of robotmasters ">
           <tr>
-            <td><img src={{robotmaster.icon}}> <a routerLink='/robotmasters/{{robotmaster.id}}'>{{robotmaster.name}}</a></td>
+            <td><a routerLink='/robotmasters/{{robotmaster.id}}'><img src={{robotmaster.icon}}> {{robotmaster.name}}</a></td>
             <td>{{robotmaster.origin}}</td>
             <td>{{robotmaster.primaryclass}}</td>
             <td>{{robotmaster.secondaryclass}}</td>

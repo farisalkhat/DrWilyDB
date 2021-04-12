@@ -55,7 +55,7 @@
                     <div class="card text-white bg-primary mb-3" >   
                         <div class="card-body">
                           <h5 class="card-title">Worst Fragger In a Single Game</h5>
-                          <p *ngIf="robotmasterDetails?.worst_performance" class="card-text"><a routerLink='/players/{{robotmasterDetails?.worst_performance.playerid}}'>{{robotmasterDetails?.worst_performance.name}}</a>: <a routerLink='/players/{{robotmasterDetails?.worst_performance.matchid}}'>{{robotmasterDetails?.worst_performance.frags}}</a></p>
+                          <p *ngIf="robotmasterDetails?.worst_performance" class="card-text"><a routerLink='/players/{{robotmasterDetails?.worst_performance.playerid}}'>{{robotmasterDetails?.worst_performance.name}}</a>: <a routerLink='/matches/{{robotmasterDetails?.worst_performance.matchid}}'>{{robotmasterDetails?.worst_performance.frags}}</a></p>
                         </div>
                       </div>
         

@@ -98,7 +98,7 @@
                   </thead>
                   <tbody *ngFor="let rm of mostplayedrm5">
                     <tr>
-                      <td><a routerLink='/robotmasters/{{rm.id}}'><img src="{{rm.icon}}"> </a>{{rm.robotmaster}}</td>
+                      <td><a routerLink='/robotmasters/{{rm.id}}'><img class="rbm-icon" src="{{rm.icon}}"> </a>{{rm.robotmaster}}</td>
                       <td>{{rm.MP}}</td>
                       <td><a routerLink='/matches/{{rm.LM}}'>{{rm.LM}}</a></td>
                     </tr>

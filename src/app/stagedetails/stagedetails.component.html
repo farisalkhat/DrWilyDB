@@ -150,7 +150,7 @@
         </thead>
         <tbody *ngFor="let match of stageDetails?.top_fraggers_ordered ">
           <tr>
-            <td><img class="rmimg" src="{{match.icon}}"><a routerLink='/players/{{match.playerid}}'>{{match.name}}</a></td>
+            <td><a routerLink='/robotmasters/{{match.rid}}'><img class="rmimg" src="{{match.icon}}"></a><a routerLink='/players/{{match.playerid}}'>{{match.name}}</a></td>
             <td> {{match.frags}}</td>
             <td> <a routerLink='/matches/{{match.matchid}}'>{{match.matchid}}</a></td>
             
