@@ -90,7 +90,7 @@
             <div class="card text-white bg-primary mb-3" >   
                 <div class="card-body">
                   <h5 class="card-title">Best Frags Game</h5>
-                  <p  *ngIf="playerTotals?.bestFrags.frags"  class="card-text"><a routerLink = "/robotmasters/{{playerTotals?.bestFrags.id}}"><img src = "{{playerTotals?.bestFrags.icon}}"></a> with <a routerLink="/matches/{{playerTotals?.bestFrags.matchid}}">{{playerTotals?.bestFrags.frags}} Frags</a></p>
+                  <p  *ngIf="playerTotals?.bestFrags"  class="card-text"><a routerLink = "/robotmasters/{{playerTotals?.bestFrags.id}}"><img src = "{{playerTotals?.bestFrags.icon}}"></a> with <a routerLink="/matches/{{playerTotals?.bestFrags.matchid}}">{{playerTotals?.bestFrags.frags}} Frags</a></p>
                 </div>
               </div>        
         </div>
@@ -99,7 +99,7 @@
             <div class="card text-white bg-primary mb-3" >   
                 <div class="card-body">
                   <h5 class="card-title">Best Wins Game</h5>
-                  <p *ngIf="playerTotals?.bestWins.wins" class="card-text"><a routerLink = "/robotmasters/{{playerTotals?.bestWins.id}}"><img src = "{{playerTotals?.bestWins.icon}}"></a> with <a routerLink="/matches/{{playerTotals?.bestWins.matchid}}">{{playerTotals?.bestWins.wins}} Wins</a></p>
+                  <p *ngIf="playerTotals?.bestWins" class="card-text"><a routerLink = "/robotmasters/{{playerTotals?.bestWins.id}}"><img src = "{{playerTotals?.bestWins.icon}}"></a> with <a routerLink="/matches/{{playerTotals?.bestWins.matchid}}">{{playerTotals?.bestWins.wins}} Wins</a></p>
                 </div>
               </div>        
         </div>
@@ -108,7 +108,7 @@
             <div class="card text-white bg-primary mb-3" >   
                 <div class="card-body">
                   <h5 class="card-title">Worst Frags Match</h5>
-                  <p *ngIf="playerTotals?.worstFrags.frags"  class="card-text"><a routerLink = "/robotmasters/{{playerTotals?.worstFrags.id}}"><img src = "{{playerTotals?.worstFrags.icon}}"></a> with <a routerLink="/matches/{{playerTotals?.worstFrags.matchid}}">{{playerTotals?.worstFrags.frags}} Frags</a></p>
+                  <p *ngIf="playerTotals?.worstFrags"  class="card-text"><a routerLink = "/robotmasters/{{playerTotals?.worstFrags.id}}"><img src = "{{playerTotals?.worstFrags.icon}}"></a> with <a routerLink="/matches/{{playerTotals?.worstFrags.matchid}}">{{playerTotals?.worstFrags.frags}} Frags</a></p>
                 </div>
               </div>        
         </div>
