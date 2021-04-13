@@ -12,4 +12,9 @@ export class RulesComponent implements OnInit {
   ngOnInit() {
   }
 
+  hideloader() {
+    var div = document.getElementById('Loading')
+      div.style.display = "none"
+      console.log(div)
+  }
 }

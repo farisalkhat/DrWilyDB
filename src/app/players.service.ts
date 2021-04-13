@@ -123,5 +123,9 @@ export class PlayersService {
   }
 
 
+  getFragsChart(player:string){
+    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/frags`)
+  }
+
 }
 

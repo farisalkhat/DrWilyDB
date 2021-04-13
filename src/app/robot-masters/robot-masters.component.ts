@@ -18,13 +18,22 @@ export class RobotMastersComponent implements OnInit {
   ngOnInit() {    
     this.robotmasterService.getRobotMasters().subscribe(
 
-      res => {this.robotmasters = res;
+      res => {
+        if(res){
+          this.hideloader();
+        }
+        this.robotmasters = res;
       console.log(this.robotmasters[0])}
 
       
       
     
   )
+  }
+  hideloader() {
+    var div = document.getElementById('Loading')
+      div.style.display = "none"
+      console.log(div)
   }
 
 }

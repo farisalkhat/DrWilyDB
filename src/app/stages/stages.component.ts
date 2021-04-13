@@ -16,8 +16,17 @@ export class StagesComponent implements OnInit {
 
 
     this.stageService.getStages().subscribe(
-      res => {this.stages = res})
+      res => {
+        if(res){
+          this.hideloader();
+        }
+        this.stages = res})
 
   } 
+  hideloader() {
+    var div = document.getElementById('Loading')
+      div.style.display = "none"
+      console.log(div)
+  }
 
 }

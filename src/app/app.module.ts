@@ -35,6 +35,10 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RulesComponent } from './rules/rules.component';
 import { PatchnotesComponent } from './patchnotes/patchnotes.component';
+import { PlayerHistogramsComponent } from './playerdetails/player-histograms/player-histograms.component';
+import { ChartsModule } from 'ng2-charts';
+
+
 
 @NgModule({
   declarations: [
@@ -62,17 +66,18 @@ import { PatchnotesComponent } from './patchnotes/patchnotes.component';
     RobotmasterDetailsComponent,
     SeriesdataComponent,
     RulesComponent,
-    PatchnotesComponent
+    PatchnotesComponent,
+    PlayerHistogramsComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule,
-    RouterModule
-
+    RouterModule,
   ],
   providers: [AuthService,AuthGuard,
     {

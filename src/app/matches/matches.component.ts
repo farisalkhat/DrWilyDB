@@ -18,6 +18,9 @@ export class MatchesComponent implements OnInit {
   constructor(public authGuard: AuthGuard,private matchesService: MatchesService, private _authService: AuthService,private _router:Router) {
     this.matchesService.getMatches().subscribe(
       data=>{
+        if(data){
+          this.hideloader();
+        }
         this.matches=data;
       }
     )
@@ -55,4 +58,9 @@ export class MatchesComponent implements OnInit {
       this._router.navigate(['/matches']);
     }
 
+    hideloader() {
+      var div = document.getElementById('Loading')
+        div.style.display = "none"
+        console.log(div)
+    }
 }

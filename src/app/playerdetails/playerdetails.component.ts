@@ -49,4 +49,9 @@ export class PlayerdetailsComponent implements OnInit {
 
   }
 
+  hideloader() {
+    var div = document.getElementById('Loading')
+      div.style.display = "none"
+      console.log(div)
+  }
 }

@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
 import { MatchesComponent } from './matches/matches.component';
 import { PatchnotesComponent } from './patchnotes/patchnotes.component';
+import { PlayerHistogramsComponent } from './playerdetails/player-histograms/player-histograms.component';
 import { PlayerMatchesComponent } from './playerdetails/player-matches/player-matches.component';
 import { PlayerPeersComponent } from './playerdetails/player-peers/player-peers.component';
 import { PlayerRobotmastersComponent } from './playerdetails/player-robotmasters/player-robotmasters.component';
@@ -93,6 +94,10 @@ const routes: Routes = [
   {
     path:'players/:playername',
     component:PlayerhomeComponent
+  },
+  {
+    path:'players/:playername/histograms',
+    component:PlayerHistogramsComponent
   },
   {
     path:'robotmasters/:robotmaster',

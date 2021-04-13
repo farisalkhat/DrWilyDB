@@ -24,5 +24,10 @@ export class PlayerTotalsComponent implements OnInit {
       console.log(this.playerTotals)}
     )
   }
+  hideloader() {
+    var div = document.getElementById('Loading')
+      div.style.display = "none"
+      console.log(div)
+  }
 
 }

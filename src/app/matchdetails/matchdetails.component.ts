@@ -58,6 +58,10 @@ export class MatchdetailsComponent implements OnInit {
     })
   }
 
-  
+   hideloader() {
+    var div = document.getElementById('Loading')
+      div.style.display = "none"
+      console.log(div)
+  }
 
 }

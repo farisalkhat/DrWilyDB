@@ -25,4 +25,9 @@ export class PatchnotesComponent implements OnInit {
     this.patchnotes=true;    
   }
 
+  hideloader() {
+    var div = document.getElementById('Loading')
+      div.style.display = "none"
+      console.log(div)
+  }
 }

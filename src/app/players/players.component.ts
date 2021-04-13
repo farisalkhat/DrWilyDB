@@ -14,8 +14,17 @@ export class PlayersComponent implements OnInit {
 
   ngOnInit() {
     this.playersService.getPlayers().subscribe(
-      res=>{this.playernames = res;}
+      res=>{
+        if(res){
+          this.hideloader();
+        }
+        this.playernames = res;}
     )
+  }
+  hideloader() {
+    var div = document.getElementById('Loading')
+      div.style.display = "none"
+      console.log(div)
   }
 
 }

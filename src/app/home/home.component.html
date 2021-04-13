@@ -7,6 +7,11 @@
      
    </div>
 
+
+
+
+
+
    <div class="row">
      <div class="col">
        <h2>Most Recent Match</h2>
@@ -43,6 +48,14 @@
             <div class="rm-card card text-white bg-primary mb-3" >   
                 <div class="card-body">
                   <h5 class="card-title">ROBOT MASTER OF THE DAY</h5>
+
+                  <div class="d-flex justify-content-center">
+                    <div id="Loading" class="spinner-border" role="status">
+                        <span class="sr-only" ></span>
+                    </div>
+                  </div>
+
+
                   <a routerLink ="/robotmasters/{{dailyRM?.id}}"><img class="rm-card-img" src = "{{dailyRM?.image}}"></a>
                   <p class="card-text">
                    {{dailyRM?.name}}
@@ -57,6 +70,12 @@
           <div class="rm-card card text-white bg-primary mb-3" >   
               <div class="card-body">
                 <h5 class="card-title">RANDOM MATCH</h5>
+
+                <div class="d-flex justify-content-center">
+                  <div id="Loading1" class="spinner-border" role="status">
+                      <span class="sr-only" ></span>
+                  </div>
+                </div>
                 <a routerLink ="/matches/{{randomMatch?.matchid}}"><img class="stage-card-img" src = "{{randomMatch?.image}}"></a>
                 <p class="card-text">
                   {{randomMatch?.gametitle}} : {{randomMatch?.gamemode}}

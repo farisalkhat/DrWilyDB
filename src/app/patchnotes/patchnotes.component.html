@@ -16,6 +16,12 @@
 <div  class="container" *ngIf="patchnotes">
 <h1> Updates</h1>
 
+<h3> Ver 1.1.0 - April 13th, 2021</h3>
+<ul>
+    <li>Adding a loading spinner to give site a more responsive feel.</li>
+    <li>Added Charts!!</li>
+</ul>
+
 <h2> Ver 1.0.1 - April 12th, 2021</h2>
 <ul>
     <li>Attempt at a rebrand - Renamed From MM8BitDM-Stats to Dr.Wily's Database
@@ -100,7 +106,20 @@
 
 <div class="container" *ngIf="todo">
     <h1>TODO</h1>
-    <ul>
+    <ul><li>Player Page related stuff:
+        <ul>
+            <li>Add charts!
+                <ul><li>Kills chart, filterable by robot master</li>
+                <li>Placement chart, filterable by robot master</li></ul>
+            </li>
+            <li>Add robot master filter in matches</li>
+            <li>Recalculate a player's Best Wins/Loss match.</li>
+            <li>Add separate counts for Solo vs Multiplayer games.</li>
+        </ul>
+    </li>
+        
+
+
         <li>
             Limit amount of matches on Stages/Robotmasters, and introduce a load more button.
             <ul>

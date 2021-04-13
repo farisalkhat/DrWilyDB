@@ -88,3 +88,12 @@ thead{
 }
 
 .bg-primary{background: #053275!important}
+
+
+#Loading{
+    width:2rem;
+    height:2rem;
+    border-radius:50%;
+    color:white;
+    font-size:40px  !important;
+}

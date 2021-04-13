@@ -12,4 +12,9 @@ export class PlayerSeriesComponent implements OnInit {
   ngOnInit() {
   }
 
+  hideloader() {
+    var div = document.getElementById('Loading')
+      div.style.display = "none"
+      console.log(div)
+  }
 }
