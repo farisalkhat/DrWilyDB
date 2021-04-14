@@ -127,5 +127,14 @@ export class PlayersService {
     return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/frags`)
   }
 
+
+  getFragsRMChart(player:string,rid:string){
+    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/${rid}/rm-frags`)
+  }
+
+  getPlayerRMMatches(player:string,rid:string){
+    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/${rid}/matches`)
+  }
+
 }
 

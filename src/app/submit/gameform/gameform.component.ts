@@ -17,16 +17,16 @@ import { unescapeIdentifier } from '@angular/compiler';
 export class GameformComponent implements AfterViewInit {
 
 
-  @ViewChild('player1',{static:false}) player1:PlayerdataComponent
-  @ViewChild('player2',{static:false}) player2:PlayerdataComponent
-  @ViewChild('player3',{static:false}) player3:PlayerdataComponent
-  @ViewChild('player4',{static:false}) player4:PlayerdataComponent
-  @ViewChild('player5',{static:false}) player5:PlayerdataComponent
-  @ViewChild('player6',{static:false}) player6:PlayerdataComponent
-  @ViewChild('player7',{static:false}) player7:PlayerdataComponent
-  @ViewChild('player8',{static:false}) player8:PlayerdataComponent
-  @ViewChild('player9',{static:false}) player9:PlayerdataComponent
-  @ViewChild('player10',{static:false}) player10:PlayerdataComponent
+  @ViewChild('player1') player1:PlayerdataComponent
+  @ViewChild('player2') player2:PlayerdataComponent
+  @ViewChild('player3') player3:PlayerdataComponent
+  @ViewChild('player4') player4:PlayerdataComponent
+  @ViewChild('player5') player5:PlayerdataComponent
+  @ViewChild('player6') player6:PlayerdataComponent
+  @ViewChild('player7') player7:PlayerdataComponent
+  @ViewChild('player8') player8:PlayerdataComponent
+  @ViewChild('player9') player9:PlayerdataComponent
+  @ViewChild('player10') player10:PlayerdataComponent
   jstoday = '';
   today= new Date();
   @Input() submitted:boolean;

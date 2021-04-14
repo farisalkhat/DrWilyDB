@@ -19,7 +19,7 @@ export class SubmitComponent implements OnInit {
   match = {}
   players = {}
 
-  @ViewChild('gameForm',{static:false}) gameForm:GameformComponent
+  @ViewChild('gameForm') gameForm:GameformComponent
   robotmasters: RobotMaster[];
   stages: Stage[];
   playernames: any[];
