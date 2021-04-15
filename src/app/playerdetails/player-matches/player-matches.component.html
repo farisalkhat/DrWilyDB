@@ -3,9 +3,21 @@
 
   <div class="col-auto">
     <label for="robotmasters">Robot Master</label>
-    <select class="form-control"   id="robotmasters" [(ngModel)] = "robotmaster" (change)="filterByRM($event.target.value)" [value]="None">
-        <option value = "Clear">None</option>
+    <select class="form-control"   id="robotmasters" [(ngModel)] = "robotmasterFilter" (change)="selectFilter()">
+        <option value = "None">None</option>
         <option value = "{{robotmaster.id}}" *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
+      </select>
+    </div>
+
+
+    <div class="col-auto">
+    <label for="gamemode">Game Mode</label>
+    <select class="form-control"   id="gamemode" [(ngModel)] = "gamemodeFilter" (change)="selectFilter()">
+        <option value = "None">None</option>
+        <option value ="DM">DM</option>
+        <option value ="TDM">TDM</option>
+        <option value ="LMS">LMS</option>
+        <option value ="Duels">Duels</option>
       </select>
     </div>
 

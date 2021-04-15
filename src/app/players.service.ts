@@ -136,5 +136,15 @@ export class PlayersService {
     return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/${rid}/matches`)
   }
 
+  getPlayerGMMatches(player:string,gm:string){
+    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/${gm}/gamemode-matches`)
+  }
+
+  getPlayerRMGMMatches(player:string,rid:string,gm:string){
+    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/players/${player}/${rid}/${gm}/filtered-matches`)
+  }
+
+
+
 }
 

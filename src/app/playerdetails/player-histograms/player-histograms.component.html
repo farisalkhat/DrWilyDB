@@ -3,7 +3,7 @@
 
     <div class="col-auto">
         <label for="robotmasters">Robot Master</label>
-        <select class="form-control"   id="robotmasters" [(ngModel)] = "robotmaster" (change)="updateChart($event.target.value)" [value]="None">
+        <select class="form-control"   id="robotmasters" [(ngModel)] = "robotmaster" (change)="updateChart($event.target.value)" >
             <option value = "Clear">None</option>
             <option value = "{{robotmaster.id}}" *ngFor="let robotmaster of robotmasters">{{robotmaster.name}}</option>
           </select>
