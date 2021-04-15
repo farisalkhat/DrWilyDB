@@ -10,6 +10,11 @@ export interface RobotMaster extends Document{
   secondaryclass:string;
   icon:string;
   image:string;
+  damage:string;
+  durability:string;
+  mobility:string;
+  utility:string;
+  difficulty:string;
 }
 
 export interface RobotmasterDetails{

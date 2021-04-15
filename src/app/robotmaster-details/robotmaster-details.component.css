@@ -1,5 +1,6 @@
 .rm-image{
-    width:50%;
+    width:400px;
+    height:400px;
     display: block;
   margin-left: auto;
   margin-right: auto;
@@ -51,3 +52,10 @@
   }
   
   .bg-primary{background: #053275!important}
+
+
+  #divChart{
+    display:block;
+    width:600px;
+    height:300px;
+} 

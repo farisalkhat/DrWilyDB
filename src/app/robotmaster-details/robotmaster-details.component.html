@@ -4,10 +4,14 @@
     
     <div class="container2">
       <h1 class ="h1-center">{{robotmasterDetails?.robotmaster.name}} - {{robotmasterDetails?.robotmaster.primaryclass}}<span *ngIf="robotmasterDetails?.robotmaster.secondaryclass!=''">,</span>  {{robotmasterDetails?.robotmaster.secondaryclass}}</h1>
-      <h1> </h1>
     </div>
       
     
+
+  <div id="divChart" class="container2">  
+      <canvas id="myChart" ></canvas>
+  </div>
+
 
     <div class="container2">
         <div class="row">

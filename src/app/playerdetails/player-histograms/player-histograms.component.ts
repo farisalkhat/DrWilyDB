@@ -45,13 +45,14 @@ chartColors = {
     this.robotmastersService.getRobotMasters().subscribe(
         res=>{this.robotmasters = res;}
     )
-
+    Chart.defaults.global.defaultFontColor = 'white';
+    Chart.defaults.global.defaultFontSize = 14;
       this.createChart()
 
     
 
 
-      
+       
       });
 
 
@@ -68,9 +69,11 @@ chartColors = {
 
     updateChart(value:string){
         console.log(value)
-        
-        this.playersService.getFragsRMChart(this.playerid,value).subscribe(
-            res=>{this.data = res;
+        if(value =="None"){
+
+            this.playersService.getFragsChart(this.playerid).subscribe(
+                res=>{
+                    this.data = res;
                 console.log(this.data)
 
 
@@ -117,6 +120,61 @@ chartColors = {
 
 
             })
+
+
+        }
+
+        else{
+            this.playersService.getFragsRMChart(this.playerid,value).subscribe(
+                res=>{this.data = res;
+                    console.log(this.data)
+    
+    
+                    this.times = []
+                    this.frags = []
+                    this.totalGames = 0
+            
+                    this.data.forEach(value => {
+                        this.times.push(value.frags);
+                        this.frags.push(value.total);
+                        this.backgroundColor.push(this.chartColors.blue)
+                        this.totalGames = this.totalGames + value.total
+                      })
+    
+    
+                    this.currentChart.data.labels =  this.times
+                    this.currentChart.data.datasets[0].data = this.frags;
+    
+                var highEnd = this.totalGames*.2
+                var midEnd = this.totalGames*.11
+                var lowEnd = 0
+                console.log("lowEnd:"+lowEnd)
+                console.log("midEnd:"+midEnd)
+                console.log("highEnd:"+highEnd)
+                var datalabels = this.currentChart.data.labels
+                var dataset = this.currentChart.data.datasets[0];
+        
+                console.log(datalabels)
+        
+                for (var i = 0; i < datalabels.length; i++) {
+                    if (dataset.data[i] < midEnd) {
+                        dataset.backgroundColor[i] = this.chartColors.red;
+                    }
+                    if (dataset.data[i] >= midEnd )  {
+                        dataset.backgroundColor[i] = this.chartColors.orange;
+                    }
+                    if (dataset.data[i] >= highEnd) {
+                        dataset.backgroundColor[i] = this.chartColors.green;
+                    }
+        
+                }
+                this.currentChart.update();
+    
+    
+    
+                })
+        }
+
         
 
 
@@ -141,7 +199,7 @@ chartColors = {
                 data: {
                     labels: this.times,
                     datasets: [{
-                        label: '# of Times Frags Achieved',
+                        
                         data: this.frags,
                         backgroundColor: this.backgroundColor,
                         barThickness: 20,
@@ -150,7 +208,9 @@ chartColors = {
                         
                     }]
                 },
-                options: {
+                options: {legend: {
+                    display: false
+                 },
                     scales: {
                         yAxes: [{
                             scaleLabel: {
@@ -177,14 +237,7 @@ chartColors = {
                         }]
                     },
                     plugins: {
-                        legend: {
-                            labels: {
-                                // This more specific font property overrides the global property
-                                font: {
-                                    size: 20
-                                }
-                            }
-                        }
+
                     }
                 }
             });
