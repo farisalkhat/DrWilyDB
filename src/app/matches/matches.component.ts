@@ -5,6 +5,9 @@ import { AuthGuard } from '../auth.guard';
 import { AuthService } from '../auth.service';
 
 import {MatchesService} from '../matches.service'
+import { PlayerDetails, PlayersService } from '../players.service';
+import { RobotMaster, RobotmastersService } from '../robotmasters.service';
+import { Stage, StagesService } from '../stages.service';
 @Component({
   selector: 'app-matches',
   templateUrl: './matches.component.html',
@@ -15,7 +18,21 @@ export class MatchesComponent implements OnInit {
   matches:any[];
   submitVerified = false
 
-  constructor(public authGuard: AuthGuard,private matchesService: MatchesService, private _authService: AuthService,private _router:Router) {
+  robotmasters:RobotMaster[];
+  stages:Stage[];
+  players:PlayerDetails[];
+
+  filters = {
+    'robotmaster':'None',
+    'stage':'None',
+    'player':'None',
+    'gamemode':'None'
+  }
+
+
+
+
+  constructor(public robotmastersService:RobotmastersService,public stagesService: StagesService, public playersService:PlayersService,public authGuard: AuthGuard,private matchesService: MatchesService, private _authService: AuthService,private _router:Router) {
     this.matchesService.getMatches().subscribe(
       data=>{
         if(data){
@@ -25,10 +42,20 @@ export class MatchesComponent implements OnInit {
       }
     )
 
+    this.matchesService.getMatches().subscribe(data=>{this.matches=data;})
+    this.robotmastersService.getRobotMasters().subscribe(data=>{this.robotmasters=data;})
+    this.playersService.getPlayers().subscribe(data=>{this.players=data;})
+    this.stagesService.getStages().subscribe(data=>{this.stages=data;})
+
 
    }
 
   ngOnInit() {
+  }
+
+
+  updateFilter(){
+    console.log(this.filters)
   }
 
   deleteMatch(matchid:number){
