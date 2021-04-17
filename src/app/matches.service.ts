@@ -59,6 +59,15 @@ export class MatchesService {
     return this.http.get<Match>("https://mm8bitdm-v2.herokuapp.com/api/recentmatch");
   }
 
+
+  
+
+
+  getFilteredMatches(data){
+    console.log(data)
+    return this.http.get<any[]>('http://127.0.0.1:8080/api/matches/filtered');
+  }
+
   deleteMatch(matchid){
     if (this.authGuard.canActivate()){
       return this.http.post<any>('https://mm8bitdm-v2.herokuapp.com/api/deletematch',matchid)

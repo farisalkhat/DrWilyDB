@@ -33,6 +33,12 @@ export class MatchesComponent implements OnInit {
 
 
   constructor(public robotmastersService:RobotmastersService,public stagesService: StagesService, public playersService:PlayersService,public authGuard: AuthGuard,private matchesService: MatchesService, private _authService: AuthService,private _router:Router) {
+
+
+
+   }
+
+  ngOnInit() {
     this.matchesService.getMatches().subscribe(
       data=>{
         if(data){
@@ -46,16 +52,11 @@ export class MatchesComponent implements OnInit {
     this.robotmastersService.getRobotMasters().subscribe(data=>{this.robotmasters=data;})
     this.playersService.getPlayers().subscribe(data=>{this.players=data;})
     this.stagesService.getStages().subscribe(data=>{this.stages=data;})
-
-
-   }
-
-  ngOnInit() {
   }
 
 
   updateFilter(){
-    console.log(this.filters)
+    this.matchesService.getFilteredMatches(this.filters)
   }
 
   deleteMatch(matchid:number){
