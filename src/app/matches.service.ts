@@ -48,7 +48,7 @@ export class MatchesService {
   private _matchesUrl = "https://mm8bitdm-v2.herokuapp.com/api/matches"
   constructor(private http:HttpClient,private _router:Router,private authGuard:AuthGuard) { }
   getMatches(){
-    return this.http.get<any[]>(this._matchesUrl);
+    return this.http.get<Match[]>(this._matchesUrl);
   }
 
   getRandomMatch(){
@@ -64,8 +64,7 @@ export class MatchesService {
 
 
   getFilteredMatches(data){
-    console.log(data)
-    return this.http.get<any[]>('http://127.0.0.1:8080/api/matches/filtered');
+    return this.http.post<Match[]>('https://mm8bitdm-v2.herokuapp.com/api/matches/filtered',data,);
   }
 
   deleteMatch(matchid){

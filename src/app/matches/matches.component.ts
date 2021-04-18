@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthGuard } from '../auth.guard';
 import { AuthService } from '../auth.service';
 
-import {MatchesService} from '../matches.service'
+import {Match, MatchesService} from '../matches.service'
 import { PlayerDetails, PlayersService } from '../players.service';
 import { RobotMaster, RobotmastersService } from '../robotmasters.service';
 import { Stage, StagesService } from '../stages.service';
@@ -15,7 +15,7 @@ import { Stage, StagesService } from '../stages.service';
 })
 export class MatchesComponent implements OnInit {
 
-  matches:any[];
+  matches:Match[];
   submitVerified = false
 
   robotmasters:RobotMaster[];
@@ -56,7 +56,15 @@ export class MatchesComponent implements OnInit {
 
 
   updateFilter(){
-    this.matchesService.getFilteredMatches(this.filters)
+    
+    this.matchesService.getFilteredMatches(this.filters).subscribe(
+      res=>{
+        this.matches=res;
+        console.log(res)
+      },
+        
+      err=>{console.log(err)}
+    )
   }
 
   deleteMatch(matchid:number){
