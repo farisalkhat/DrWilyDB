@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatchesService } from 'src/app/matches.service';
 import { PlayersService } from 'src/app/players.service';
 import { RobotMaster, RobotmastersService } from 'src/app/robotmasters.service';
+import { Stage, StagesService } from 'src/app/stages.service';
 
 @Component({
   selector: 'app-player-matches',
@@ -13,20 +15,38 @@ export class PlayerMatchesComponent implements OnInit {
   playerid:string;
   matchDetails: any[];
   robotmasters:RobotMaster[];
+  stages:Stage[];
   gamemodeFilter="None";
-  robotmasterFilter:"None";
+  robotmasterFilter="None";
+  stageFilter ="None";
 
-  constructor(private robotmastersService:RobotmastersService,private playersService: PlayersService,private route: ActivatedRoute,) { }
+
+  filters = {
+    'robotmaster':'None',
+    'stage':'None',
+    'player':'None',
+    'gamemode':'None'
+  }
+
+
+  constructor(private matchesService:MatchesService,private stagesService:StagesService,private robotmastersService:RobotmastersService,private playersService: PlayersService,private route: ActivatedRoute,) { }
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap)=>{
       this.playerid= paramMap.get('playername');
+      this.filters['player']=this.playerid
     })
     this.playersService.getPlayerMatches(this.playerid).subscribe(
       res=>{this.matchDetails = res;}
     )
     this.robotmastersService.getRobotMasters().subscribe(
       res=>{this.robotmasters = res;}
-  )}
+    )
+
+    this.stagesService.getStages().subscribe(
+      res=>{this.stages = res;}
+    )
+
+}
     
 
     hideloader() {
@@ -35,18 +55,15 @@ export class PlayerMatchesComponent implements OnInit {
         console.log(div)
     }
   
-    selectFilter(){
-      console.log(this.gamemodeFilter)
-      console.log(this.robotmasterFilter)
-      if(this.gamemodeFilter!="None" && this.robotmasterFilter!="None"){
-        this.filterByRMGM()
-      }
-      else if(this.gamemodeFilter=="None" && this.robotmasterFilter!="None"){
-        this.filterByRM()
-      }
-      else if(this.gamemodeFilter!="None" && this.robotmasterFilter=="None"){
-        this.filterByGM()
-      }
+    updateFilter(){
+      this.matchesService.getFilteredPlayerMatches(this.filters).subscribe(
+        res=>{
+          this.matchDetails=res;
+          console.log(res)
+        },
+          
+        err=>{console.log(err)}
+      )
     }
 
 

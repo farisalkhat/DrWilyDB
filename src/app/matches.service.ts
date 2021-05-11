@@ -67,6 +67,10 @@ export class MatchesService {
     return this.http.post<Match[]>('https://mm8bitdm-v2.herokuapp.com/api/matches/filtered',data,);
   }
 
+  getFilteredPlayerMatches(data){
+    return this.http.post<Match[]>('https://mm8bitdm-v2.herokuapp.com/api/matches/filteredplayermatches',data,);
+  }
+
   deleteMatch(matchid){
     if (this.authGuard.canActivate()){
       return this.http.post<any>('https://mm8bitdm-v2.herokuapp.com/api/deletematch',matchid)
