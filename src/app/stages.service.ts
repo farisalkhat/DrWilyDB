@@ -86,7 +86,7 @@ total_frags: {
   providedIn: 'root'
 })
 export class StagesService {
-  private _stages = "https://mm8bitdm-v2.herokuapp.com/api/stages"
+  private _stages = "https://mm8bitdm.herokuapp.com/api/stages"
 
   constructor(private http:HttpClient,private _router:Router) { }
   getStages(){
@@ -94,7 +94,7 @@ export class StagesService {
   }
 
   getStage(name:string){
-    return this.http.get<StageDetails>(`https://mm8bitdm-v2.herokuapp.com/api/stages/${name}`);
+    return this.http.get<StageDetails>(`https://mm8bitdm.herokuapp.com/api/stages/${name}`);
   }
 
 

@@ -11,7 +11,7 @@ export class AuthService {
   private _registerUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/register"
   private _loginUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/login"
   private _submitUrl = "https://mm8bitdm-api-nodejs.herokuapp.com/api/submit"
-  private _subtmitMatchUrl = "https://mm8bitdm-v2.herokuapp.com/api/submitmatch"
+  private _subtmitMatchUrl = "https://mm8bitdm.herokuapp.com/api/submitmatch"
   
 
   constructor(private http: HttpClient,private _router:Router) { }

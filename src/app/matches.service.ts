@@ -45,18 +45,18 @@ export class MatchesService {
   stagesDetails:any[]
   playedMatchDetails:any[]
 
-  private _matchesUrl = "https://mm8bitdm-v2.herokuapp.com/api/matches"
+  private _matchesUrl = "https://mm8bitdm.herokuapp.com/api/matches"
   constructor(private http:HttpClient,private _router:Router,private authGuard:AuthGuard) { }
   getMatches(){
     return this.http.get<Match[]>(this._matchesUrl);
   }
 
   getRandomMatch(){
-    return this.http.get<rmMatch>("https://mm8bitdm-v2.herokuapp.com/api/randommatch");
+    return this.http.get<rmMatch>("https://mm8bitdm.herokuapp.com/api/randommatch");
   }
 
   getMostRecentMatch(){
-    return this.http.get<Match>("https://mm8bitdm-v2.herokuapp.com/api/recentmatch");
+    return this.http.get<Match>("https://mm8bitdm.herokuapp.com/api/recentmatch");
   }
 
 
@@ -64,30 +64,30 @@ export class MatchesService {
 
 
   getFilteredMatches(data){
-    return this.http.post<Match[]>('https://mm8bitdm-v2.herokuapp.com/api/matches/filtered',data,);
+    return this.http.post<Match[]>('https://mm8bitdm.herokuapp.com/api/matches/filtered',data,);
   }
 
   getFilteredPlayerMatches(data){
-    return this.http.post<Match[]>('https://mm8bitdm-v2.herokuapp.com/api/matches/filteredplayermatches',data,);
+    return this.http.post<Match[]>('https://mm8bitdm.herokuapp.com/api/matches/filteredplayermatches',data,);
   }
 
   deleteMatch(matchid){
     if (this.authGuard.canActivate()){
-      return this.http.post<any>('https://mm8bitdm-v2.herokuapp.com/api/deletematch',matchid)
+      return this.http.post<any>('https://mm8bitdm.herokuapp.com/api/deletematch',matchid)
     }
     
   }
 
   getMatchDetails(matchid:string){
  
-    return this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/matches/${matchid}`).pipe(
+    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/matches/${matchid}`).pipe(
       map(res=>{
         this.matchDetails = res
         return res
       }),
       mergeMap(res=>{
-        const stageData = this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/stages/stageid/${res['stage']}`);
-        const playedMatchData = this.http.get<any[]>(`https://mm8bitdm-v2.herokuapp.com/api/playedmatch/${res['matchid']}`);
+        const stageData = this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/stages/stageid/${res['stage']}`);
+        const playedMatchData = this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/playedmatch/${res['matchid']}`);
         return forkJoin([stageData,playedMatchData])
       })
 
