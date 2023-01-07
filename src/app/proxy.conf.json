@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "https://mm8bitdm.herokuapp.com/api/",
+      "target": "https://mm8bitdm-ygo.herokuapp.com/api/",
       "secure": true,
       "changeOrigin": true,
       "pathRewrite": {

@@ -68,79 +68,79 @@ export interface Peers{
 })
 export class PlayersService {
   getPlayerTotals(player: String) {
-    return this.http.get<PlayerTotals>(`https://mm8bitdm.herokuapp.com/api/players/${player}/totals`)
+    return this.http.get<PlayerTotals>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/totals`)
   }
 
-  private _playersUrl = "https://mm8bitdm.herokuapp.com/api/players"
+  private _playersUrl = "https://mm8bitdm-ygo.herokuapp.com/api/players"
   constructor(private http:HttpClient,private _router:Router) { }
   getPlayers(){
     return this.http.get<any[]>(this._playersUrl);
   }
   getPlayer(player:string){
-    return this.http.get<PlayerDetails>(`https://mm8bitdm.herokuapp.com/api/players/${player}`)
+    return this.http.get<PlayerDetails>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}`)
   }
 
   getRecentMatches(player:string){
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/recentmatches/${player}`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/recentmatches/${player}`)
   }
 
   getRecentDM(player:string){
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/recentmatches/dm/${player}`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/recentmatches/dm/${player}`)
   }
 
   getRecentDuels(player:string){
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/recentmatches/duels/${player}`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/recentmatches/duels/${player}`)
   }
 
   getMatchesTotals(player:string){
-    return this.http.get<MatchesTotal>(`https://mm8bitdm.herokuapp.com/api/players/${player}/matchtotals`)
+    return this.http.get<MatchesTotal>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/matchtotals`)
   }
 
   getMostPlayedRM(player: string) {
-    return this.http.get<MostPlayedRM>(`https://mm8bitdm.herokuapp.com/api/players/${player}/mostplayedrm`)
+    return this.http.get<MostPlayedRM>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/mostplayedrm`)
   }
 
   get5MostPlayedRM(player: string) {
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/5mostplayedrm`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/5mostplayedrm`)
   }
 
   getPlayerMatches(player: string) {
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/matches`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/matches`)
   }
 
   getPlayerRM(player: string) {
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/robotmasters`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/robotmasters`)
   }
 
 
   getPeers(player: string) {
-    return this.http.get<Peers[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/peers`)
+    return this.http.get<Peers[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/peers`)
   }
 
   getPeers5(player: string) {
-    return this.http.get<Peers[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/peers5`)
+    return this.http.get<Peers[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/peers5`)
   }
 
 
   getFragsChart(player:string){
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/frags`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/frags`)
   }
 
 
   getFragsRMChart(player:string,rid:string){
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/${rid}/rm-frags`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/${rid}/rm-frags`)
   }
 
   getPlayerRMMatches(player:string,rid:string){
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/${rid}/matches`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/${rid}/matches`)
   }
 
   getPlayerGMMatches(player:string,gm:string){
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/${gm}/gamemode-matches`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/${gm}/gamemode-matches`)
   }
 
   getPlayerRMGMMatches(player:string,rid:string,gm:string){
-    return this.http.get<any[]>(`https://mm8bitdm.herokuapp.com/api/players/${player}/${rid}/${gm}/filtered-matches`)
+    return this.http.get<any[]>(`https://mm8bitdm-ygo.herokuapp.com/api/players/${player}/${rid}/${gm}/filtered-matches`)
   }
 
 

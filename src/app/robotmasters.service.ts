@@ -99,17 +99,17 @@ export interface RobotmasterDetails{
 })
 export class RobotmastersService {
   getDailyRM() {
-    return this.http.get<RobotMaster>('https://mm8bitdm.herokuapp.com/api/dailyrm')
+    return this.http.get<RobotMaster>('https://mm8bitdm-ygo.herokuapp.com/api/dailyrm')
   }
 
-  private _robotmastersUrl = "https://mm8bitdm.herokuapp.com/api/robotmasters"
+  private _robotmastersUrl = "https://mm8bitdm-ygo.herokuapp.com/api/robotmasters"
   constructor(private http:HttpClient,private _router:Router) { }
   getRobotMasters(){
     return this.http.get<any[]>(this._robotmastersUrl);
   }
 
   getRobotMaster(robotmaster:string){
-    return this.http.get<RobotmasterDetails>(`https://mm8bitdm.herokuapp.com/api/robotmasters/${robotmaster}`)
+    return this.http.get<RobotmasterDetails>(`https://mm8bitdm-ygo.herokuapp.com/api/robotmasters/${robotmaster}`)
   }
 
 
